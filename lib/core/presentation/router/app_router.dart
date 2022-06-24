@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:base_riverpod/ui/presentation/home_page.dart';
+import 'package:base_riverpod/auth/presentation/login_screen.dart';
 import 'package:flutter/material.dart';
 
 part 'app_router.gr.dart';
@@ -8,7 +8,7 @@ part 'app_router.gr.dart';
   routes: [
     AutoRoute(
       path: '/',
-      page: HomePage,
+      page: LoginScreen,
       initial: true,
     ),
 

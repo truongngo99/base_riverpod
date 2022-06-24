@@ -1,0 +1,7 @@
+<resources>
+    <color name="orangePrimary">#E74E00</color>
+    <color name="orangePrimaryMaterial" type="material">#E74E00</color>
+    <color name="grey">#CCCCCC</color>
+    <color name="greyMaterial" type="material">#CCCCCC</color>
+    <color name="second_background_color">#FF39393D</color>
+</resources>
