@@ -25,12 +25,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   );
 
   ShapeBorder? bottomBarShape = const RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(25)),
+    borderRadius: BorderRadius.all(Radius.circular(8)),
   );
   SnakeBarBehaviour snakeBarStyle = SnakeBarBehaviour.floating;
   EdgeInsets padding = const EdgeInsets.all(12);
 
-  int _selectedItemPosition = 2;
+  int _selectedItemPosition = 0;
   PageController _pageController = PageController();
   SnakeShape snakeShape = SnakeShape.circle;
 

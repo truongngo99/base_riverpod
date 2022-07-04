@@ -48,7 +48,14 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                                     children: [
                                       Assets.images.profileAvatar
                                           .image(width: 90, height: 90),
-                                      const Text("プロフィール編集")
+                                      Row(
+                                        children: [
+                                          Assets.images.btnSetting
+                                              .image(width: 16, height: 16),
+                                          const SizedBox(width: 4),
+                                          const Text("プロフィール編集"),
+                                        ],
+                                      )
                                     ],
                                   )
                                 ],
@@ -138,18 +145,18 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                             style: TextStyle(fontSize: 14)),
                         const SizedBox(height: 20),
                         Assets.images.homeImage2.image(),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 30),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             const SizedBox(width: 12),
-                            Assets.images.file.image(width: 16, height: 16),
+                            Assets.images.file.image(width: 20, height: 20),
                             const SizedBox(width: 12),
                             const Text("沖縄本島ガイド会",
                                 style: TextStyle(fontSize: 14)),
                           ],
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 20),
                         Row(
                           children: const [
                             RoundedTextContainer(
@@ -158,22 +165,22 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                             Text("日常会話レベル", style: TextStyle(fontSize: 14))
                           ],
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 6),
                         Row(
                           children: const [
                             RoundedTextContainer(
-                                containerWidth: 80, text: "ドイツ語"),
+                                containerWidth: 80, text: "中国語"),
                             SizedBox(width: 18),
-                            Text("日常会話レベル", style: TextStyle(fontSize: 14))
+                            Text("ビジネスレベル", style: TextStyle(fontSize: 14))
                           ],
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 6),
                         Row(
                           children: const [
                             RoundedTextContainer(
-                                containerWidth: 80, text: "ドイツ語"),
+                                containerWidth: 80, text: "英語"),
                             SizedBox(width: 18),
-                            Text("日常会話レベル", style: TextStyle(fontSize: 14))
+                            Text("ネイティブレベル", style: TextStyle(fontSize: 14))
                           ],
                         ),
                         const SizedBox(height: 60),
@@ -182,31 +189,31 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
                         const SizedBox(height: 20),
                         const Padding(
                           padding: EdgeInsets.only(left: 40),
-                          child: Text("ホーム\n\nナビテキストA\n\nナビテキストテキストテキストB\n\nナビテキストテキストC\n\nナビテキストD\n\nナビテキストテキストE",
+                          child: Text(
+                              "ホーム\n\nナビテキストA\n\nナビテキストテキストテキストB\n\nナビテキストテキストC\n\nナビテキストD\n\nナビテキストテキストE",
                               style: TextStyle(
                                 fontSize: 14,
                               )),
                         ),
                       ]),
                 ),
-              Stack(
-                alignment: Alignment.topRight,
-                children: [
-                 ClipPath(
-                 clipper: CustomClipPath()
-                 ..type = ClipPathType.top,
-                 child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 100,
-                  color: ColorName.profileBackground,
-                 ),
-               ),
-               const Padding(
-                 padding: EdgeInsets.fromLTRB(0, 48, 20, 0),
-                 child: Text("© GuideNavi. All Rights Reserved."),
-               )
-              ],)
-              
+                Stack(
+                  alignment: Alignment.topRight,
+                  children: [
+                    ClipPath(
+                      clipper: CustomClipPath()..type = ClipPathType.top,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 100,
+                        color: ColorName.profileBackground,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(0, 48, 20, 0),
+                      child: Text("© GuideNavi. All Rights Reserved."),
+                    )
+                  ],
+                )
               ],
             ),
           ),

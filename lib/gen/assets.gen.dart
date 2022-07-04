@@ -25,6 +25,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/award.png
   AssetGenImage get award => const AssetGenImage('assets/images/award.png');
 
+  /// File path: assets/images/btn_setting.png
+  AssetGenImage get btnSetting =>
+      const AssetGenImage('assets/images/btn_setting.png');
+
   /// File path: assets/images/docs.png
   AssetGenImage get docs => const AssetGenImage('assets/images/docs.png');
 
