@@ -1,7 +1,16 @@
 <resources>
     <color name="orangePrimary">#E74E00</color>
+    <color name="greenPrimary">#009F9B</color>
+    <color name="profileBackground">#E1ECF2</color>
+    <color name="roundedTextBackground">#3F4443</color>
+
     <color name="orangePrimaryMaterial" type="material">#E74E00</color>
+    <color name="greenPrimaryMaterial" type="material">#009F9B</color>
+    <color name="profileBackgroundMaterial" type="material">#E1ECF2</color>
+    <color name="roundedTextBackgroundMaterial" type="material">#3F4443</color>
+
     <color name="grey">#CCCCCC</color>
     <color name="greyMaterial" type="material">#CCCCCC</color>
     <color name="second_background_color">#FF39393D</color>
+    <color name="appbar_background_color">#EFEFEF</color>
 </resources>
