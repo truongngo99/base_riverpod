@@ -2,7 +2,7 @@
 import 'dart:io';
 
 import 'package:base_riverpod/core/utils/exception.dart';
-import 'package:base_riverpod/data/datasource/remote_data_source.dart';
+import 'package:base_riverpod/data/datasource/auth_remote_data_source.dart';
 import 'package:base_riverpod/domain/entity/auth_response.dart';
 import 'package:base_riverpod/core/utils/failure.dart';
 import 'package:base_riverpod/domain/repositories/auth_repository.dart';
@@ -10,7 +10,7 @@ import 'package:dartz/dartz.dart';
 import 'package:riverpod/riverpod.dart';
 
 class AuthRespositoryImpl implements AuthRepository {
-  final GuideNaviRemoteDataSource guideNaviRemoteDataSource;
+  final AuthRemoteDataSource guideNaviRemoteDataSource;
 
   AuthRespositoryImpl({required this.guideNaviRemoteDataSource});
 

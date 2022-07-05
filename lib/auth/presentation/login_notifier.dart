@@ -29,6 +29,7 @@ class LoginNotifier extends ChangeNotifier {
       print("login fail");
       notifyListeners();
     }, (result) {
+      print("token ${result.data.accessToken}");
       _loginState = RequestState.loaded;
       _isLoggedIn = true;
       notifyListeners();

@@ -11,8 +11,6 @@ class ActivitiesTabScreen extends StatefulWidget {
 class _ActivitiesTabScreenState extends State<ActivitiesTabScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text("Activities"))
-      );
+    return Text("Activities");
   }
 }

@@ -11,8 +11,6 @@ class SkillTabScreen extends StatefulWidget {
 class _SkillTabScreenState extends State<SkillTabScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text("SkillTab nek"))
-      );
+    return Text("SkillTab nek");
   }
 }

@@ -1,7 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:base_riverpod/core/utils/exception.dart';
 import 'package:base_riverpod/core/utils/urls.dart';
@@ -11,14 +10,14 @@ import 'package:http/http.dart' as http;
 
 import 'package:base_riverpod/domain/entity/auth_response.dart';
 
-abstract class GuideNaviRemoteDataSource {
+abstract class AuthRemoteDataSource {
   Future<AuthResponse> login(String email, String password);
 }
 
-class GuideNaviRemoteDataSourceImpl implements GuideNaviRemoteDataSource {
+class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   final http.Client client;
 
-  GuideNaviRemoteDataSourceImpl({
+  AuthRemoteDataSourceImpl({
     required this.client,
   });
   
@@ -42,6 +41,6 @@ class GuideNaviRemoteDataSourceImpl implements GuideNaviRemoteDataSource {
   }
 }
 
-final Provider guideNaviDatasourceProvider = Provider<GuideNaviRemoteDataSourceImpl>((ref) {
-  return GuideNaviRemoteDataSourceImpl(client: http.Client());
+final Provider authDatasourceProvider = Provider<AuthRemoteDataSourceImpl>((ref) {
+  return AuthRemoteDataSourceImpl(client: http.Client());
 });

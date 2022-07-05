@@ -1,4 +1,4 @@
-import 'package:base_riverpod/data/datasource/remote_data_source.dart';
+import 'package:base_riverpod/data/datasource/auth_remote_data_source.dart';
 import 'package:base_riverpod/data/respositories/auth_respository_impl.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,6 +11,6 @@ abstract class AuthRepository {
 }
 
 final Provider authRespository = Provider<AuthRespositoryImpl>((ref) {
-  final remoteDataSource = ref.watch(guideNaviDatasourceProvider);
+  final remoteDataSource = ref.watch(authDatasourceProvider);
   return AuthRespositoryImpl(guideNaviRemoteDataSource: remoteDataSource);
 });

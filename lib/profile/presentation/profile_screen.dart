@@ -1,15 +1,16 @@
-
 import 'package:base_riverpod/core/presentation/router/app_router.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';
-import 'package:base_riverpod/profile/Tab/activities_tab_screen.dart';
-import 'package:base_riverpod/profile/Tab/gallery_tab_screen.dart';
-import 'package:base_riverpod/profile/Tab/home_tab_screen.dart';
-import 'package:base_riverpod/profile/Tab/skill_tab_screen.dart';
-import 'package:base_riverpod/profile/Tab/travel_spot_tab_screen.dart';
+import 'package:base_riverpod/profile/presentation/tab/activities_tab_screen.dart';
+import 'package:base_riverpod/profile/presentation/tab/gallery_tab_screen.dart';
+import 'package:base_riverpod/profile/presentation/tab/home_tab_screen.dart';
+import 'package:base_riverpod/profile/presentation/tab/skill_tab_screen.dart';
+import 'package:base_riverpod/profile/presentation/tab/travel_spot_tab_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
+
+import 'profile_tab_builder.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -19,10 +20,15 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final BorderRadius _borderRadius = const BorderRadius.only(
-    topLeft: Radius.circular(25),
-    topRight: Radius.circular(25),
-  );
+  final Map<String, String> _bottomNavigationBarItems = {
+    Assets.images.home.path: "ホーム",
+    Assets.images.mapPin.path: "観光地",
+    Assets.images.award.path: "スキル",
+    Assets.images.fileText.path: "活動",
+    Assets.images.imagePng.path: "写真",
+  };
+
+  final PageController _pageController = PageController();
 
   ShapeBorder? bottomBarShape = const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(Radius.circular(8)),
@@ -31,7 +37,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   EdgeInsets padding = const EdgeInsets.all(12);
 
   int _selectedItemPosition = 0;
-  PageController _pageController = PageController();
   SnakeShape snakeShape = SnakeShape.circle;
 
   bool showSelectedLabels = true;
@@ -43,12 +48,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-           appBar: PreferredSize(
+      appBar: PreferredSize(
         preferredSize: AppBar().preferredSize,
         child: AppBar(
           leading: Transform.translate(
-            offset: const Offset(15, 0),
-            child: Assets.images.markK.image()),
+              offset: const Offset(15, 0), child: Assets.images.markK.image()),
           titleSpacing: 20,
           leadingWidth: 32,
           backgroundColor: ColorName.profileBackground,
@@ -72,11 +76,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
           controller: _pageController,
           physics: const NeverScrollableScrollPhysics(),
           children: [
-            HomeTabScreen(),
-            TravelSpotTabScreen(),
-            SkillTabScreen(),
-            ActivitiesTabScreen(),
-            GalleryTabScreen(),
+            const ProfileTabBuilder(body: HomeTabScreen()),
+            ProfileTabBuilder(body: TravelSpotTabScreen()),
+            ProfileTabBuilder(body: SkillTabScreen()),
+            ProfileTabBuilder(body: ActivitiesTabScreen()),
+            ProfileTabBuilder(body: GalleryTabScreen()),
           ],
         ),
       ),
@@ -95,37 +99,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
         currentIndex: _selectedItemPosition,
         onTap: (index) => setState(() {
           _selectedItemPosition = index;
-          _pageController.animateToPage(index, duration: const Duration(milliseconds: 100), curve: Curves.linear);
+          _pageController.animateToPage(index,
+              duration: const Duration(milliseconds: 100),
+              curve: Curves.linear);
         }),
-          
-        items: [
-          BottomNavigationBarItem(icon: ImageIcon(
-              AssetImage(Assets.images.home.path),
-              size: 24,
-          ), label: "ホーム"),
-          BottomNavigationBarItem(icon: ImageIcon(
-              AssetImage(Assets.images.mapPin.path),
-              size: 24,
-          ),label: "観光地"),
-          BottomNavigationBarItem(icon: ImageIcon(
-              AssetImage(Assets.images.award.path),
-              size: 24,
-          ), label: "スキル"),
-          BottomNavigationBarItem(icon: ImageIcon(
-              AssetImage(Assets.images.fileText.path),
-              size: 24,
-          ), label: "活動"),
-          BottomNavigationBarItem(icon: ImageIcon(
-              AssetImage(Assets.images.imagePng.path),
-              size: 24,
-          ), label: "写真"),
-        ],
+        items: _buildBottomNavigationChilds(),
         selectedLabelStyle: const TextStyle(fontSize: 14),
         unselectedLabelStyle: const TextStyle(fontSize: 12),
-
-    ),
-      
+      ),
     );
   }
-}
 
+  List<BottomNavigationBarItem> _buildBottomNavigationChilds() {
+    List<BottomNavigationBarItem> list = [];
+    for (String key in _bottomNavigationBarItems.keys) {
+      list.add(customNavigationBarItem(key, _bottomNavigationBarItems[key]));
+    }
+    return list;
+  }
+
+  BottomNavigationBarItem customNavigationBarItem(
+      String assetPath, String? label) {
+    return BottomNavigationBarItem(
+        icon: ImageIcon(
+          AssetImage(assetPath),
+          size: 24,
+        ),
+        label: label);
+  }
+}

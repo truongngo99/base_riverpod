@@ -10,8 +10,6 @@ class GalleryTabScreen extends StatefulWidget {
 class _GalleryTabScreenState extends State<GalleryTabScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text("Gallery Tab"))
-      );
+    return Text("Gallery Tab");
   }
 }
