@@ -1,15 +1,12 @@
 import 'package:base_riverpod/gen/assets.gen.dart';
+import 'package:base_riverpod/profile/presentation/notifier/home_tab_notifier.dart';
 import 'package:base_riverpod/profile/utils/container_rounded_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeTabScreen extends StatefulWidget {
-  const HomeTabScreen({Key? key}) : super(key: key);
+class HomeTabScreen extends ConsumerWidget {
+  HomeTabScreen({Key? key}) : super(key: key);
 
-  @override
-  State<HomeTabScreen> createState() => _HomeTabScreenState();
-}
-
-class _HomeTabScreenState extends State<HomeTabScreen> {
   final Map<String, String> _skillList = {
     "ドイツ語": "日常会話レベル",
     "中国語": "ビジネスレベル",
@@ -19,18 +16,19 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
   final String selfDes = "私は東京でフリーのツアープランニングをしています。沖縄出身のうちなーんちゅなので、ガイドブックに載っていない情報やお店の事をお伝えできます！お客様のご要望に合わせてプランを組み立てるので、一緒に特別な思い出を作りましょう！！";
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.watch(homeTabNotifierProvider).fetchGeneralInfo();
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        _buildBioWidget(selfDes),
+        _buildBioWidget(selfDes, ref),
         const SizedBox(height: 30),
         _buildSkillWidget(_skillList),
       ]),
     );
   }
 
-  Widget _buildBioWidget(String selfDescription) {
+  Widget _buildBioWidget(String selfDescription, WidgetRef ref) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -44,7 +42,12 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
           ),
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
-            child: Assets.images.editProfile.image(width: 24, height: 24),
+            child: GestureDetector(
+              onTap: () {
+                ref.watch(homeTabNotifierProvider).fetchGeneralInfo();
+              },
+              child: Assets.images.editProfile.image(width: 24, height: 24)
+              ),
           ),
         ],
       ),

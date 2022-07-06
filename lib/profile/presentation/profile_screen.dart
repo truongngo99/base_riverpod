@@ -76,7 +76,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           controller: _pageController,
           physics: const NeverScrollableScrollPhysics(),
           children: [
-            const ProfileTabBuilder(body: HomeTabScreen()),
+            ProfileTabBuilder(body: HomeTabScreen()),
             ProfileTabBuilder(body: TravelSpotTabScreen()),
             ProfileTabBuilder(body: SkillTabScreen()),
             ProfileTabBuilder(body: ActivitiesTabScreen()),

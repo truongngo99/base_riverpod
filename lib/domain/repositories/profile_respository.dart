@@ -9,10 +9,10 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 abstract class ProfileRepository {
-  Future<Either<Failure, GeneralInfoResponse>> fetchGeneralInfo();
+  Future<Either<Failure, GeneralInfoResponse>> fetchGeneralInfo(String username);
   Future<Either<Failure, UserInfoResponse>> fetchUserInfo();
   Future<Either<Failure, SkillResponse>> fetchSkillResponse();
-  Future<Either<Failure, GuideUserInfoResponse>> fetchGuideUserInfo();
+  Future<Either<Failure, GuideUserInfoResponse>> fetchGuideUserInfo(String username);
 }
 
 final Provider profileRespository = Provider<ProfileRespositoryImpl>((ref) {

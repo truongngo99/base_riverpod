@@ -16,9 +16,9 @@ class ProfileRespositoryImpl implements ProfileRepository {
   ProfileRespositoryImpl({required this.remoteDataSource});
 
   @override
-  Future<Either<Failure, GeneralInfoResponse>> fetchGeneralInfo() async {
+  Future<Either<Failure, GeneralInfoResponse>> fetchGeneralInfo(String username) async {
      try {
-      final result = await remoteDataSource.fetchGeneralInfo();
+      final result = await remoteDataSource.fetchGeneralInfo(username);
       return Right(result);
     } on ServerException {
       return const Left(ServerFailure("abc"));
@@ -28,9 +28,9 @@ class ProfileRespositoryImpl implements ProfileRepository {
   }
 
   @override
-  Future<Either<Failure, GuideUserInfoResponse>> fetchGuideUserInfo() async {
+  Future<Either<Failure, GuideUserInfoResponse>> fetchGuideUserInfo(String username) async {
    try {
-      final result = await remoteDataSource.fetchGuideUserInfo();
+      final result = await remoteDataSource.fetchGuideUserInfo(username);
       return Right(result);
     } on ServerException {
       return const Left(ServerFailure("abc"));

@@ -1,9 +1,12 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'package:base_riverpod/auth/domain/auth_failure.dart';
-import 'package:base_riverpod/infrastructure/dto/auth_dto.dart';
-import 'package:base_riverpod/infrastructure/dto/auth_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'package:base_riverpod/auth/domain/auth_failure.dart';
+import 'package:base_riverpod/core/infrastructure/share_pref_ultils.dart';
+import 'package:base_riverpod/infrastructure/dto/auth_dto.dart';
+import 'package:base_riverpod/infrastructure/dto/auth_model.dart';
 
 import '../../infrastructure/authenticator.dart';
 
@@ -22,8 +25,12 @@ typedef AuthUriCallback = Future<Uri> Function(Uri authorizationUrl);
 
 class AuthNotifier extends StateNotifier<AuthState> {
   final Authenticator _authenticator;
+  final SharePrefUtils userDefault;
 
-  AuthNotifier(this._authenticator) : super(const AuthState.initial());
+  AuthNotifier(
+    this._authenticator,
+    this.userDefault,
+  ) : super(const AuthState.initial());
 
   // Future<void> checkAndUpdateAuthStatus() async {
   //   state = (await _authenticator.isSignedIn())

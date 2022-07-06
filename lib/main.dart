@@ -8,7 +8,7 @@ import 'package:injectable/injectable.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  configureInjection(Environment.dev);
+  configureInjection(Environment.test);
   getIt<SharePrefUtils>().init();    
 
   runApp(ProviderScope(

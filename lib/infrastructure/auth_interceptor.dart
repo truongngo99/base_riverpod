@@ -13,12 +13,15 @@ class AuthInterceptor extends Interceptor {
   Future<void> onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
     final authDto = await _authenticator.getSignedInAuth();
+
     final modifiedOptions = options
       ..headers.addAll(authDto == null
           ? {}
           : {
               'Authorization': 'Bearer ${authDto.accessToken}',
             });
+
+            
     handler.next(modifiedOptions);
   }
 

@@ -1,10 +1,12 @@
+import 'package:base_riverpod/core/infrastructure/share_pref_ultils.dart';
 import 'package:base_riverpod/dev_helper/shared/dev_helper_providers.dart';
+import 'package:base_riverpod/infrastructure/auth_interceptor.dart';
 import 'package:base_riverpod/infrastructure/auth_remote_service.dart';
 import 'package:base_riverpod/infrastructure/basic_authen_interceptor.dart';
+import 'package:base_riverpod/injection.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/services/network/auth_interceptor.dart';
 import '../../infrastructure/authenticator.dart';
 import '../application/auth_notifier.dart';
 
@@ -51,5 +53,6 @@ final authenticatorProvider = Provider(
 final authNotifierProvider = StateNotifierProvider<AuthNotifier, AuthState>(
   (ref) => AuthNotifier(
     ref.watch(authenticatorProvider),
+     getIt<SharePrefUtils>()
   ),
 );
