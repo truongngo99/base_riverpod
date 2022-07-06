@@ -1,4 +1,3 @@
-import 'package:base_riverpod/data/datasource/auth_remote_data_source.dart';
 import 'package:dio/dio.dart';
 
 import '../auth/application/auth_notifier.dart';

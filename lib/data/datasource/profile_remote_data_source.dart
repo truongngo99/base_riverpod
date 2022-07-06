@@ -1,13 +1,15 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:base_riverpod/auth/shared/auth_provider.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:base_riverpod/core/utils/exception.dart';
 import 'package:base_riverpod/core/utils/urls.dart';
 import 'package:base_riverpod/domain/entity/general_info_response.dart';
 import 'package:base_riverpod/domain/entity/guide_user_info.dart';
 import 'package:base_riverpod/domain/entity/skill_response.dart';
 import 'package:base_riverpod/domain/entity/user_info.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 abstract class ProfileRemoteDataSource {
     Future<UserInfoResponse> fetchUserInfo();
@@ -17,7 +19,11 @@ abstract class ProfileRemoteDataSource {
 }
 
 class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
-  final _dio = Dio();
+  final Dio _dio;
+
+  ProfileRemoteDataSourceImpl(
+    this._dio,
+  );
 
   @override
   Future<GeneralInfoResponse> fetchGeneralInfo() async {
@@ -61,5 +67,5 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
 }
 
 final Provider profileDatasourceProvider = Provider<ProfileRemoteDataSourceImpl>((ref) {
-  return ProfileRemoteDataSourceImpl();
+  return ProfileRemoteDataSourceImpl(ref.watch(dioForAuthProvider));
 });
