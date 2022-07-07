@@ -14,184 +14,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-GeneralInfoResponse _$GeneralInfoResponseFromJson(Map<String, dynamic> json) {
-  return _GeneralInfoResponse.fromJson(json);
-}
-
-/// @nodoc
-mixin _$GeneralInfoResponse {
-  String get message => throw _privateConstructorUsedError;
-  GeneralInfoData get data => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $GeneralInfoResponseCopyWith<GeneralInfoResponse> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GeneralInfoResponseCopyWith<$Res> {
-  factory $GeneralInfoResponseCopyWith(
-          GeneralInfoResponse value, $Res Function(GeneralInfoResponse) then) =
-      _$GeneralInfoResponseCopyWithImpl<$Res>;
-  $Res call({String message, GeneralInfoData data});
-
-  $GeneralInfoDataCopyWith<$Res> get data;
-}
-
-/// @nodoc
-class _$GeneralInfoResponseCopyWithImpl<$Res>
-    implements $GeneralInfoResponseCopyWith<$Res> {
-  _$GeneralInfoResponseCopyWithImpl(this._value, this._then);
-
-  final GeneralInfoResponse _value;
-  // ignore: unused_field
-  final $Res Function(GeneralInfoResponse) _then;
-
-  @override
-  $Res call({
-    Object? message = freezed,
-    Object? data = freezed,
-  }) {
-    return _then(_value.copyWith(
-      message: message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      data: data == freezed
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as GeneralInfoData,
-    ));
-  }
-
-  @override
-  $GeneralInfoDataCopyWith<$Res> get data {
-    return $GeneralInfoDataCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value));
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$_GeneralInfoResponseCopyWith<$Res>
-    implements $GeneralInfoResponseCopyWith<$Res> {
-  factory _$$_GeneralInfoResponseCopyWith(_$_GeneralInfoResponse value,
-          $Res Function(_$_GeneralInfoResponse) then) =
-      __$$_GeneralInfoResponseCopyWithImpl<$Res>;
-  @override
-  $Res call({String message, GeneralInfoData data});
-
-  @override
-  $GeneralInfoDataCopyWith<$Res> get data;
-}
-
-/// @nodoc
-class __$$_GeneralInfoResponseCopyWithImpl<$Res>
-    extends _$GeneralInfoResponseCopyWithImpl<$Res>
-    implements _$$_GeneralInfoResponseCopyWith<$Res> {
-  __$$_GeneralInfoResponseCopyWithImpl(_$_GeneralInfoResponse _value,
-      $Res Function(_$_GeneralInfoResponse) _then)
-      : super(_value, (v) => _then(v as _$_GeneralInfoResponse));
-
-  @override
-  _$_GeneralInfoResponse get _value => super._value as _$_GeneralInfoResponse;
-
-  @override
-  $Res call({
-    Object? message = freezed,
-    Object? data = freezed,
-  }) {
-    return _then(_$_GeneralInfoResponse(
-      message: message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      data: data == freezed
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as GeneralInfoData,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_GeneralInfoResponse implements _GeneralInfoResponse {
-  const _$_GeneralInfoResponse({required this.message, required this.data});
-
-  factory _$_GeneralInfoResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_GeneralInfoResponseFromJson(json);
-
-  @override
-  final String message;
-  @override
-  final GeneralInfoData data;
-
-  @override
-  String toString() {
-    return 'GeneralInfoResponse(message: $message, data: $data)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_GeneralInfoResponse &&
-            const DeepCollectionEquality().equals(other.message, message) &&
-            const DeepCollectionEquality().equals(other.data, data));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(message),
-      const DeepCollectionEquality().hash(data));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_GeneralInfoResponseCopyWith<_$_GeneralInfoResponse> get copyWith =>
-      __$$_GeneralInfoResponseCopyWithImpl<_$_GeneralInfoResponse>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_GeneralInfoResponseToJson(this);
-  }
-}
-
-abstract class _GeneralInfoResponse implements GeneralInfoResponse {
-  const factory _GeneralInfoResponse(
-      {required final String message,
-      required final GeneralInfoData data}) = _$_GeneralInfoResponse;
-
-  factory _GeneralInfoResponse.fromJson(Map<String, dynamic> json) =
-      _$_GeneralInfoResponse.fromJson;
-
-  @override
-  String get message => throw _privateConstructorUsedError;
-  @override
-  GeneralInfoData get data => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$$_GeneralInfoResponseCopyWith<_$_GeneralInfoResponse> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-GeneralInfoData _$GeneralInfoDataFromJson(Map<String, dynamic> json) {
-  return _GeneralInfoData.fromJson(json);
-}
-
 /// @nodoc
 mixin _$GeneralInfoData {
   Catchphrase get catchphrase => throw _privateConstructorUsedError;
-  Catchphrase get travelOrganizations => throw _privateConstructorUsedError;
+  TravelOrganizations get travelOrganizations =>
+      throw _privateConstructorUsedError;
   List<LanguageSkill> get languageSkills => throw _privateConstructorUsedError;
   List<GeneralInfo> get generalInfos => throw _privateConstructorUsedError;
   Catchphrase get selfIntroduction => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GeneralInfoDataCopyWith<GeneralInfoData> get copyWith =>
       throw _privateConstructorUsedError;
@@ -204,13 +35,13 @@ abstract class $GeneralInfoDataCopyWith<$Res> {
       _$GeneralInfoDataCopyWithImpl<$Res>;
   $Res call(
       {Catchphrase catchphrase,
-      Catchphrase travelOrganizations,
+      TravelOrganizations travelOrganizations,
       List<LanguageSkill> languageSkills,
       List<GeneralInfo> generalInfos,
       Catchphrase selfIntroduction});
 
   $CatchphraseCopyWith<$Res> get catchphrase;
-  $CatchphraseCopyWith<$Res> get travelOrganizations;
+  $TravelOrganizationsCopyWith<$Res> get travelOrganizations;
   $CatchphraseCopyWith<$Res> get selfIntroduction;
 }
 
@@ -239,7 +70,7 @@ class _$GeneralInfoDataCopyWithImpl<$Res>
       travelOrganizations: travelOrganizations == freezed
           ? _value.travelOrganizations
           : travelOrganizations // ignore: cast_nullable_to_non_nullable
-              as Catchphrase,
+              as TravelOrganizations,
       languageSkills: languageSkills == freezed
           ? _value.languageSkills
           : languageSkills // ignore: cast_nullable_to_non_nullable
@@ -263,8 +94,9 @@ class _$GeneralInfoDataCopyWithImpl<$Res>
   }
 
   @override
-  $CatchphraseCopyWith<$Res> get travelOrganizations {
-    return $CatchphraseCopyWith<$Res>(_value.travelOrganizations, (value) {
+  $TravelOrganizationsCopyWith<$Res> get travelOrganizations {
+    return $TravelOrganizationsCopyWith<$Res>(_value.travelOrganizations,
+        (value) {
       return _then(_value.copyWith(travelOrganizations: value));
     });
   }
@@ -286,7 +118,7 @@ abstract class _$$_GeneralInfoDataCopyWith<$Res>
   @override
   $Res call(
       {Catchphrase catchphrase,
-      Catchphrase travelOrganizations,
+      TravelOrganizations travelOrganizations,
       List<LanguageSkill> languageSkills,
       List<GeneralInfo> generalInfos,
       Catchphrase selfIntroduction});
@@ -294,7 +126,7 @@ abstract class _$$_GeneralInfoDataCopyWith<$Res>
   @override
   $CatchphraseCopyWith<$Res> get catchphrase;
   @override
-  $CatchphraseCopyWith<$Res> get travelOrganizations;
+  $TravelOrganizationsCopyWith<$Res> get travelOrganizations;
   @override
   $CatchphraseCopyWith<$Res> get selfIntroduction;
 }
@@ -326,13 +158,13 @@ class __$$_GeneralInfoDataCopyWithImpl<$Res>
       travelOrganizations: travelOrganizations == freezed
           ? _value.travelOrganizations
           : travelOrganizations // ignore: cast_nullable_to_non_nullable
-              as Catchphrase,
+              as TravelOrganizations,
       languageSkills: languageSkills == freezed
-          ? _value._languageSkills
+          ? _value.languageSkills
           : languageSkills // ignore: cast_nullable_to_non_nullable
               as List<LanguageSkill>,
       generalInfos: generalInfos == freezed
-          ? _value._generalInfos
+          ? _value.generalInfos
           : generalInfos // ignore: cast_nullable_to_non_nullable
               as List<GeneralInfo>,
       selfIntroduction: selfIntroduction == freezed
@@ -344,38 +176,23 @@ class __$$_GeneralInfoDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_GeneralInfoData implements _GeneralInfoData {
   const _$_GeneralInfoData(
       {required this.catchphrase,
       required this.travelOrganizations,
-      required final List<LanguageSkill> languageSkills,
-      required final List<GeneralInfo> generalInfos,
-      required this.selfIntroduction})
-      : _languageSkills = languageSkills,
-        _generalInfos = generalInfos;
-
-  factory _$_GeneralInfoData.fromJson(Map<String, dynamic> json) =>
-      _$$_GeneralInfoDataFromJson(json);
+      required this.languageSkills,
+      required this.generalInfos,
+      required this.selfIntroduction});
 
   @override
   final Catchphrase catchphrase;
   @override
-  final Catchphrase travelOrganizations;
-  final List<LanguageSkill> _languageSkills;
+  final TravelOrganizations travelOrganizations;
   @override
-  List<LanguageSkill> get languageSkills {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_languageSkills);
-  }
-
-  final List<GeneralInfo> _generalInfos;
+  final List<LanguageSkill> languageSkills;
   @override
-  List<GeneralInfo> get generalInfos {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_generalInfos);
-  }
-
+  final List<GeneralInfo> generalInfos;
   @override
   final Catchphrase selfIntroduction;
 
@@ -394,49 +211,41 @@ class _$_GeneralInfoData implements _GeneralInfoData {
             const DeepCollectionEquality()
                 .equals(other.travelOrganizations, travelOrganizations) &&
             const DeepCollectionEquality()
-                .equals(other._languageSkills, _languageSkills) &&
+                .equals(other.languageSkills, languageSkills) &&
             const DeepCollectionEquality()
-                .equals(other._generalInfos, _generalInfos) &&
+                .equals(other.generalInfos, generalInfos) &&
             const DeepCollectionEquality()
                 .equals(other.selfIntroduction, selfIntroduction));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(catchphrase),
       const DeepCollectionEquality().hash(travelOrganizations),
-      const DeepCollectionEquality().hash(_languageSkills),
-      const DeepCollectionEquality().hash(_generalInfos),
+      const DeepCollectionEquality().hash(languageSkills),
+      const DeepCollectionEquality().hash(generalInfos),
       const DeepCollectionEquality().hash(selfIntroduction));
 
   @JsonKey(ignore: true)
   @override
   _$$_GeneralInfoDataCopyWith<_$_GeneralInfoData> get copyWith =>
       __$$_GeneralInfoDataCopyWithImpl<_$_GeneralInfoData>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_GeneralInfoDataToJson(this);
-  }
 }
 
 abstract class _GeneralInfoData implements GeneralInfoData {
   const factory _GeneralInfoData(
       {required final Catchphrase catchphrase,
-      required final Catchphrase travelOrganizations,
+      required final TravelOrganizations travelOrganizations,
       required final List<LanguageSkill> languageSkills,
       required final List<GeneralInfo> generalInfos,
       required final Catchphrase selfIntroduction}) = _$_GeneralInfoData;
 
-  factory _GeneralInfoData.fromJson(Map<String, dynamic> json) =
-      _$_GeneralInfoData.fromJson;
-
   @override
   Catchphrase get catchphrase => throw _privateConstructorUsedError;
   @override
-  Catchphrase get travelOrganizations => throw _privateConstructorUsedError;
+  TravelOrganizations get travelOrganizations =>
+      throw _privateConstructorUsedError;
   @override
   List<LanguageSkill> get languageSkills => throw _privateConstructorUsedError;
   @override
@@ -455,8 +264,8 @@ Catchphrase _$CatchphraseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Catchphrase {
-  dynamic get ja => throw _privateConstructorUsedError;
-  dynamic get en => throw _privateConstructorUsedError;
+  String? get ja => throw _privateConstructorUsedError;
+  String? get en => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -469,7 +278,7 @@ abstract class $CatchphraseCopyWith<$Res> {
   factory $CatchphraseCopyWith(
           Catchphrase value, $Res Function(Catchphrase) then) =
       _$CatchphraseCopyWithImpl<$Res>;
-  $Res call({dynamic ja, dynamic en});
+  $Res call({String? ja, String? en});
 }
 
 /// @nodoc
@@ -489,11 +298,11 @@ class _$CatchphraseCopyWithImpl<$Res> implements $CatchphraseCopyWith<$Res> {
       ja: ja == freezed
           ? _value.ja
           : ja // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       en: en == freezed
           ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
     ));
   }
 }
@@ -505,7 +314,7 @@ abstract class _$$_CatchphraseCopyWith<$Res>
           _$_Catchphrase value, $Res Function(_$_Catchphrase) then) =
       __$$_CatchphraseCopyWithImpl<$Res>;
   @override
-  $Res call({dynamic ja, dynamic en});
+  $Res call({String? ja, String? en});
 }
 
 /// @nodoc
@@ -527,11 +336,11 @@ class __$$_CatchphraseCopyWithImpl<$Res> extends _$CatchphraseCopyWithImpl<$Res>
       ja: ja == freezed
           ? _value.ja
           : ja // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       en: en == freezed
           ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
     ));
   }
 }
@@ -545,9 +354,9 @@ class _$_Catchphrase implements _Catchphrase {
       _$$_CatchphraseFromJson(json);
 
   @override
-  final dynamic ja;
+  final String? ja;
   @override
-  final dynamic en;
+  final String? en;
 
   @override
   String toString() {
@@ -583,33 +392,28 @@ class _$_Catchphrase implements _Catchphrase {
 
 abstract class _Catchphrase implements Catchphrase {
   const factory _Catchphrase(
-      {required final dynamic ja, required final dynamic en}) = _$_Catchphrase;
+      {required final String? ja, required final String? en}) = _$_Catchphrase;
 
   factory _Catchphrase.fromJson(Map<String, dynamic> json) =
       _$_Catchphrase.fromJson;
 
   @override
-  dynamic get ja => throw _privateConstructorUsedError;
+  String? get ja => throw _privateConstructorUsedError;
   @override
-  dynamic get en => throw _privateConstructorUsedError;
+  String? get en => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_CatchphraseCopyWith<_$_Catchphrase> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-GeneralInfo _$GeneralInfoFromJson(Map<String, dynamic> json) {
-  return _GeneralInfo.fromJson(json);
-}
-
 /// @nodoc
 mixin _$GeneralInfo {
   int get id => throw _privateConstructorUsedError;
-  String get inputType => throw _privateConstructorUsedError;
-  Catchphrase get value => throw _privateConstructorUsedError;
-  String get mediaUrl => throw _privateConstructorUsedError;
+  String? get inputType => throw _privateConstructorUsedError;
+  Catchphrase? get value => throw _privateConstructorUsedError;
+  String? get mediaUrl => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GeneralInfoCopyWith<GeneralInfo> get copyWith =>
       throw _privateConstructorUsedError;
@@ -620,9 +424,9 @@ abstract class $GeneralInfoCopyWith<$Res> {
   factory $GeneralInfoCopyWith(
           GeneralInfo value, $Res Function(GeneralInfo) then) =
       _$GeneralInfoCopyWithImpl<$Res>;
-  $Res call({int id, String inputType, Catchphrase value, String mediaUrl});
+  $Res call({int id, String? inputType, Catchphrase? value, String? mediaUrl});
 
-  $CatchphraseCopyWith<$Res> get value;
+  $CatchphraseCopyWith<$Res>? get value;
 }
 
 /// @nodoc
@@ -648,21 +452,25 @@ class _$GeneralInfoCopyWithImpl<$Res> implements $GeneralInfoCopyWith<$Res> {
       inputType: inputType == freezed
           ? _value.inputType
           : inputType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as Catchphrase,
+              as Catchphrase?,
       mediaUrl: mediaUrl == freezed
           ? _value.mediaUrl
           : mediaUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 
   @override
-  $CatchphraseCopyWith<$Res> get value {
-    return $CatchphraseCopyWith<$Res>(_value.value, (value) {
+  $CatchphraseCopyWith<$Res>? get value {
+    if (_value.value == null) {
+      return null;
+    }
+
+    return $CatchphraseCopyWith<$Res>(_value.value!, (value) {
       return _then(_value.copyWith(value: value));
     });
   }
@@ -675,10 +483,10 @@ abstract class _$$_GeneralInfoCopyWith<$Res>
           _$_GeneralInfo value, $Res Function(_$_GeneralInfo) then) =
       __$$_GeneralInfoCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String inputType, Catchphrase value, String mediaUrl});
+  $Res call({int id, String? inputType, Catchphrase? value, String? mediaUrl});
 
   @override
-  $CatchphraseCopyWith<$Res> get value;
+  $CatchphraseCopyWith<$Res>? get value;
 }
 
 /// @nodoc
@@ -706,21 +514,21 @@ class __$$_GeneralInfoCopyWithImpl<$Res> extends _$GeneralInfoCopyWithImpl<$Res>
       inputType: inputType == freezed
           ? _value.inputType
           : inputType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as Catchphrase,
+              as Catchphrase?,
       mediaUrl: mediaUrl == freezed
           ? _value.mediaUrl
           : mediaUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_GeneralInfo implements _GeneralInfo {
   const _$_GeneralInfo(
       {required this.id,
@@ -728,17 +536,14 @@ class _$_GeneralInfo implements _GeneralInfo {
       required this.value,
       required this.mediaUrl});
 
-  factory _$_GeneralInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_GeneralInfoFromJson(json);
-
   @override
   final int id;
   @override
-  final String inputType;
+  final String? inputType;
   @override
-  final Catchphrase value;
+  final Catchphrase? value;
   @override
-  final String mediaUrl;
+  final String? mediaUrl;
 
   @override
   String toString() {
@@ -756,7 +561,6 @@ class _$_GeneralInfo implements _GeneralInfo {
             const DeepCollectionEquality().equals(other.mediaUrl, mediaUrl));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -769,31 +573,23 @@ class _$_GeneralInfo implements _GeneralInfo {
   @override
   _$$_GeneralInfoCopyWith<_$_GeneralInfo> get copyWith =>
       __$$_GeneralInfoCopyWithImpl<_$_GeneralInfo>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_GeneralInfoToJson(this);
-  }
 }
 
 abstract class _GeneralInfo implements GeneralInfo {
   const factory _GeneralInfo(
       {required final int id,
-      required final String inputType,
-      required final Catchphrase value,
-      required final String mediaUrl}) = _$_GeneralInfo;
-
-  factory _GeneralInfo.fromJson(Map<String, dynamic> json) =
-      _$_GeneralInfo.fromJson;
+      required final String? inputType,
+      required final Catchphrase? value,
+      required final String? mediaUrl}) = _$_GeneralInfo;
 
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  String get inputType => throw _privateConstructorUsedError;
+  String? get inputType => throw _privateConstructorUsedError;
   @override
-  Catchphrase get value => throw _privateConstructorUsedError;
+  Catchphrase? get value => throw _privateConstructorUsedError;
   @override
-  String get mediaUrl => throw _privateConstructorUsedError;
+  String? get mediaUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_GeneralInfoCopyWith<_$_GeneralInfo> get copyWith =>
@@ -968,5 +764,170 @@ abstract class _LanguageSkill implements LanguageSkill {
   @override
   @JsonKey(ignore: true)
   _$$_LanguageSkillCopyWith<_$_LanguageSkill> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TravelOrganizations _$TravelOrganizationsFromJson(Map<String, dynamic> json) {
+  return _TravelOrganizations.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TravelOrganizations {
+  List<String> get ja => throw _privateConstructorUsedError;
+  List<String> get en => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TravelOrganizationsCopyWith<TravelOrganizations> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TravelOrganizationsCopyWith<$Res> {
+  factory $TravelOrganizationsCopyWith(
+          TravelOrganizations value, $Res Function(TravelOrganizations) then) =
+      _$TravelOrganizationsCopyWithImpl<$Res>;
+  $Res call({List<String> ja, List<String> en});
+}
+
+/// @nodoc
+class _$TravelOrganizationsCopyWithImpl<$Res>
+    implements $TravelOrganizationsCopyWith<$Res> {
+  _$TravelOrganizationsCopyWithImpl(this._value, this._then);
+
+  final TravelOrganizations _value;
+  // ignore: unused_field
+  final $Res Function(TravelOrganizations) _then;
+
+  @override
+  $Res call({
+    Object? ja = freezed,
+    Object? en = freezed,
+  }) {
+    return _then(_value.copyWith(
+      ja: ja == freezed
+          ? _value.ja
+          : ja // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      en: en == freezed
+          ? _value.en
+          : en // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_TravelOrganizationsCopyWith<$Res>
+    implements $TravelOrganizationsCopyWith<$Res> {
+  factory _$$_TravelOrganizationsCopyWith(_$_TravelOrganizations value,
+          $Res Function(_$_TravelOrganizations) then) =
+      __$$_TravelOrganizationsCopyWithImpl<$Res>;
+  @override
+  $Res call({List<String> ja, List<String> en});
+}
+
+/// @nodoc
+class __$$_TravelOrganizationsCopyWithImpl<$Res>
+    extends _$TravelOrganizationsCopyWithImpl<$Res>
+    implements _$$_TravelOrganizationsCopyWith<$Res> {
+  __$$_TravelOrganizationsCopyWithImpl(_$_TravelOrganizations _value,
+      $Res Function(_$_TravelOrganizations) _then)
+      : super(_value, (v) => _then(v as _$_TravelOrganizations));
+
+  @override
+  _$_TravelOrganizations get _value => super._value as _$_TravelOrganizations;
+
+  @override
+  $Res call({
+    Object? ja = freezed,
+    Object? en = freezed,
+  }) {
+    return _then(_$_TravelOrganizations(
+      ja: ja == freezed
+          ? _value._ja
+          : ja // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      en: en == freezed
+          ? _value._en
+          : en // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_TravelOrganizations implements _TravelOrganizations {
+  const _$_TravelOrganizations(
+      {required final List<String> ja, required final List<String> en})
+      : _ja = ja,
+        _en = en;
+
+  factory _$_TravelOrganizations.fromJson(Map<String, dynamic> json) =>
+      _$$_TravelOrganizationsFromJson(json);
+
+  final List<String> _ja;
+  @override
+  List<String> get ja {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_ja);
+  }
+
+  final List<String> _en;
+  @override
+  List<String> get en {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_en);
+  }
+
+  @override
+  String toString() {
+    return 'TravelOrganizations(ja: $ja, en: $en)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_TravelOrganizations &&
+            const DeepCollectionEquality().equals(other._ja, _ja) &&
+            const DeepCollectionEquality().equals(other._en, _en));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_ja),
+      const DeepCollectionEquality().hash(_en));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_TravelOrganizationsCopyWith<_$_TravelOrganizations> get copyWith =>
+      __$$_TravelOrganizationsCopyWithImpl<_$_TravelOrganizations>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_TravelOrganizationsToJson(this);
+  }
+}
+
+abstract class _TravelOrganizations implements TravelOrganizations {
+  const factory _TravelOrganizations(
+      {required final List<String> ja,
+      required final List<String> en}) = _$_TravelOrganizations;
+
+  factory _TravelOrganizations.fromJson(Map<String, dynamic> json) =
+      _$_TravelOrganizations.fromJson;
+
+  @override
+  List<String> get ja => throw _privateConstructorUsedError;
+  @override
+  List<String> get en => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$_TravelOrganizationsCopyWith<_$_TravelOrganizations> get copyWith =>
       throw _privateConstructorUsedError;
 }

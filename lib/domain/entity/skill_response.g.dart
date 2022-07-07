@@ -6,42 +6,30 @@ part of 'skill_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SkillResponse _$$_SkillResponseFromJson(Map<String, dynamic> json) =>
-    _$_SkillResponse(
-      message: json['message'] as String,
-      data: SkillData.fromJson(json['data'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$$_SkillResponseToJson(_$_SkillResponse instance) =>
-    <String, dynamic>{
-      'message': instance.message,
-      'data': instance.data,
-    };
-
-_$_Data _$$_DataFromJson(Map<String, dynamic> json) => _$_Data(
-      domesticBusinessManager: json['domesticBusinessManager'],
-      generalBusinessManager: json['generalBusinessManager'],
+SkillData _$SkillDataFromJson(Map<String, dynamic> json) => SkillData(
+      domesticBusinessManager: json['domestic_business_manager'],
+      generalBusinessManager: json['general_business_manager'],
       toeic: json['toeic'],
-      tourismEnglish: json['tourismEnglish'],
-      travelGeography: json['travelGeography'],
-      worldHeritage: json['worldHeritage'],
-      showLatestTest: json['showLatestTest'],
-      ortherDegrees:
-          OrtherDegrees.fromJson(json['ortherDegrees'] as Map<String, dynamic>),
+      tourismEnglish: json['tourism_english'],
+      travelGeography: json['travel_geography'],
+      worldHeritage: json['world_heritage'],
+      showLatestTest: json['show_latest_test'],
+      ortherDegrees: OrtherDegrees.fromJson(
+          json['orther_degrees'] as Map<String, dynamic>),
       lastSkillsTest: LastSkillsTest.fromJson(
-          json['lastSkillsTest'] as Map<String, dynamic>),
+          json['last_skills_test'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_DataToJson(_$_Data instance) => <String, dynamic>{
-      'domesticBusinessManager': instance.domesticBusinessManager,
-      'generalBusinessManager': instance.generalBusinessManager,
+Map<String, dynamic> _$SkillDataToJson(SkillData instance) => <String, dynamic>{
+      'domestic_business_manager': instance.domesticBusinessManager,
+      'general_business_manager': instance.generalBusinessManager,
       'toeic': instance.toeic,
-      'tourismEnglish': instance.tourismEnglish,
-      'travelGeography': instance.travelGeography,
-      'worldHeritage': instance.worldHeritage,
-      'showLatestTest': instance.showLatestTest,
-      'ortherDegrees': instance.ortherDegrees,
-      'lastSkillsTest': instance.lastSkillsTest,
+      'tourism_english': instance.tourismEnglish,
+      'travel_geography': instance.travelGeography,
+      'world_heritage': instance.worldHeritage,
+      'show_latest_test': instance.showLatestTest,
+      'orther_degrees': instance.ortherDegrees,
+      'last_skills_test': instance.lastSkillsTest,
     };
 
 _$_LastSkillsTest _$$_LastSkillsTestFromJson(Map<String, dynamic> json) =>
@@ -52,8 +40,8 @@ Map<String, dynamic> _$$_LastSkillsTestToJson(_$_LastSkillsTest instance) =>
 
 _$_OrtherDegrees _$$_OrtherDegreesFromJson(Map<String, dynamic> json) =>
     _$_OrtherDegrees(
-      ja: json['ja'] as List<dynamic>,
-      en: json['en'] as List<dynamic>,
+      ja: (json['ja'] as List<dynamic>).map((e) => e as String?).toList(),
+      en: (json['en'] as List<dynamic>).map((e) => e as String?).toList(),
     );
 
 Map<String, dynamic> _$$_OrtherDegreesToJson(_$_OrtherDegrees instance) =>

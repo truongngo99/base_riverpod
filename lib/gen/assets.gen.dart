@@ -22,6 +22,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/avatar.png
   AssetGenImage get avatar => const AssetGenImage('assets/images/avatar.png');
 
+  /// File path: assets/images/avatar_placeholder.png
+  AssetGenImage get avatarPlaceholder =>
+      const AssetGenImage('assets/images/avatar_placeholder.png');
+
   /// File path: assets/images/award.png
   AssetGenImage get award => const AssetGenImage('assets/images/award.png');
 
@@ -96,6 +100,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/phone.png
   AssetGenImage get phone => const AssetGenImage('assets/images/phone.png');
+
+  /// File path: assets/images/placeholder.png
+  AssetGenImage get placeholder =>
+      const AssetGenImage('assets/images/placeholder.png');
 
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');

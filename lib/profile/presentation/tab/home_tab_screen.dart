@@ -1,3 +1,4 @@
+import 'package:base_riverpod/domain/entity/general_info_response.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/profile/presentation/notifier/home_tab_notifier.dart';
 import 'package:base_riverpod/profile/utils/container_rounded_text.dart';
@@ -13,25 +14,26 @@ class HomeTabScreen extends ConsumerWidget {
     "英語": "ネイティブレベル",
   };
 
-  final String selfDes = "私は東京でフリーのツアープランニングをしています。沖縄出身のうちなーんちゅなので、ガイドブックに載っていない情報やお店の事をお伝えできます！お客様のご要望に合わせてプランを組み立てるので、一緒に特別な思い出を作りましょう！！";
+  final String selfDes =
+      "私は東京でフリーのツアープランニングをしています。沖縄出身のうちなーんちゅなので、ガイドブックに載っていない情報やお店の事をお伝えできます！お客様のご要望に合わせてプランを組み立てるので、一緒に特別な思い出を作りましょう！！";
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.watch(homeTabNotifierProvider).fetchGeneralInfo();
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        _buildBioWidget(selfDes, ref),
+        _buildBioWidget(ref),
         const SizedBox(height: 30),
         _buildSkillWidget(_skillList),
       ]),
     );
   }
 
-  Widget _buildBioWidget(String selfDescription, WidgetRef ref) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+  Widget _buildBioWidget(WidgetRef ref) {
+
+    final generalInfo = ref.watch(profileNotifierProvider).generalInfo;
+
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         // ignore: prefer_const_literals_to_create_immutables
@@ -43,30 +45,39 @@ class HomeTabScreen extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
             child: GestureDetector(
-              onTap: () {
-                ref.watch(homeTabNotifierProvider).fetchGeneralInfo();
-              },
-              child: Assets.images.editProfile.image(width: 24, height: 24)
-              ),
+                onTap: () {},
+                child: Assets.images.editProfile.image(width: 24, height: 24)),
           ),
         ],
       ),
       const SizedBox(height: 20),
-      const Text("一緒に特別な思い出を作りましょう！！",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-      const SizedBox(height: 10),
-      Text(
-          selfDescription,
-          style: const TextStyle(fontSize: 14)),
-      const SizedBox(height: 20),
-      Assets.images.homeImage2.image(),
+      Text(generalInfo?.catchphrase.ja ?? "",
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+      for (var info in generalInfo?.generalInfos ?? []) Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: _buildBioElement(info),
+      ),
     ]);
+  }
+
+  Widget _buildBioElement(GeneralInfo info) {
+    return (info.inputType == "image")
+        ? ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: FadeInImage.assetNetwork(
+              placeholder: Assets.images.avatarPlaceholder.path,
+              image: info.mediaUrl ??
+                  "https://www.publicdomainpictures.net/pictures/280000/nahled/not-found-image-15383864787lu.jpg",
+              fit: BoxFit.fill,
+            ),
+        )
+        : Text("${info.value?.ja}", style: const TextStyle(fontSize: 14));
   }
 
   Widget _buildSkillWidget(Map<String, String> skillList) {
     return Column(
       children: [
-         Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const SizedBox(width: 12),

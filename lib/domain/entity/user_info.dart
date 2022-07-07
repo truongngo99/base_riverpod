@@ -3,25 +3,12 @@
 //     final userInfoResponse = userInfoResponseFromJson(jsonString);
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'dart:convert';
 part 'user_info.g.dart';
 part 'user_info.freezed.dart';
 
-UserInfoResponse userInfoResponseFromJson(String str) => UserInfoResponse.fromJson(json.decode(str));
 
-String userInfoResponseToJson(UserInfoResponse data) => json.encode(data.toJson());
-
-@freezed
-class UserInfoResponse with _$UserInfoResponse {
-    const factory UserInfoResponse({
-        required String message,
-        required UserInfoData data,
-    }) = _UserInfoResponse;
-
-    factory UserInfoResponse.fromJson(Map<String, dynamic> json) => _$UserInfoResponseFromJson(json);
-}
-
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false, toJson: false, fromJson: false)
+@JsonSerializable(fieldRename: FieldRename.snake)
 class UserInfoData with _$UserInfoData {
     const factory UserInfoData({
         required String email,
@@ -40,19 +27,21 @@ class UserInfoData with _$UserInfoData {
 @freezed
 class StName with _$StName {
     const factory StName({
-        required String ja,
-        required String en,
+        required String? ja,
+        required String? en,
     }) = _StName;
 
     factory StName.fromJson(Map<String, dynamic> json) => _$StNameFromJson(json);
 }
 
-@freezed
+
+@Freezed(makeCollectionsUnmodifiable: false, toJson: false, fromJson: false)
+@JsonSerializable(fieldRename: FieldRename.snake)
 class AryLanguage with _$AryLanguage {
     const factory AryLanguage({
-        required String code,
-        required String name,
-        required String nameJa,
+        required String? code,
+        required String? name,
+        required String? nameJa,
     }) = _AryLanguage;
 
     factory AryLanguage.fromJson(Map<String, dynamic> json) => _$AryLanguageFromJson(json);

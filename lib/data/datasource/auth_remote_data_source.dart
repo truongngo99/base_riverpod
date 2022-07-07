@@ -35,7 +35,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       return AuthResponse.fromJson(json.decode(response.body));
     } else {
       // ignore: avoid_print
-      print("body: ${response.body}");
       throw ServerException();
     }
   }

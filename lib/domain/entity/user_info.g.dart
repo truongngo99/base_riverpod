@@ -6,64 +6,50 @@ part of 'user_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserInfoResponse _$$_UserInfoResponseFromJson(Map<String, dynamic> json) =>
-    _$_UserInfoResponse(
-      message: json['message'] as String,
-      data: UserInfoData.fromJson(json['data'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$$_UserInfoResponseToJson(_$_UserInfoResponse instance) =>
-    <String, dynamic>{
-      'message': instance.message,
-      'data': instance.data,
-    };
-
-_$_UserInfoData _$$_UserInfoDataFromJson(Map<String, dynamic> json) =>
-    _$_UserInfoData(
+UserInfoData _$UserInfoDataFromJson(Map<String, dynamic> json) => UserInfoData(
       email: json['email'] as String,
-      firstName: StName.fromJson(json['firstName'] as Map<String, dynamic>),
-      lastName: StName.fromJson(json['lastName'] as Map<String, dynamic>),
+      firstName: StName.fromJson(json['first_name'] as Map<String, dynamic>),
+      lastName: StName.fromJson(json['last_name'] as Map<String, dynamic>),
       birthday: DateTime.parse(json['birthday'] as String),
-      couponCode: json['couponCode'],
+      couponCode: json['coupon_code'],
       subscription: json['subscription'] as bool,
-      primaryLanguage:
-          AryLanguage.fromJson(json['primaryLanguage'] as Map<String, dynamic>),
+      primaryLanguage: AryLanguage.fromJson(
+          json['primary_language'] as Map<String, dynamic>),
       secondaryLanguage: AryLanguage.fromJson(
-          json['secondaryLanguage'] as Map<String, dynamic>),
+          json['secondary_language'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_UserInfoDataToJson(_$_UserInfoData instance) =>
+Map<String, dynamic> _$UserInfoDataToJson(UserInfoData instance) =>
     <String, dynamic>{
       'email': instance.email,
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
+      'first_name': instance.firstName,
+      'last_name': instance.lastName,
       'birthday': instance.birthday.toIso8601String(),
-      'couponCode': instance.couponCode,
+      'coupon_code': instance.couponCode,
       'subscription': instance.subscription,
-      'primaryLanguage': instance.primaryLanguage,
-      'secondaryLanguage': instance.secondaryLanguage,
+      'primary_language': instance.primaryLanguage,
+      'secondary_language': instance.secondaryLanguage,
+    };
+
+AryLanguage _$AryLanguageFromJson(Map<String, dynamic> json) => AryLanguage(
+      code: json['code'] as String?,
+      name: json['name'] as String?,
+      nameJa: json['name_ja'] as String?,
+    );
+
+Map<String, dynamic> _$AryLanguageToJson(AryLanguage instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'name': instance.name,
+      'name_ja': instance.nameJa,
     };
 
 _$_StName _$$_StNameFromJson(Map<String, dynamic> json) => _$_StName(
-      ja: json['ja'] as String,
-      en: json['en'] as String,
+      ja: json['ja'] as String?,
+      en: json['en'] as String?,
     );
 
 Map<String, dynamic> _$$_StNameToJson(_$_StName instance) => <String, dynamic>{
       'ja': instance.ja,
       'en': instance.en,
-    };
-
-_$_AryLanguage _$$_AryLanguageFromJson(Map<String, dynamic> json) =>
-    _$_AryLanguage(
-      code: json['code'] as String,
-      name: json['name'] as String,
-      nameJa: json['nameJa'] as String,
-    );
-
-Map<String, dynamic> _$$_AryLanguageToJson(_$_AryLanguage instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'name': instance.name,
-      'nameJa': instance.nameJa,
     };

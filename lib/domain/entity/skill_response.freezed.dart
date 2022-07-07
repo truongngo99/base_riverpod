@@ -14,174 +14,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-SkillResponse _$SkillResponseFromJson(Map<String, dynamic> json) {
-  return _SkillResponse.fromJson(json);
-}
-
-/// @nodoc
-mixin _$SkillResponse {
-  String get message => throw _privateConstructorUsedError;
-  SkillData get data => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SkillResponseCopyWith<SkillResponse> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SkillResponseCopyWith<$Res> {
-  factory $SkillResponseCopyWith(
-          SkillResponse value, $Res Function(SkillResponse) then) =
-      _$SkillResponseCopyWithImpl<$Res>;
-  $Res call({String message, SkillData data});
-
-  $SkillDataCopyWith<$Res> get data;
-}
-
-/// @nodoc
-class _$SkillResponseCopyWithImpl<$Res>
-    implements $SkillResponseCopyWith<$Res> {
-  _$SkillResponseCopyWithImpl(this._value, this._then);
-
-  final SkillResponse _value;
-  // ignore: unused_field
-  final $Res Function(SkillResponse) _then;
-
-  @override
-  $Res call({
-    Object? message = freezed,
-    Object? data = freezed,
-  }) {
-    return _then(_value.copyWith(
-      message: message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      data: data == freezed
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as SkillData,
-    ));
-  }
-
-  @override
-  $SkillDataCopyWith<$Res> get data {
-    return $SkillDataCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value));
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$_SkillResponseCopyWith<$Res>
-    implements $SkillResponseCopyWith<$Res> {
-  factory _$$_SkillResponseCopyWith(
-          _$_SkillResponse value, $Res Function(_$_SkillResponse) then) =
-      __$$_SkillResponseCopyWithImpl<$Res>;
-  @override
-  $Res call({String message, SkillData data});
-
-  @override
-  $SkillDataCopyWith<$Res> get data;
-}
-
-/// @nodoc
-class __$$_SkillResponseCopyWithImpl<$Res>
-    extends _$SkillResponseCopyWithImpl<$Res>
-    implements _$$_SkillResponseCopyWith<$Res> {
-  __$$_SkillResponseCopyWithImpl(
-      _$_SkillResponse _value, $Res Function(_$_SkillResponse) _then)
-      : super(_value, (v) => _then(v as _$_SkillResponse));
-
-  @override
-  _$_SkillResponse get _value => super._value as _$_SkillResponse;
-
-  @override
-  $Res call({
-    Object? message = freezed,
-    Object? data = freezed,
-  }) {
-    return _then(_$_SkillResponse(
-      message: message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      data: data == freezed
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as SkillData,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_SkillResponse implements _SkillResponse {
-  const _$_SkillResponse({required this.message, required this.data});
-
-  factory _$_SkillResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_SkillResponseFromJson(json);
-
-  @override
-  final String message;
-  @override
-  final SkillData data;
-
-  @override
-  String toString() {
-    return 'SkillResponse(message: $message, data: $data)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_SkillResponse &&
-            const DeepCollectionEquality().equals(other.message, message) &&
-            const DeepCollectionEquality().equals(other.data, data));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(message),
-      const DeepCollectionEquality().hash(data));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_SkillResponseCopyWith<_$_SkillResponse> get copyWith =>
-      __$$_SkillResponseCopyWithImpl<_$_SkillResponse>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_SkillResponseToJson(this);
-  }
-}
-
-abstract class _SkillResponse implements SkillResponse {
-  const factory _SkillResponse(
-      {required final String message,
-      required final SkillData data}) = _$_SkillResponse;
-
-  factory _SkillResponse.fromJson(Map<String, dynamic> json) =
-      _$_SkillResponse.fromJson;
-
-  @override
-  String get message => throw _privateConstructorUsedError;
-  @override
-  SkillData get data => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$$_SkillResponseCopyWith<_$_SkillResponse> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-SkillData _$SkillDataFromJson(Map<String, dynamic> json) {
-  return _Data.fromJson(json);
-}
-
 /// @nodoc
 mixin _$SkillData {
   dynamic get domesticBusinessManager => throw _privateConstructorUsedError;
@@ -194,7 +26,6 @@ mixin _$SkillData {
   OrtherDegrees get ortherDegrees => throw _privateConstructorUsedError;
   LastSkillsTest get lastSkillsTest => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SkillDataCopyWith<SkillData> get copyWith =>
       throw _privateConstructorUsedError;
@@ -379,7 +210,7 @@ class __$$_DataCopyWithImpl<$Res> extends _$SkillDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_Data implements _Data {
   const _$_Data(
       {required this.domesticBusinessManager,
@@ -391,8 +222,6 @@ class _$_Data implements _Data {
       required this.showLatestTest,
       required this.ortherDegrees,
       required this.lastSkillsTest});
-
-  factory _$_Data.fromJson(Map<String, dynamic> json) => _$$_DataFromJson(json);
 
   @override
   final dynamic domesticBusinessManager;
@@ -442,7 +271,6 @@ class _$_Data implements _Data {
                 .equals(other.lastSkillsTest, lastSkillsTest));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -460,11 +288,6 @@ class _$_Data implements _Data {
   @override
   _$$_DataCopyWith<_$_Data> get copyWith =>
       __$$_DataCopyWithImpl<_$_Data>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_DataToJson(this);
-  }
 }
 
 abstract class _Data implements SkillData {
@@ -478,8 +301,6 @@ abstract class _Data implements SkillData {
       required final dynamic showLatestTest,
       required final OrtherDegrees ortherDegrees,
       required final LastSkillsTest lastSkillsTest}) = _$_Data;
-
-  factory _Data.fromJson(Map<String, dynamic> json) = _$_Data.fromJson;
 
   @override
   dynamic get domesticBusinessManager => throw _privateConstructorUsedError;
@@ -591,8 +412,8 @@ OrtherDegrees _$OrtherDegreesFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OrtherDegrees {
-  List<dynamic> get ja => throw _privateConstructorUsedError;
-  List<dynamic> get en => throw _privateConstructorUsedError;
+  List<String?> get ja => throw _privateConstructorUsedError;
+  List<String?> get en => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -605,7 +426,7 @@ abstract class $OrtherDegreesCopyWith<$Res> {
   factory $OrtherDegreesCopyWith(
           OrtherDegrees value, $Res Function(OrtherDegrees) then) =
       _$OrtherDegreesCopyWithImpl<$Res>;
-  $Res call({List<dynamic> ja, List<dynamic> en});
+  $Res call({List<String?> ja, List<String?> en});
 }
 
 /// @nodoc
@@ -626,11 +447,11 @@ class _$OrtherDegreesCopyWithImpl<$Res>
       ja: ja == freezed
           ? _value.ja
           : ja // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<String?>,
       en: en == freezed
           ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<String?>,
     ));
   }
 }
@@ -642,7 +463,7 @@ abstract class _$$_OrtherDegreesCopyWith<$Res>
           _$_OrtherDegrees value, $Res Function(_$_OrtherDegrees) then) =
       __$$_OrtherDegreesCopyWithImpl<$Res>;
   @override
-  $Res call({List<dynamic> ja, List<dynamic> en});
+  $Res call({List<String?> ja, List<String?> en});
 }
 
 /// @nodoc
@@ -665,11 +486,11 @@ class __$$_OrtherDegreesCopyWithImpl<$Res>
       ja: ja == freezed
           ? _value._ja
           : ja // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<String?>,
       en: en == freezed
           ? _value._en
           : en // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<String?>,
     ));
   }
 }
@@ -678,23 +499,23 @@ class __$$_OrtherDegreesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_OrtherDegrees implements _OrtherDegrees {
   const _$_OrtherDegrees(
-      {required final List<dynamic> ja, required final List<dynamic> en})
+      {required final List<String?> ja, required final List<String?> en})
       : _ja = ja,
         _en = en;
 
   factory _$_OrtherDegrees.fromJson(Map<String, dynamic> json) =>
       _$$_OrtherDegreesFromJson(json);
 
-  final List<dynamic> _ja;
+  final List<String?> _ja;
   @override
-  List<dynamic> get ja {
+  List<String?> get ja {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_ja);
   }
 
-  final List<dynamic> _en;
+  final List<String?> _en;
   @override
-  List<dynamic> get en {
+  List<String?> get en {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_en);
   }
@@ -733,16 +554,16 @@ class _$_OrtherDegrees implements _OrtherDegrees {
 
 abstract class _OrtherDegrees implements OrtherDegrees {
   const factory _OrtherDegrees(
-      {required final List<dynamic> ja,
-      required final List<dynamic> en}) = _$_OrtherDegrees;
+      {required final List<String?> ja,
+      required final List<String?> en}) = _$_OrtherDegrees;
 
   factory _OrtherDegrees.fromJson(Map<String, dynamic> json) =
       _$_OrtherDegrees.fromJson;
 
   @override
-  List<dynamic> get ja => throw _privateConstructorUsedError;
+  List<String?> get ja => throw _privateConstructorUsedError;
   @override
-  List<dynamic> get en => throw _privateConstructorUsedError;
+  List<String?> get en => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_OrtherDegreesCopyWith<_$_OrtherDegrees> get copyWith =>

@@ -1,32 +1,20 @@
 // To parse this JSON data, do
 //
-//     final generalInfoResponse = generalInfoResponseFromJson(jsonString);
+//     final guideUserInfoResponse = guideUserInfoResponseFromMap(jsonString);
 
+import 'package:meta/meta.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
 
-part 'general_info_response.freezed.dart';
 part 'general_info_response.g.dart';
+part 'general_info_response.freezed.dart';
 
-GeneralInfoResponse generalInfoResponseFromJson(String str) => GeneralInfoResponse.fromJson(json.decode(str));
-
-String generalInfoResponseToJson(GeneralInfoResponse data) => json.encode(data.toJson());
-
-@freezed
-class GeneralInfoResponse with _$GeneralInfoResponse {
-    const factory GeneralInfoResponse({
-        required String message,
-        required GeneralInfoData data,
-    }) = _GeneralInfoResponse;
-
-    factory GeneralInfoResponse.fromJson(Map<String, dynamic> json) => _$GeneralInfoResponseFromJson(json);
-}
-
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false, toJson: false, fromJson: false)
+@JsonSerializable(fieldRename: FieldRename.snake)
 class GeneralInfoData with _$GeneralInfoData {
     const factory GeneralInfoData({
         required Catchphrase catchphrase,
-        required Catchphrase travelOrganizations,
+        required TravelOrganizations travelOrganizations,
         required List<LanguageSkill> languageSkills,
         required List<GeneralInfo> generalInfos,
         required Catchphrase selfIntroduction,
@@ -38,20 +26,21 @@ class GeneralInfoData with _$GeneralInfoData {
 @freezed
 class Catchphrase with _$Catchphrase {
     const factory Catchphrase({
-        required dynamic ja,
-        required dynamic en,
+        required String? ja,
+        required String? en,
     }) = _Catchphrase;
 
     factory Catchphrase.fromJson(Map<String, dynamic> json) => _$CatchphraseFromJson(json);
 }
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false, toJson: false, fromJson: false)
+@JsonSerializable(fieldRename: FieldRename.snake)
 class GeneralInfo with _$GeneralInfo {
     const factory GeneralInfo({
         required int id,
-        required String inputType,
-        required Catchphrase value,
-        required String mediaUrl,
+        required String? inputType,
+        required Catchphrase? value,
+        required String? mediaUrl,
     }) = _GeneralInfo;
 
     factory GeneralInfo.fromJson(Map<String, dynamic> json) => _$GeneralInfoFromJson(json);
@@ -66,4 +55,14 @@ class LanguageSkill with _$LanguageSkill {
     }) = _LanguageSkill;
 
     factory LanguageSkill.fromJson(Map<String, dynamic> json) => _$LanguageSkillFromJson(json);
+}
+
+@freezed
+class TravelOrganizations with _$TravelOrganizations {
+    const factory TravelOrganizations({
+        required List<String> ja,
+        required List<String> en,
+    }) = _TravelOrganizations;
+
+    factory TravelOrganizations.fromJson(Map<String, dynamic> json) => _$TravelOrganizationsFromJson(json);
 }

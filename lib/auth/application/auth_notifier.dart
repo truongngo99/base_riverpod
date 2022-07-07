@@ -62,7 +62,9 @@ class AuthNotifier extends StateNotifier<AuthState> {
 
     state = failureOrSuccess.fold(
       (l) => AuthState.failure(l),
-      (authDto) => AuthState.authenticated(authDto),
+      (authDto) {
+          return AuthState.authenticated(authDto);
+      } ,
     );
   }
 

@@ -8,21 +8,9 @@ import 'dart:convert';
 part 'skill_response.freezed.dart';
 part 'skill_response.g.dart';
 
-SkillResponse skillResponseFromJson(String str) => SkillResponse.fromJson(json.decode(str));
 
-String skillResponseToJson(SkillResponse data) => json.encode(data.toJson());
-
-@freezed
-class SkillResponse with _$SkillResponse {
-    const factory SkillResponse({
-        required String message,
-        required SkillData data,
-    }) = _SkillResponse;
-
-    factory SkillResponse.fromJson(Map<String, dynamic> json) => _$SkillResponseFromJson(json);
-}
-
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false, toJson: false, fromJson: false)
+@JsonSerializable(fieldRename: FieldRename.snake)
 class SkillData with _$SkillData {
     const factory SkillData({
         required dynamic domesticBusinessManager,
@@ -49,8 +37,8 @@ class LastSkillsTest with _$LastSkillsTest {
 @freezed
 class OrtherDegrees with _$OrtherDegrees {
     const factory OrtherDegrees({
-        required List<dynamic> ja,
-        required List<dynamic> en,
+        required List<String?> ja,
+        required List<String?> en,
     }) = _OrtherDegrees;
 
     factory OrtherDegrees.fromJson(Map<String, dynamic> json) => _$OrtherDegreesFromJson(json);
