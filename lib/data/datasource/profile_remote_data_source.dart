@@ -1,8 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'dart:convert';
+
 import 'package:base_riverpod/auth/shared/auth_provider.dart';
 import 'package:base_riverpod/core/shared/core_provider.dart';
 import 'package:base_riverpod/domain/entity/guide_info_response.dart';
+import 'package:base_riverpod/domain/entity/map_pin_response.dart';
 import 'package:base_riverpod/domain/entity/top_profile_response.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,6 +29,7 @@ abstract class ProfileRemoteDataSource {
   Future<GeneralInfoData> fetchGeneralInfo(String username);
   Future<SkillData> fetchSkill(String username);
   Future<TopProfileData> fetchTopProfile();
+  Future<List<TravelSpotData>> fetchMapPin(String username);
 }
 
 class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
@@ -70,7 +74,6 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
     final response = await _dio.get("api/v1/guides/$username/info");
 
     if (response.statusCode == 200) {
-      print("data nek: ${response.data["data"]}");
       return GuideUserInfoData.fromJson(response.data["data"]);
     } else {
       throw ServerException();
@@ -81,7 +84,6 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
   Future<GuideInfoData> fetchGuideInfo() async {
     final response = await _dio.get('api/v1/guides/me');
     if (response.statusCode == 200) {
-      print("${GuideInfoData.fromJson((response.data["data"]))}");
       return GuideInfoData.fromJson((response.data["data"]));
     } else {
       throw ServerException();
@@ -93,6 +95,17 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
      final response = await _dio.get('api/v1/guides/me?top_profile=true');
     if (response.statusCode == 200) {
       return TopProfileData.fromJson((response.data["data"]));
+    } else {
+      throw ServerException();
+    }
+  }
+  
+  @override
+  Future<List<TravelSpotData>> fetchMapPin(String username) async {
+    final response = await _dio.get("api/v1/guides/$username/destinations");
+
+    if (response.statusCode == 200) {
+      return TravelSpotResponse.fromJson(response.data).data;
     } else {
       throw ServerException();
     }

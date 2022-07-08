@@ -3,7 +3,9 @@ import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/profile/presentation/notifier/home_tab_notifier.dart';
 import 'package:base_riverpod/profile/utils/container_rounded_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 
 class HomeTabScreen extends ConsumerWidget {
   HomeTabScreen({Key? key}) : super(key: key);
@@ -65,13 +67,13 @@ class HomeTabScreen extends ConsumerWidget {
         ? ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: FadeInImage.assetNetwork(
-              placeholder: Assets.images.avatarPlaceholder.path,
+              placeholder: Assets.images.placeholderVjp.path,
               image: info.mediaUrl ??
                   "https://www.publicdomainpictures.net/pictures/280000/nahled/not-found-image-15383864787lu.jpg",
               fit: BoxFit.fill,
             ),
         )
-        : Text("${info.value?.ja}", style: const TextStyle(fontSize: 14));
+        : Html(data: info.value?.ja);
   }
 
   Widget _buildSkillWidget(Map<String, String> skillList) {

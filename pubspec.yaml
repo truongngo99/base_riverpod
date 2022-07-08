@@ -51,6 +51,7 @@ dependencies:
   equatable: ^2.0.3
   flutter_easyloading: ^3.0.5
   flutter_snake_navigationbar: ^0.6.1
+  flutter_html: ^2.2.1
 
 
 dev_dependencies:

@@ -24,10 +24,10 @@ class ProfileScreen extends ConsumerStatefulWidget {
 class _ProfileScreenState extends ConsumerState<ProfileScreen> {
   final Map<String, String> _bottomNavigationBarItems = {
     Assets.images.home.path: "ホーム",
-    Assets.images.mapPin.path: "観光地",
-    Assets.images.award.path: "スキル",
-    Assets.images.fileText.path: "活動",
-    Assets.images.imagePng.path: "写真",
+    Assets.images.blackMapPin.path: "観光地",
+    Assets.images.blackAward.path: "スキル",
+    Assets.images.blackFileText.path: "活動",
+    Assets.images.blackImage.path: "写真",
   };
 
   final PageController _pageController = PageController();

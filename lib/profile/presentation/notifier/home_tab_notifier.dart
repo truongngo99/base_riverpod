@@ -8,9 +8,7 @@ import 'package:base_riverpod/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:base_riverpod/data/respositories/profile_respository_impl.dart';
 import 'package:base_riverpod/domain/repositories/profile_respository.dart';
 
 class ProfileNotifier extends ChangeNotifier {

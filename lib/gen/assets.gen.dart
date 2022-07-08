@@ -29,6 +29,22 @@ class $AssetsImagesGen {
   /// File path: assets/images/award.png
   AssetGenImage get award => const AssetGenImage('assets/images/award.png');
 
+  /// File path: assets/images/black-award.png
+  AssetGenImage get blackAward =>
+      const AssetGenImage('assets/images/black-award.png');
+
+  /// File path: assets/images/black-file-text.png
+  AssetGenImage get blackFileText =>
+      const AssetGenImage('assets/images/black-file-text.png');
+
+  /// File path: assets/images/black-image.png
+  AssetGenImage get blackImage =>
+      const AssetGenImage('assets/images/black-image.png');
+
+  /// File path: assets/images/black-map-pin.png
+  AssetGenImage get blackMapPin =>
+      const AssetGenImage('assets/images/black-map-pin.png');
+
   /// File path: assets/images/btn_setting.png
   AssetGenImage get btnSetting =>
       const AssetGenImage('assets/images/btn_setting.png');
@@ -104,6 +120,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/placeholder.png
   AssetGenImage get placeholder =>
       const AssetGenImage('assets/images/placeholder.png');
+
+  /// File path: assets/images/placeholder_vjp.png
+  AssetGenImage get placeholderVjp =>
+      const AssetGenImage('assets/images/placeholder_vjp.png');
 
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
