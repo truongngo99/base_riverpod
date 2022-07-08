@@ -93,6 +93,7 @@ class ProfileNotifier extends ChangeNotifier {
     Future<void> _fetchSkill() async {
     final result = await repo.fetchSkill(userDefault.username);
     result.fold((l) {}, (r) {
+      _skill = r;
     });
   }
 }

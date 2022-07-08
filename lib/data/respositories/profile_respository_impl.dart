@@ -3,8 +3,10 @@ import 'dart:io';
 import 'package:base_riverpod/core/utils/exception.dart';
 import 'package:base_riverpod/core/utils/failure.dart';
 import 'package:base_riverpod/data/datasource/profile_remote_data_source.dart';
+import 'package:base_riverpod/domain/entity/album_response.dart';
 import 'package:base_riverpod/domain/entity/guide_info_response.dart';
 import 'package:base_riverpod/domain/entity/map_pin_response.dart';
+import 'package:base_riverpod/domain/entity/media_response.dart';
 import 'package:base_riverpod/domain/entity/top_profile_response.dart';
 import 'package:base_riverpod/domain/entity/user_info.dart';
 import 'package:base_riverpod/domain/entity/skill_response.dart';
@@ -100,5 +102,17 @@ class ProfileRespositoryImpl implements ProfileRepository {
     } on SocketException {
       return const Left(ConnectionFailure('Failed to connect to the network'));
     }
+  }
+
+  @override
+  Future<Either<Failure, List<AlbumData>>> fetchAlbum(String username) {
+    // TODO: implement fetchAlbum
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, List<MediaData>>> fetchMedia(String username) {
+    // TODO: implement fetchMedia
+    throw UnimplementedError();
   }
 }

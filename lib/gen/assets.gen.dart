@@ -152,6 +152,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/two-lines-splash.png
   AssetGenImage get twoLinesSplash =>
       const AssetGenImage('assets/images/two-lines-splash.png');
+
+  /// File path: assets/images/yellow-award.png
+  AssetGenImage get yellowAward =>
+      const AssetGenImage('assets/images/yellow-award.png');
 }
 
 class Assets {

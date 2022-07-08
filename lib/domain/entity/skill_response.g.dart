@@ -7,13 +7,13 @@ part of 'skill_response.dart';
 // **************************************************************************
 
 SkillData _$SkillDataFromJson(Map<String, dynamic> json) => SkillData(
-      domesticBusinessManager: json['domestic_business_manager'],
-      generalBusinessManager: json['general_business_manager'],
-      toeic: json['toeic'],
-      tourismEnglish: json['tourism_english'],
-      travelGeography: json['travel_geography'],
-      worldHeritage: json['world_heritage'],
-      showLatestTest: json['show_latest_test'],
+      domesticBusinessManager: json['domestic_business_manager'] as String,
+      generalBusinessManager: json['general_business_manager'] as String,
+      toeic: json['toeic'] as String,
+      tourismEnglish: json['tourism_english'] as String,
+      travelGeography: json['travel_geography'] as String,
+      worldHeritage: json['world_heritage'] as String,
+      showLatestTest: json['show_latest_test'] as bool,
       ortherDegrees: OrtherDegrees.fromJson(
           json['orther_degrees'] as Map<String, dynamic>),
       lastSkillsTest: LastSkillsTest.fromJson(

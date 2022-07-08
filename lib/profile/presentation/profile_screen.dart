@@ -93,7 +93,8 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
             ],
           ),
         ),
-        bottomNavigationBar: SnakeNavigationBar.color(
+        bottomNavigationBar: 
+        SnakeNavigationBar.color(
           elevation: 2,
           behaviour: snakeBarStyle,
           snakeShape: snakeShape,

@@ -4,8 +4,10 @@ import 'dart:convert';
 
 import 'package:base_riverpod/auth/shared/auth_provider.dart';
 import 'package:base_riverpod/core/shared/core_provider.dart';
+import 'package:base_riverpod/domain/entity/album_response.dart';
 import 'package:base_riverpod/domain/entity/guide_info_response.dart';
 import 'package:base_riverpod/domain/entity/map_pin_response.dart';
+import 'package:base_riverpod/domain/entity/media_response.dart';
 import 'package:base_riverpod/domain/entity/top_profile_response.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -30,6 +32,8 @@ abstract class ProfileRemoteDataSource {
   Future<SkillData> fetchSkill(String username);
   Future<TopProfileData> fetchTopProfile();
   Future<List<TravelSpotData>> fetchMapPin(String username);
+  Future<List<MediaData>> fetchMedia(String username);
+  Future<List<AlbumData>> fetchAlbum(String username);
 }
 
 class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
@@ -92,20 +96,42 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
 
   @override
   Future<TopProfileData> fetchTopProfile() async {
-     final response = await _dio.get('api/v1/guides/me?top_profile=true');
+    final response = await _dio.get('api/v1/guides/me?top_profile=true');
     if (response.statusCode == 200) {
       return TopProfileData.fromJson((response.data["data"]));
     } else {
       throw ServerException();
     }
   }
-  
+
   @override
   Future<List<TravelSpotData>> fetchMapPin(String username) async {
     final response = await _dio.get("api/v1/guides/$username/destinations");
 
     if (response.statusCode == 200) {
       return TravelSpotResponse.fromJson(response.data).data;
+    } else {
+      throw ServerException();
+    }
+  }
+  
+  @override
+  Future<List<AlbumData>> fetchAlbum(String username) async {
+     final response = await _dio.get("api/v1/guides/$username/albums");
+
+    if (response.statusCode == 200) {
+      return AlbumReponse.fromJson(response.data).data;
+    } else {
+      throw ServerException();
+    }
+  }
+  
+  @override
+  Future<List<MediaData>> fetchMedia(String username) async {
+     final response = await _dio.get("api/v1/guides/$username/media");
+
+    if (response.statusCode == 200) {
+      return MediaReponse.fromJson(response.data).data;
     } else {
       throw ServerException();
     }

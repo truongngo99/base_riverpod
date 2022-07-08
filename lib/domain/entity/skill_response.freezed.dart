@@ -16,13 +16,13 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SkillData {
-  dynamic get domesticBusinessManager => throw _privateConstructorUsedError;
-  dynamic get generalBusinessManager => throw _privateConstructorUsedError;
-  dynamic get toeic => throw _privateConstructorUsedError;
-  dynamic get tourismEnglish => throw _privateConstructorUsedError;
-  dynamic get travelGeography => throw _privateConstructorUsedError;
-  dynamic get worldHeritage => throw _privateConstructorUsedError;
-  dynamic get showLatestTest => throw _privateConstructorUsedError;
+  String get domesticBusinessManager => throw _privateConstructorUsedError;
+  String get generalBusinessManager => throw _privateConstructorUsedError;
+  String get toeic => throw _privateConstructorUsedError;
+  String get tourismEnglish => throw _privateConstructorUsedError;
+  String get travelGeography => throw _privateConstructorUsedError;
+  String get worldHeritage => throw _privateConstructorUsedError;
+  bool get showLatestTest => throw _privateConstructorUsedError;
   OrtherDegrees get ortherDegrees => throw _privateConstructorUsedError;
   LastSkillsTest get lastSkillsTest => throw _privateConstructorUsedError;
 
@@ -36,13 +36,13 @@ abstract class $SkillDataCopyWith<$Res> {
   factory $SkillDataCopyWith(SkillData value, $Res Function(SkillData) then) =
       _$SkillDataCopyWithImpl<$Res>;
   $Res call(
-      {dynamic domesticBusinessManager,
-      dynamic generalBusinessManager,
-      dynamic toeic,
-      dynamic tourismEnglish,
-      dynamic travelGeography,
-      dynamic worldHeritage,
-      dynamic showLatestTest,
+      {String domesticBusinessManager,
+      String generalBusinessManager,
+      String toeic,
+      String tourismEnglish,
+      String travelGeography,
+      String worldHeritage,
+      bool showLatestTest,
       OrtherDegrees ortherDegrees,
       LastSkillsTest lastSkillsTest});
 
@@ -74,31 +74,31 @@ class _$SkillDataCopyWithImpl<$Res> implements $SkillDataCopyWith<$Res> {
       domesticBusinessManager: domesticBusinessManager == freezed
           ? _value.domesticBusinessManager
           : domesticBusinessManager // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       generalBusinessManager: generalBusinessManager == freezed
           ? _value.generalBusinessManager
           : generalBusinessManager // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       toeic: toeic == freezed
           ? _value.toeic
           : toeic // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       tourismEnglish: tourismEnglish == freezed
           ? _value.tourismEnglish
           : tourismEnglish // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       travelGeography: travelGeography == freezed
           ? _value.travelGeography
           : travelGeography // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       worldHeritage: worldHeritage == freezed
           ? _value.worldHeritage
           : worldHeritage // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       showLatestTest: showLatestTest == freezed
           ? _value.showLatestTest
           : showLatestTest // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as bool,
       ortherDegrees: ortherDegrees == freezed
           ? _value.ortherDegrees
           : ortherDegrees // ignore: cast_nullable_to_non_nullable
@@ -126,18 +126,19 @@ class _$SkillDataCopyWithImpl<$Res> implements $SkillDataCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_DataCopyWith<$Res> implements $SkillDataCopyWith<$Res> {
-  factory _$$_DataCopyWith(_$_Data value, $Res Function(_$_Data) then) =
-      __$$_DataCopyWithImpl<$Res>;
+abstract class _$$_SkillDataCopyWith<$Res> implements $SkillDataCopyWith<$Res> {
+  factory _$$_SkillDataCopyWith(
+          _$_SkillData value, $Res Function(_$_SkillData) then) =
+      __$$_SkillDataCopyWithImpl<$Res>;
   @override
   $Res call(
-      {dynamic domesticBusinessManager,
-      dynamic generalBusinessManager,
-      dynamic toeic,
-      dynamic tourismEnglish,
-      dynamic travelGeography,
-      dynamic worldHeritage,
-      dynamic showLatestTest,
+      {String domesticBusinessManager,
+      String generalBusinessManager,
+      String toeic,
+      String tourismEnglish,
+      String travelGeography,
+      String worldHeritage,
+      bool showLatestTest,
       OrtherDegrees ortherDegrees,
       LastSkillsTest lastSkillsTest});
 
@@ -148,13 +149,14 @@ abstract class _$$_DataCopyWith<$Res> implements $SkillDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_DataCopyWithImpl<$Res> extends _$SkillDataCopyWithImpl<$Res>
-    implements _$$_DataCopyWith<$Res> {
-  __$$_DataCopyWithImpl(_$_Data _value, $Res Function(_$_Data) _then)
-      : super(_value, (v) => _then(v as _$_Data));
+class __$$_SkillDataCopyWithImpl<$Res> extends _$SkillDataCopyWithImpl<$Res>
+    implements _$$_SkillDataCopyWith<$Res> {
+  __$$_SkillDataCopyWithImpl(
+      _$_SkillData _value, $Res Function(_$_SkillData) _then)
+      : super(_value, (v) => _then(v as _$_SkillData));
 
   @override
-  _$_Data get _value => super._value as _$_Data;
+  _$_SkillData get _value => super._value as _$_SkillData;
 
   @override
   $Res call({
@@ -168,35 +170,35 @@ class __$$_DataCopyWithImpl<$Res> extends _$SkillDataCopyWithImpl<$Res>
     Object? ortherDegrees = freezed,
     Object? lastSkillsTest = freezed,
   }) {
-    return _then(_$_Data(
+    return _then(_$_SkillData(
       domesticBusinessManager: domesticBusinessManager == freezed
           ? _value.domesticBusinessManager
           : domesticBusinessManager // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       generalBusinessManager: generalBusinessManager == freezed
           ? _value.generalBusinessManager
           : generalBusinessManager // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       toeic: toeic == freezed
           ? _value.toeic
           : toeic // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       tourismEnglish: tourismEnglish == freezed
           ? _value.tourismEnglish
           : tourismEnglish // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       travelGeography: travelGeography == freezed
           ? _value.travelGeography
           : travelGeography // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       worldHeritage: worldHeritage == freezed
           ? _value.worldHeritage
           : worldHeritage // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       showLatestTest: showLatestTest == freezed
           ? _value.showLatestTest
           : showLatestTest // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as bool,
       ortherDegrees: ortherDegrees == freezed
           ? _value.ortherDegrees
           : ortherDegrees // ignore: cast_nullable_to_non_nullable
@@ -211,8 +213,8 @@ class __$$_DataCopyWithImpl<$Res> extends _$SkillDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Data implements _Data {
-  const _$_Data(
+class _$_SkillData implements _SkillData {
+  const _$_SkillData(
       {required this.domesticBusinessManager,
       required this.generalBusinessManager,
       required this.toeic,
@@ -224,19 +226,19 @@ class _$_Data implements _Data {
       required this.lastSkillsTest});
 
   @override
-  final dynamic domesticBusinessManager;
+  final String domesticBusinessManager;
   @override
-  final dynamic generalBusinessManager;
+  final String generalBusinessManager;
   @override
-  final dynamic toeic;
+  final String toeic;
   @override
-  final dynamic tourismEnglish;
+  final String tourismEnglish;
   @override
-  final dynamic travelGeography;
+  final String travelGeography;
   @override
-  final dynamic worldHeritage;
+  final String worldHeritage;
   @override
-  final dynamic showLatestTest;
+  final bool showLatestTest;
   @override
   final OrtherDegrees ortherDegrees;
   @override
@@ -251,7 +253,7 @@ class _$_Data implements _Data {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Data &&
+            other is _$_SkillData &&
             const DeepCollectionEquality().equals(
                 other.domesticBusinessManager, domesticBusinessManager) &&
             const DeepCollectionEquality()
@@ -286,43 +288,44 @@ class _$_Data implements _Data {
 
   @JsonKey(ignore: true)
   @override
-  _$$_DataCopyWith<_$_Data> get copyWith =>
-      __$$_DataCopyWithImpl<_$_Data>(this, _$identity);
+  _$$_SkillDataCopyWith<_$_SkillData> get copyWith =>
+      __$$_SkillDataCopyWithImpl<_$_SkillData>(this, _$identity);
 }
 
-abstract class _Data implements SkillData {
-  const factory _Data(
-      {required final dynamic domesticBusinessManager,
-      required final dynamic generalBusinessManager,
-      required final dynamic toeic,
-      required final dynamic tourismEnglish,
-      required final dynamic travelGeography,
-      required final dynamic worldHeritage,
-      required final dynamic showLatestTest,
+abstract class _SkillData implements SkillData {
+  const factory _SkillData(
+      {required final String domesticBusinessManager,
+      required final String generalBusinessManager,
+      required final String toeic,
+      required final String tourismEnglish,
+      required final String travelGeography,
+      required final String worldHeritage,
+      required final bool showLatestTest,
       required final OrtherDegrees ortherDegrees,
-      required final LastSkillsTest lastSkillsTest}) = _$_Data;
+      required final LastSkillsTest lastSkillsTest}) = _$_SkillData;
 
   @override
-  dynamic get domesticBusinessManager => throw _privateConstructorUsedError;
+  String get domesticBusinessManager => throw _privateConstructorUsedError;
   @override
-  dynamic get generalBusinessManager => throw _privateConstructorUsedError;
+  String get generalBusinessManager => throw _privateConstructorUsedError;
   @override
-  dynamic get toeic => throw _privateConstructorUsedError;
+  String get toeic => throw _privateConstructorUsedError;
   @override
-  dynamic get tourismEnglish => throw _privateConstructorUsedError;
+  String get tourismEnglish => throw _privateConstructorUsedError;
   @override
-  dynamic get travelGeography => throw _privateConstructorUsedError;
+  String get travelGeography => throw _privateConstructorUsedError;
   @override
-  dynamic get worldHeritage => throw _privateConstructorUsedError;
+  String get worldHeritage => throw _privateConstructorUsedError;
   @override
-  dynamic get showLatestTest => throw _privateConstructorUsedError;
+  bool get showLatestTest => throw _privateConstructorUsedError;
   @override
   OrtherDegrees get ortherDegrees => throw _privateConstructorUsedError;
   @override
   LastSkillsTest get lastSkillsTest => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_DataCopyWith<_$_Data> get copyWith => throw _privateConstructorUsedError;
+  _$$_SkillDataCopyWith<_$_SkillData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 LastSkillsTest _$LastSkillsTestFromJson(Map<String, dynamic> json) {

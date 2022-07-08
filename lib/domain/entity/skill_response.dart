@@ -1,28 +1,28 @@
 // To parse this JSON data, do
 //
-//     final skillResponse = skillResponseFromJson(jsonString);
+//     final skillReponse = skillReponseFromMap(jsonString);
 
+import 'package:meta/meta.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
 
-part 'skill_response.freezed.dart';
 part 'skill_response.g.dart';
-
+part 'skill_response.freezed.dart';
 
 @Freezed(makeCollectionsUnmodifiable: false, toJson: false, fromJson: false)
 @JsonSerializable(fieldRename: FieldRename.snake)
 class SkillData with _$SkillData {
     const factory SkillData({
-        required dynamic domesticBusinessManager,
-        required dynamic generalBusinessManager,
-        required dynamic toeic,
-        required dynamic tourismEnglish,
-        required dynamic travelGeography,
-        required dynamic worldHeritage,
-        required dynamic showLatestTest,
+        required String domesticBusinessManager,
+        required String generalBusinessManager,
+        required String toeic,
+        required String tourismEnglish,
+        required String travelGeography,
+        required String worldHeritage,
+        required bool showLatestTest,
         required OrtherDegrees ortherDegrees,
         required LastSkillsTest lastSkillsTest,
-    }) = _Data;
+    }) = _SkillData;
 
     factory SkillData.fromJson(Map<String, dynamic> json) => _$SkillDataFromJson(json);
 }
