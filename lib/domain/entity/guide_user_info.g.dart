@@ -125,8 +125,8 @@ Map<String, dynamic> _$$_AryLanguageToJson(_$_AryLanguage instance) =>
 _$_TravelOrganizations _$$_TravelOrganizationsFromJson(
         Map<String, dynamic> json) =>
     _$_TravelOrganizations(
-      ja: (json['ja'] as List<dynamic>).map((e) => e as String).toList(),
-      en: (json['en'] as List<dynamic>).map((e) => e as String).toList(),
+      ja: (json['ja'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      en: (json['en'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$$_TravelOrganizationsToJson(

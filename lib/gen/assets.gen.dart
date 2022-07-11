@@ -15,6 +15,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/arrow.png
   AssetGenImage get arrow => const AssetGenImage('assets/images/arrow.png');
 
+  /// File path: assets/images/arrow_back_ios.png
+  AssetGenImage get arrowBackIos =>
+      const AssetGenImage('assets/images/arrow_back_ios.png');
+
   /// File path: assets/images/avatar-background.png
   AssetGenImage get avatarBackground =>
       const AssetGenImage('assets/images/avatar-background.png');
@@ -51,6 +55,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/docs.png
   AssetGenImage get docs => const AssetGenImage('assets/images/docs.png');
+
+  /// File path: assets/images/dropdown.png
+  AssetGenImage get dropdown =>
+      const AssetGenImage('assets/images/dropdown.png');
 
   /// File path: assets/images/edit.png
   AssetGenImage get edit => const AssetGenImage('assets/images/edit.png');

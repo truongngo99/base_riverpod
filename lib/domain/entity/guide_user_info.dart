@@ -85,8 +85,8 @@ class AryLanguage with _$AryLanguage {
 @freezed
 class TravelOrganizations with _$TravelOrganizations {
     const factory TravelOrganizations({
-        required List<String> ja,
-        required List<String> en,
+        required List<String>? ja,
+        required List<String>? en,
     }) = _TravelOrganizations;
 
     factory TravelOrganizations.fromJson(Map<String, dynamic> json) => _$TravelOrganizationsFromJson(json);

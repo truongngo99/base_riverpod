@@ -29,7 +29,7 @@ class AlbumData with _$AlbumData {
         required int mediumId,
         required String mediumAttachmentUrl,
         required String mediumAttachmentType,
-        required DateTime timeline,
+        required DateTime? timeline,
     }) = _AlbumData;
 
     factory AlbumData.fromJson(Map<String, dynamic> json) => _$AlbumDataFromJson(json);

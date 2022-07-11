@@ -1,12 +1,9 @@
 import 'package:base_riverpod/dev_helper/shared/dev_helper_providers.dart';
-import 'package:base_riverpod/theme/theme.dart';
-import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:lifecycle/lifecycle.dart';
-
 import 'router/app_router.dart';
 
 // final initializationProvider = FutureProvider<Unit>((ref) async {
@@ -38,6 +35,7 @@ class _MyAppState extends ConsumerState<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    initializeDateFormatting();
     ref.listen(initialiaztionProvider, (previous, next) {});
     return MaterialApp
     .router(

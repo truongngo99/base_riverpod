@@ -37,8 +37,8 @@ class LastSkillsTest with _$LastSkillsTest {
 @freezed
 class OrtherDegrees with _$OrtherDegrees {
     const factory OrtherDegrees({
-        required List<String?> ja,
-        required List<String?> en,
+        required List<String?>? ja,
+        required List<String?>? en,
     }) = _OrtherDegrees;
 
     factory OrtherDegrees.fromJson(Map<String, dynamic> json) => _$OrtherDegreesFromJson(json);

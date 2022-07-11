@@ -105,14 +105,26 @@ class ProfileRespositoryImpl implements ProfileRepository {
   }
 
   @override
-  Future<Either<Failure, List<AlbumData>>> fetchAlbum(String username) {
-    // TODO: implement fetchAlbum
-    throw UnimplementedError();
+  Future<Either<Failure, List<AlbumData>>> fetchAlbum(String username) async {
+    try {
+      final result = await remoteDataSource.fetchAlbum(username);
+      return Right(result);
+    } on ServerException {
+      return const Left(ServerFailure("abc"));
+    } on SocketException {
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    }
   }
 
   @override
-  Future<Either<Failure, List<MediaData>>> fetchMedia(String username) {
-    // TODO: implement fetchMedia
-    throw UnimplementedError();
+  Future<Either<Failure, List<MediaData>>> fetchMedia(String username) async {
+    try {
+      final result = await remoteDataSource.fetchMedia(username);
+      return Right(result);
+    } on ServerException {
+      return const Left(ServerFailure("abc"));
+    } on SocketException {
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    }
   }
 }

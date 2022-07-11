@@ -12,7 +12,9 @@ AlbumData _$AlbumDataFromJson(Map<String, dynamic> json) => AlbumData(
       mediumId: json['medium_id'] as int,
       mediumAttachmentUrl: json['medium_attachment_url'] as String,
       mediumAttachmentType: json['medium_attachment_type'] as String,
-      timeline: DateTime.parse(json['timeline'] as String),
+      timeline: json['timeline'] == null
+          ? null
+          : DateTime.parse(json['timeline'] as String),
     );
 
 Map<String, dynamic> _$AlbumDataToJson(AlbumData instance) => <String, dynamic>{
@@ -21,7 +23,7 @@ Map<String, dynamic> _$AlbumDataToJson(AlbumData instance) => <String, dynamic>{
       'medium_id': instance.mediumId,
       'medium_attachment_url': instance.mediumAttachmentUrl,
       'medium_attachment_type': instance.mediumAttachmentType,
-      'timeline': instance.timeline.toIso8601String(),
+      'timeline': instance.timeline?.toIso8601String(),
     };
 
 Meta _$MetaFromJson(Map<String, dynamic> json) => Meta(

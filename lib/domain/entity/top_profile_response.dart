@@ -13,11 +13,11 @@ class TopProfileData with _$TopProfileData {
     const factory TopProfileData({
         required int id,
         required String username,
-        required String avatarUrl,
+        required String? avatarUrl,
         required Name firstName,
         required Name lastName,
         required Name name,
-        required String profileThemeColor,
+        required String? profileThemeColor,
         required AryLanguage primaryLanguage,
         required AryLanguage secondaryLanguage,
     }) = _TopProfileData;
@@ -28,8 +28,8 @@ class TopProfileData with _$TopProfileData {
 @freezed
 class Name with _$Name {
     const factory Name({
-        required String ja,
-        required String en,
+        required String? ja,
+        required String? en,
     }) = _Name;
 
     factory Name.fromJson(Map<String, dynamic> json) => _$NameFromJson(json);
@@ -40,8 +40,8 @@ class Name with _$Name {
 class AryLanguage with _$AryLanguage {
     const factory AryLanguage({
         required String code,
-        required String name,
-        required String nameJa,
+        required String? name,
+        required String? nameJa,
     }) = _AryLanguage;
 
     factory AryLanguage.fromJson(Map<String, dynamic> json) => _$AryLanguageFromJson(json);

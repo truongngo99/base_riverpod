@@ -67,7 +67,7 @@ class ProfileTabBuilder extends ConsumerWidget {
                                 (topProfile?.avatarUrl != null) 
                                  ?  FadeInImage.assetNetwork(
                                     placeholder: Assets.images.avatarPlaceholder.path,
-                                    image: topProfile!.avatarUrl,
+                                    image: topProfile?.avatarUrl ?? "",
                                     width: 90,
                                     height: 90,
                                     fit: BoxFit.fill,

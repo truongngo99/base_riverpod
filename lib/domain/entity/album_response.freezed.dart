@@ -210,7 +210,7 @@ mixin _$AlbumData {
   int get mediumId => throw _privateConstructorUsedError;
   String get mediumAttachmentUrl => throw _privateConstructorUsedError;
   String get mediumAttachmentType => throw _privateConstructorUsedError;
-  DateTime get timeline => throw _privateConstructorUsedError;
+  DateTime? get timeline => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AlbumDataCopyWith<AlbumData> get copyWith =>
@@ -227,7 +227,7 @@ abstract class $AlbumDataCopyWith<$Res> {
       int mediumId,
       String mediumAttachmentUrl,
       String mediumAttachmentType,
-      DateTime timeline});
+      DateTime? timeline});
 }
 
 /// @nodoc
@@ -271,7 +271,7 @@ class _$AlbumDataCopyWithImpl<$Res> implements $AlbumDataCopyWith<$Res> {
       timeline: timeline == freezed
           ? _value.timeline
           : timeline // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -288,7 +288,7 @@ abstract class _$$_AlbumDataCopyWith<$Res> implements $AlbumDataCopyWith<$Res> {
       int mediumId,
       String mediumAttachmentUrl,
       String mediumAttachmentType,
-      DateTime timeline});
+      DateTime? timeline});
 }
 
 /// @nodoc
@@ -334,7 +334,7 @@ class __$$_AlbumDataCopyWithImpl<$Res> extends _$AlbumDataCopyWithImpl<$Res>
       timeline: timeline == freezed
           ? _value.timeline
           : timeline // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -361,7 +361,7 @@ class _$_AlbumData implements _AlbumData {
   @override
   final String mediumAttachmentType;
   @override
-  final DateTime timeline;
+  final DateTime? timeline;
 
   @override
   String toString() {
@@ -406,7 +406,7 @@ abstract class _AlbumData implements AlbumData {
       required final int mediumId,
       required final String mediumAttachmentUrl,
       required final String mediumAttachmentType,
-      required final DateTime timeline}) = _$_AlbumData;
+      required final DateTime? timeline}) = _$_AlbumData;
 
   @override
   int get id => throw _privateConstructorUsedError;
@@ -419,7 +419,7 @@ abstract class _AlbumData implements AlbumData {
   @override
   String get mediumAttachmentType => throw _privateConstructorUsedError;
   @override
-  DateTime get timeline => throw _privateConstructorUsedError;
+  DateTime? get timeline => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_AlbumDataCopyWith<_$_AlbumData> get copyWith =>

@@ -1,18 +1,21 @@
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';
 import 'package:base_riverpod/profile/presentation/notifier/home_tab_notifier.dart';
+import 'package:base_riverpod/profile/presentation/tab/edit/edit_skill_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:base_riverpod/core/presentation/router/app_router.dart';
+import 'package:auto_route/auto_route.dart';
 
 class SkillTabScreen extends ConsumerWidget {
   SkillTabScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return _buildAwardWidget(ref);
+    return _buildAwardWidget(context, ref);
   }
 
-  Widget _buildAwardWidget(WidgetRef ref) {
+  Widget _buildAwardWidget(BuildContext context, WidgetRef ref) {
     final skill = ref.watch(profileNotifierProvider).skill;
     return Padding(
       padding: const EdgeInsets.all(16.0),
@@ -29,7 +32,9 @@ class SkillTabScreen extends ConsumerWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.router.push(const EditSkillRoute());
+                    },
                     child:
                         Assets.images.editProfile.image(width: 24, height: 24)),
               ],

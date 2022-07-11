@@ -5,6 +5,7 @@ import 'package:base_riverpod/domain/entity/album_response.dart';
 import 'package:base_riverpod/domain/entity/map_pin_response.dart';
 import 'package:base_riverpod/domain/entity/media_response.dart';
 import 'package:base_riverpod/injection.dart';
+import 'package:dartz/dartz_unsafe.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -15,11 +16,11 @@ class GalleryNotifier extends ChangeNotifier {
   final ProfileRepository repo;
   final SharePrefUtils userDefault;
 
-  List<AlbumData> _albums = [];
-  List<AlbumData> get albums => _albums;
+  Map<String, List<String>> _mediaByDate = {};
+  Map<String, List<String>> get mediaByDate => _mediaByDate;
 
-  List<MediaData> _media = [];
-  List<MediaData> get media => _media;
+  Map<String, List<String>> _mediaByAlbums = {};
+  Map<String, List<String>> get mediaByAlbums => _mediaByAlbums;
 
   GalleryNotifier({
     required this.repo,
@@ -39,10 +40,7 @@ class GalleryNotifier extends ChangeNotifier {
   }
 
   Future<void> _fetchData() async {
-    Future.wait([
-      _fetchMedia(),
-      _fetchAlbums()
-      ]);
+    Future.wait([_fetchMedia(), _fetchAlbums()]);
   }
 
   Future<void> _fetchGuideInfo() async {
@@ -57,7 +55,7 @@ class GalleryNotifier extends ChangeNotifier {
   Future<void> _fetchMedia() async {
     final result = await repo.fetchMedia(userDefault.username);
     result.fold((l) {}, (r) {
-      _media = r;
+      _mapMediaByDate(r);
       notifyListeners();
     });
   }
@@ -65,9 +63,33 @@ class GalleryNotifier extends ChangeNotifier {
   Future<void> _fetchAlbums() async {
     final result = await repo.fetchAlbum(userDefault.username);
     result.fold((l) {}, (r) {
-      _albums = r;
+      _mapMediaByAlbums(r);
       notifyListeners();
     });
+  }
+
+  void _mapMediaByDate(List<MediaData> data) {
+    for (var element in data) {
+      if (element.attachmentType == "image") {
+        if (_mediaByAlbums[element.timeline] != null) {
+          _mediaByDate[element.timeline]!.add(element.attachmentUrl);
+        } else {
+          _mediaByDate[element.timeline] = [element.attachmentUrl];
+        }
+      }
+    }
+  }
+
+  void _mapMediaByAlbums(List<AlbumData> data) {
+    for (var element in data) {
+      if (element.mediumAttachmentType == "image") {
+        if (_mediaByAlbums[element.name] != null) {
+          _mediaByAlbums[element.name]!.add(element.mediumAttachmentUrl);
+        } else {
+          _mediaByAlbums[element.name] = [element.mediumAttachmentUrl];
+        }
+      }
+    }
   }
 }
 

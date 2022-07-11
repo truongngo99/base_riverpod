@@ -773,8 +773,8 @@ TravelOrganizations _$TravelOrganizationsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TravelOrganizations {
-  List<String> get ja => throw _privateConstructorUsedError;
-  List<String> get en => throw _privateConstructorUsedError;
+  List<String>? get ja => throw _privateConstructorUsedError;
+  List<String>? get en => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -787,7 +787,7 @@ abstract class $TravelOrganizationsCopyWith<$Res> {
   factory $TravelOrganizationsCopyWith(
           TravelOrganizations value, $Res Function(TravelOrganizations) then) =
       _$TravelOrganizationsCopyWithImpl<$Res>;
-  $Res call({List<String> ja, List<String> en});
+  $Res call({List<String>? ja, List<String>? en});
 }
 
 /// @nodoc
@@ -808,11 +808,11 @@ class _$TravelOrganizationsCopyWithImpl<$Res>
       ja: ja == freezed
           ? _value.ja
           : ja // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       en: en == freezed
           ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ));
   }
 }
@@ -824,7 +824,7 @@ abstract class _$$_TravelOrganizationsCopyWith<$Res>
           $Res Function(_$_TravelOrganizations) then) =
       __$$_TravelOrganizationsCopyWithImpl<$Res>;
   @override
-  $Res call({List<String> ja, List<String> en});
+  $Res call({List<String>? ja, List<String>? en});
 }
 
 /// @nodoc
@@ -847,11 +847,11 @@ class __$$_TravelOrganizationsCopyWithImpl<$Res>
       ja: ja == freezed
           ? _value._ja
           : ja // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       en: en == freezed
           ? _value._en
           : en // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ));
   }
 }
@@ -860,25 +860,29 @@ class __$$_TravelOrganizationsCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_TravelOrganizations implements _TravelOrganizations {
   const _$_TravelOrganizations(
-      {required final List<String> ja, required final List<String> en})
+      {required final List<String>? ja, required final List<String>? en})
       : _ja = ja,
         _en = en;
 
   factory _$_TravelOrganizations.fromJson(Map<String, dynamic> json) =>
       _$$_TravelOrganizationsFromJson(json);
 
-  final List<String> _ja;
+  final List<String>? _ja;
   @override
-  List<String> get ja {
+  List<String>? get ja {
+    final value = _ja;
+    if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_ja);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<String> _en;
+  final List<String>? _en;
   @override
-  List<String> get en {
+  List<String>? get en {
+    final value = _en;
+    if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_en);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -916,16 +920,16 @@ class _$_TravelOrganizations implements _TravelOrganizations {
 
 abstract class _TravelOrganizations implements TravelOrganizations {
   const factory _TravelOrganizations(
-      {required final List<String> ja,
-      required final List<String> en}) = _$_TravelOrganizations;
+      {required final List<String>? ja,
+      required final List<String>? en}) = _$_TravelOrganizations;
 
   factory _TravelOrganizations.fromJson(Map<String, dynamic> json) =
       _$_TravelOrganizations.fromJson;
 
   @override
-  List<String> get ja => throw _privateConstructorUsedError;
+  List<String>? get ja => throw _privateConstructorUsedError;
   @override
-  List<String> get en => throw _privateConstructorUsedError;
+  List<String>? get en => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_TravelOrganizationsCopyWith<_$_TravelOrganizations> get copyWith =>

@@ -18,11 +18,11 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TopProfileData {
   int get id => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
-  String get avatarUrl => throw _privateConstructorUsedError;
+  String? get avatarUrl => throw _privateConstructorUsedError;
   Name get firstName => throw _privateConstructorUsedError;
   Name get lastName => throw _privateConstructorUsedError;
   Name get name => throw _privateConstructorUsedError;
-  String get profileThemeColor => throw _privateConstructorUsedError;
+  String? get profileThemeColor => throw _privateConstructorUsedError;
   AryLanguage get primaryLanguage => throw _privateConstructorUsedError;
   AryLanguage get secondaryLanguage => throw _privateConstructorUsedError;
 
@@ -39,11 +39,11 @@ abstract class $TopProfileDataCopyWith<$Res> {
   $Res call(
       {int id,
       String username,
-      String avatarUrl,
+      String? avatarUrl,
       Name firstName,
       Name lastName,
       Name name,
-      String profileThemeColor,
+      String? profileThemeColor,
       AryLanguage primaryLanguage,
       AryLanguage secondaryLanguage});
 
@@ -87,7 +87,7 @@ class _$TopProfileDataCopyWithImpl<$Res>
       avatarUrl: avatarUrl == freezed
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       firstName: firstName == freezed
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -103,7 +103,7 @@ class _$TopProfileDataCopyWithImpl<$Res>
       profileThemeColor: profileThemeColor == freezed
           ? _value.profileThemeColor
           : profileThemeColor // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       primaryLanguage: primaryLanguage == freezed
           ? _value.primaryLanguage
           : primaryLanguage // ignore: cast_nullable_to_non_nullable
@@ -161,11 +161,11 @@ abstract class _$$_TopProfileDataCopyWith<$Res>
   $Res call(
       {int id,
       String username,
-      String avatarUrl,
+      String? avatarUrl,
       Name firstName,
       Name lastName,
       Name name,
-      String profileThemeColor,
+      String? profileThemeColor,
       AryLanguage primaryLanguage,
       AryLanguage secondaryLanguage});
 
@@ -216,7 +216,7 @@ class __$$_TopProfileDataCopyWithImpl<$Res>
       avatarUrl: avatarUrl == freezed
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       firstName: firstName == freezed
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -232,7 +232,7 @@ class __$$_TopProfileDataCopyWithImpl<$Res>
       profileThemeColor: profileThemeColor == freezed
           ? _value.profileThemeColor
           : profileThemeColor // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       primaryLanguage: primaryLanguage == freezed
           ? _value.primaryLanguage
           : primaryLanguage // ignore: cast_nullable_to_non_nullable
@@ -264,7 +264,7 @@ class _$_TopProfileData implements _TopProfileData {
   @override
   final String username;
   @override
-  final String avatarUrl;
+  final String? avatarUrl;
   @override
   final Name firstName;
   @override
@@ -272,7 +272,7 @@ class _$_TopProfileData implements _TopProfileData {
   @override
   final Name name;
   @override
-  final String profileThemeColor;
+  final String? profileThemeColor;
   @override
   final AryLanguage primaryLanguage;
   @override
@@ -325,11 +325,11 @@ abstract class _TopProfileData implements TopProfileData {
   const factory _TopProfileData(
       {required final int id,
       required final String username,
-      required final String avatarUrl,
+      required final String? avatarUrl,
       required final Name firstName,
       required final Name lastName,
       required final Name name,
-      required final String profileThemeColor,
+      required final String? profileThemeColor,
       required final AryLanguage primaryLanguage,
       required final AryLanguage secondaryLanguage}) = _$_TopProfileData;
 
@@ -338,7 +338,7 @@ abstract class _TopProfileData implements TopProfileData {
   @override
   String get username => throw _privateConstructorUsedError;
   @override
-  String get avatarUrl => throw _privateConstructorUsedError;
+  String? get avatarUrl => throw _privateConstructorUsedError;
   @override
   Name get firstName => throw _privateConstructorUsedError;
   @override
@@ -346,7 +346,7 @@ abstract class _TopProfileData implements TopProfileData {
   @override
   Name get name => throw _privateConstructorUsedError;
   @override
-  String get profileThemeColor => throw _privateConstructorUsedError;
+  String? get profileThemeColor => throw _privateConstructorUsedError;
   @override
   AryLanguage get primaryLanguage => throw _privateConstructorUsedError;
   @override
@@ -363,8 +363,8 @@ Name _$NameFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Name {
-  String get ja => throw _privateConstructorUsedError;
-  String get en => throw _privateConstructorUsedError;
+  String? get ja => throw _privateConstructorUsedError;
+  String? get en => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -375,7 +375,7 @@ mixin _$Name {
 abstract class $NameCopyWith<$Res> {
   factory $NameCopyWith(Name value, $Res Function(Name) then) =
       _$NameCopyWithImpl<$Res>;
-  $Res call({String ja, String en});
+  $Res call({String? ja, String? en});
 }
 
 /// @nodoc
@@ -395,11 +395,11 @@ class _$NameCopyWithImpl<$Res> implements $NameCopyWith<$Res> {
       ja: ja == freezed
           ? _value.ja
           : ja // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       en: en == freezed
           ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -409,7 +409,7 @@ abstract class _$$_NameCopyWith<$Res> implements $NameCopyWith<$Res> {
   factory _$$_NameCopyWith(_$_Name value, $Res Function(_$_Name) then) =
       __$$_NameCopyWithImpl<$Res>;
   @override
-  $Res call({String ja, String en});
+  $Res call({String? ja, String? en});
 }
 
 /// @nodoc
@@ -430,11 +430,11 @@ class __$$_NameCopyWithImpl<$Res> extends _$NameCopyWithImpl<$Res>
       ja: ja == freezed
           ? _value.ja
           : ja // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       en: en == freezed
           ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -447,9 +447,9 @@ class _$_Name implements _Name {
   factory _$_Name.fromJson(Map<String, dynamic> json) => _$$_NameFromJson(json);
 
   @override
-  final String ja;
+  final String? ja;
   @override
-  final String en;
+  final String? en;
 
   @override
   String toString() {
@@ -484,15 +484,15 @@ class _$_Name implements _Name {
 }
 
 abstract class _Name implements Name {
-  const factory _Name({required final String ja, required final String en}) =
+  const factory _Name({required final String? ja, required final String? en}) =
       _$_Name;
 
   factory _Name.fromJson(Map<String, dynamic> json) = _$_Name.fromJson;
 
   @override
-  String get ja => throw _privateConstructorUsedError;
+  String? get ja => throw _privateConstructorUsedError;
   @override
-  String get en => throw _privateConstructorUsedError;
+  String? get en => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_NameCopyWith<_$_Name> get copyWith => throw _privateConstructorUsedError;
@@ -501,8 +501,8 @@ abstract class _Name implements Name {
 /// @nodoc
 mixin _$AryLanguage {
   String get code => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get nameJa => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get nameJa => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AryLanguageCopyWith<AryLanguage> get copyWith =>
@@ -514,7 +514,7 @@ abstract class $AryLanguageCopyWith<$Res> {
   factory $AryLanguageCopyWith(
           AryLanguage value, $Res Function(AryLanguage) then) =
       _$AryLanguageCopyWithImpl<$Res>;
-  $Res call({String code, String name, String nameJa});
+  $Res call({String code, String? name, String? nameJa});
 }
 
 /// @nodoc
@@ -539,11 +539,11 @@ class _$AryLanguageCopyWithImpl<$Res> implements $AryLanguageCopyWith<$Res> {
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       nameJa: nameJa == freezed
           ? _value.nameJa
           : nameJa // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -555,7 +555,7 @@ abstract class _$$_AryLanguageCopyWith<$Res>
           _$_AryLanguage value, $Res Function(_$_AryLanguage) then) =
       __$$_AryLanguageCopyWithImpl<$Res>;
   @override
-  $Res call({String code, String name, String nameJa});
+  $Res call({String code, String? name, String? nameJa});
 }
 
 /// @nodoc
@@ -582,11 +582,11 @@ class __$$_AryLanguageCopyWithImpl<$Res> extends _$AryLanguageCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       nameJa: nameJa == freezed
           ? _value.nameJa
           : nameJa // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -600,9 +600,9 @@ class _$_AryLanguage implements _AryLanguage {
   @override
   final String code;
   @override
-  final String name;
+  final String? name;
   @override
-  final String nameJa;
+  final String? nameJa;
 
   @override
   String toString() {
@@ -635,15 +635,15 @@ class _$_AryLanguage implements _AryLanguage {
 abstract class _AryLanguage implements AryLanguage {
   const factory _AryLanguage(
       {required final String code,
-      required final String name,
-      required final String nameJa}) = _$_AryLanguage;
+      required final String? name,
+      required final String? nameJa}) = _$_AryLanguage;
 
   @override
   String get code => throw _privateConstructorUsedError;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @override
-  String get nameJa => throw _privateConstructorUsedError;
+  String? get nameJa => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_AryLanguageCopyWith<_$_AryLanguage> get copyWith =>

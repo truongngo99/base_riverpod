@@ -40,8 +40,8 @@ Map<String, dynamic> _$$_LastSkillsTestToJson(_$_LastSkillsTest instance) =>
 
 _$_OrtherDegrees _$$_OrtherDegreesFromJson(Map<String, dynamic> json) =>
     _$_OrtherDegrees(
-      ja: (json['ja'] as List<dynamic>).map((e) => e as String?).toList(),
-      en: (json['en'] as List<dynamic>).map((e) => e as String?).toList(),
+      ja: (json['ja'] as List<dynamic>?)?.map((e) => e as String?).toList(),
+      en: (json['en'] as List<dynamic>?)?.map((e) => e as String?).toList(),
     );
 
 Map<String, dynamic> _$$_OrtherDegreesToJson(_$_OrtherDegrees instance) =>

@@ -415,8 +415,8 @@ OrtherDegrees _$OrtherDegreesFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OrtherDegrees {
-  List<String?> get ja => throw _privateConstructorUsedError;
-  List<String?> get en => throw _privateConstructorUsedError;
+  List<String?>? get ja => throw _privateConstructorUsedError;
+  List<String?>? get en => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -429,7 +429,7 @@ abstract class $OrtherDegreesCopyWith<$Res> {
   factory $OrtherDegreesCopyWith(
           OrtherDegrees value, $Res Function(OrtherDegrees) then) =
       _$OrtherDegreesCopyWithImpl<$Res>;
-  $Res call({List<String?> ja, List<String?> en});
+  $Res call({List<String?>? ja, List<String?>? en});
 }
 
 /// @nodoc
@@ -450,11 +450,11 @@ class _$OrtherDegreesCopyWithImpl<$Res>
       ja: ja == freezed
           ? _value.ja
           : ja // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
+              as List<String?>?,
       en: en == freezed
           ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
+              as List<String?>?,
     ));
   }
 }
@@ -466,7 +466,7 @@ abstract class _$$_OrtherDegreesCopyWith<$Res>
           _$_OrtherDegrees value, $Res Function(_$_OrtherDegrees) then) =
       __$$_OrtherDegreesCopyWithImpl<$Res>;
   @override
-  $Res call({List<String?> ja, List<String?> en});
+  $Res call({List<String?>? ja, List<String?>? en});
 }
 
 /// @nodoc
@@ -489,11 +489,11 @@ class __$$_OrtherDegreesCopyWithImpl<$Res>
       ja: ja == freezed
           ? _value._ja
           : ja // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
+              as List<String?>?,
       en: en == freezed
           ? _value._en
           : en // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
+              as List<String?>?,
     ));
   }
 }
@@ -502,25 +502,29 @@ class __$$_OrtherDegreesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_OrtherDegrees implements _OrtherDegrees {
   const _$_OrtherDegrees(
-      {required final List<String?> ja, required final List<String?> en})
+      {required final List<String?>? ja, required final List<String?>? en})
       : _ja = ja,
         _en = en;
 
   factory _$_OrtherDegrees.fromJson(Map<String, dynamic> json) =>
       _$$_OrtherDegreesFromJson(json);
 
-  final List<String?> _ja;
+  final List<String?>? _ja;
   @override
-  List<String?> get ja {
+  List<String?>? get ja {
+    final value = _ja;
+    if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_ja);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<String?> _en;
+  final List<String?>? _en;
   @override
-  List<String?> get en {
+  List<String?>? get en {
+    final value = _en;
+    if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_en);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -557,16 +561,16 @@ class _$_OrtherDegrees implements _OrtherDegrees {
 
 abstract class _OrtherDegrees implements OrtherDegrees {
   const factory _OrtherDegrees(
-      {required final List<String?> ja,
-      required final List<String?> en}) = _$_OrtherDegrees;
+      {required final List<String?>? ja,
+      required final List<String?>? en}) = _$_OrtherDegrees;
 
   factory _OrtherDegrees.fromJson(Map<String, dynamic> json) =
       _$_OrtherDegrees.fromJson;
 
   @override
-  List<String?> get ja => throw _privateConstructorUsedError;
+  List<String?>? get ja => throw _privateConstructorUsedError;
   @override
-  List<String?> get en => throw _privateConstructorUsedError;
+  List<String?>? get en => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_OrtherDegreesCopyWith<_$_OrtherDegrees> get copyWith =>
