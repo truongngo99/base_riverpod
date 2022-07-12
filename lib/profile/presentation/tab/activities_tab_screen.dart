@@ -53,6 +53,7 @@ class ActivitiesTabScreen extends ConsumerWidget {
           Text(activitiesData.title,
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
           const SizedBox(height: 20),
+          if (activitiesData.media.length > 1) ...[
           SizedBox(
             width: imageWidth,
             height: imageHeight,
@@ -71,7 +72,16 @@ class ActivitiesTabScreen extends ConsumerWidget {
                   ),
               ],
             ),
-          ),
+          ),]
+          else ...[
+          ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: FadeInImage.assetNetwork(
+                    placeholder: Assets.images.placeholderVjp.path,
+                    image: activitiesData.media.first.url,
+                    fit: BoxFit.fill,
+                  ),
+                )],
           const SizedBox(height: 20),
           Text(
             activitiesData.description,
