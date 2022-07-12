@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:base_riverpod/auth/shared/auth_provider.dart';
 import 'package:base_riverpod/core/shared/core_provider.dart';
+import 'package:base_riverpod/domain/entity/activities_response.dart';
 import 'package:base_riverpod/domain/entity/album_response.dart';
 import 'package:base_riverpod/domain/entity/guide_info_response.dart';
 import 'package:base_riverpod/domain/entity/map_pin_response.dart';
@@ -34,6 +35,7 @@ abstract class ProfileRemoteDataSource {
   Future<List<TravelSpotData>> fetchMapPin(String username);
   Future<List<MediaData>> fetchMedia(String username);
   Future<List<AlbumData>> fetchAlbum(String username);
+  Future<List<ActivitiesData>> fetchActivities(String username);
 }
 
 class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
@@ -132,6 +134,17 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
 
     if (response.statusCode == 200) {
       return MediaReponse.fromJson(response.data).data;
+    } else {
+      throw ServerException();
+    }
+  }
+  
+  @override
+  Future<List<ActivitiesData>> fetchActivities(String username) async {
+     final response = await _dio.get("api/v1/guides/$username/activities");
+
+    if (response.statusCode == 200) {
+      return ActivitiesReponse.fromJson(response.data).data;
     } else {
       throw ServerException();
     }

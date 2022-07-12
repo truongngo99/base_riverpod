@@ -1,6 +1,7 @@
 import 'package:base_riverpod/core/utils/failure.dart';
 import 'package:base_riverpod/data/datasource/profile_remote_data_source.dart';
 import 'package:base_riverpod/data/respositories/profile_respository_impl.dart';
+import 'package:base_riverpod/domain/entity/activities_response.dart';
 import 'package:base_riverpod/domain/entity/album_response.dart';
 import 'package:base_riverpod/domain/entity/general_info_response.dart';
 import 'package:base_riverpod/domain/entity/guide_info_response.dart';
@@ -29,6 +30,8 @@ abstract class ProfileRepository {
   Future<Either<Failure, List<TravelSpotData>>> fetchMapPin(String username);
   Future<Either<Failure, List<MediaData>>> fetchMedia(String username);
   Future<Either<Failure, List<AlbumData>>> fetchAlbum(String username);
+  Future<Either<Failure, List<ActivitiesData>>> fetchActivities(String username);
+
 }
 
 final Provider profileRespository = Provider<ProfileRespositoryImpl>((ref) {

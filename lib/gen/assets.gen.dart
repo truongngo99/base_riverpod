@@ -53,6 +53,10 @@ class $AssetsImagesGen {
   AssetGenImage get btnSetting =>
       const AssetGenImage('assets/images/btn_setting.png');
 
+  /// File path: assets/images/cross_divider.png
+  AssetGenImage get crossDivider =>
+      const AssetGenImage('assets/images/cross_divider.png');
+
   /// File path: assets/images/docs.png
   AssetGenImage get docs => const AssetGenImage('assets/images/docs.png');
 

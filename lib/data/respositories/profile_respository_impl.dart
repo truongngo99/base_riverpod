@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:base_riverpod/core/utils/exception.dart';
 import 'package:base_riverpod/core/utils/failure.dart';
 import 'package:base_riverpod/data/datasource/profile_remote_data_source.dart';
+import 'package:base_riverpod/domain/entity/activities_response.dart';
 import 'package:base_riverpod/domain/entity/album_response.dart';
 import 'package:base_riverpod/domain/entity/guide_info_response.dart';
 import 'package:base_riverpod/domain/entity/map_pin_response.dart';
@@ -120,6 +121,18 @@ class ProfileRespositoryImpl implements ProfileRepository {
   Future<Either<Failure, List<MediaData>>> fetchMedia(String username) async {
     try {
       final result = await remoteDataSource.fetchMedia(username);
+      return Right(result);
+    } on ServerException {
+      return const Left(ServerFailure("abc"));
+    } on SocketException {
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<ActivitiesData>>> fetchActivities(String username) async {
+    try {
+      final result = await remoteDataSource.fetchActivities(username);
       return Right(result);
     } on ServerException {
       return const Left(ServerFailure("abc"));
