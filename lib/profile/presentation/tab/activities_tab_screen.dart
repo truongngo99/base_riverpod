@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:base_riverpod/core/extension/imageX.dart';
 import 'package:base_riverpod/core/extension/stringX.dart';
+import 'package:base_riverpod/core/presentation/router/app_router.dart';
 import 'package:base_riverpod/domain/entity/activities_response.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/profile/presentation/notifier/activities_tab_notifier.dart';
@@ -23,65 +25,79 @@ class ActivitiesTabScreen extends ConsumerWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
             Padding(
               padding: const EdgeInsets.only(right: 20),
-              child: Assets.images.editProfile.image().iconify(),
+              child: GestureDetector(
+                  onTap: () async {
+                    final result = await context.router.push(const EditActivitiesRoute());
+                    if (result == true) {
+                      print("callbackaaa");
+                      ref.read(activitiesNotifierProvider.notifier).updateOnDismiss();
+                    }
+                  },
+                  child: Assets.images.editProfile.image().iconify()),
             )
           ]),
         ),
-
-        for (var data in activities)
-        _buildActivitiesElement(MediaQuery.of(context).size.width, data, activities.indexOf(data) != 0)
+        for (var data in ref.watch(activitiesNotifierProvider).activities)
+          if (data.isPublic)
+            _buildActivitiesElement(ref, MediaQuery.of(context).size.width,
+                data, activities.indexOf(data) != 0)
       ],
     );
   }
 
-  Widget _buildActivitiesElement(double screenWidth,ActivitiesData activitiesData, [bool showDivider = true]) {
-    double imageWidth = screenWidth * 275/375;
-    double imageHeight = imageWidth * 194/275;
+  Widget _buildActivitiesElement(
+      WidgetRef ref, double screenWidth, ActivitiesData activitiesData,
+      [bool showDivider = true]) {
+    double imageWidth = screenWidth * 275 / 375;
+    double imageHeight = imageWidth * 194 / 275;
+    ref.read(activitiesNotifierProvider).activities;
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (showDivider)
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: Assets.images.crossDivider.image(),
-          ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Assets.images.crossDivider.image(),
+            ),
           Text("${activitiesData.departureDate}".mapDate(),
               style: const TextStyle(fontSize: 14)),
           const SizedBox(height: 10),
           Text(activitiesData.title,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+              style:
+                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
           const SizedBox(height: 20),
           if (activitiesData.media.length > 1) ...[
-          SizedBox(
-            width: imageWidth,
-            height: imageHeight,
-            child: ListView(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              children: [
-                for (var img in activitiesData.media)
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
-                    child: FadeInImage.assetNetwork(
-                      placeholder: Assets.images.placeholderVjp.path,
-                      image: img.url,
-                      fit: BoxFit.fill,
+            SizedBox(
+              width: imageWidth,
+              height: imageHeight,
+              child: ListView(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                children: [
+                  for (var img in activitiesData.media)
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: FadeInImage.assetNetwork(
+                        placeholder: Assets.images.placeholderVjp.path,
+                        image: img.url,
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                  ),
-              ],
+                ],
+              ),
             ),
-          ),]
-          else ...[
-          ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: FadeInImage.assetNetwork(
-                    placeholder: Assets.images.placeholderVjp.path,
-                    image: activitiesData.media.first.url,
-                    fit: BoxFit.fill,
-                  ),
-                )],
+          ] else ...[
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: FadeInImage.assetNetwork(
+                placeholder: Assets.images.placeholderVjp.path,
+                image: activitiesData.media.first.url,
+                fit: BoxFit.fill,
+              ),
+            )
+          ],
           const SizedBox(height: 20),
           Text(
             activitiesData.description,

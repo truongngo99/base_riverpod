@@ -7,7 +7,7 @@ class EditSkillScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return EditScreenBuilder(body: _buildBody());
+    return EditScreenBuilder(body: _buildBody(), topTitle: 'スキル',);
   }
 
   Widget _buildBody() {

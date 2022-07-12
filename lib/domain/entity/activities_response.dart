@@ -7,7 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'activities_response.freezed.dart';
 part 'activities_response.g.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class ActivitiesReponse with _$ActivitiesReponse {
     const factory ActivitiesReponse({
         required String message,
@@ -21,7 +21,7 @@ class ActivitiesReponse with _$ActivitiesReponse {
 @Freezed(makeCollectionsUnmodifiable: false, toJson: false, fromJson: false)
 @JsonSerializable(fieldRename: FieldRename.snake)
 class ActivitiesData with _$ActivitiesData {
-    const factory ActivitiesData({
+    factory ActivitiesData({
         required int id,
         required String title,
         required String description,

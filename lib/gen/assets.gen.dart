@@ -114,6 +114,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/image.png
   AssetGenImage get imagePng => const AssetGenImage('assets/images/image.png');
 
+  /// File path: assets/images/logo_color.png
+  AssetGenImage get logoColor =>
+      const AssetGenImage('assets/images/logo_color.png');
+
   /// File path: assets/images/mail.png
   AssetGenImage get mail => const AssetGenImage('assets/images/mail.png');
 

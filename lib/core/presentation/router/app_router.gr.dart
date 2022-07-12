@@ -59,7 +59,16 @@ class _$AppRouter extends RootStackRouter {
           routeData: routeData,
           child: const EditSkillScreen(),
           transitionsBuilder: TransitionsBuilders.slideLeft,
-          durationInMilliseconds: 200,
+          durationInMilliseconds: 100,
+          opaque: true,
+          barrierDismissible: false);
+    },
+    EditActivitiesRoute.name: (routeData) {
+      return CustomPage<dynamic>(
+          routeData: routeData,
+          child: const EditActivitiesScreen(),
+          transitionsBuilder: TransitionsBuilders.slideLeft,
+          durationInMilliseconds: 100,
           opaque: true,
           barrierDismissible: false);
     }
@@ -72,7 +81,8 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(HomeRoute.name, path: '/home'),
         RouteConfig(MenuRoute.name, path: '/menu'),
         RouteConfig(ProfileRoute.name, path: '/profile'),
-        RouteConfig(EditSkillRoute.name, path: '/skill/edit')
+        RouteConfig(EditSkillRoute.name, path: '/skill/edit'),
+        RouteConfig(EditActivitiesRoute.name, path: '/activities/edit')
       ];
 }
 
@@ -146,4 +156,13 @@ class EditSkillRoute extends PageRouteInfo<void> {
   const EditSkillRoute() : super(EditSkillRoute.name, path: '/skill/edit');
 
   static const String name = 'EditSkillRoute';
+}
+
+/// generated route for
+/// [EditActivitiesScreen]
+class EditActivitiesRoute extends PageRouteInfo<void> {
+  const EditActivitiesRoute()
+      : super(EditActivitiesRoute.name, path: '/activities/edit');
+
+  static const String name = 'EditActivitiesRoute';
 }

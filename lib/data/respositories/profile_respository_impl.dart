@@ -140,4 +140,16 @@ class ProfileRespositoryImpl implements ProfileRepository {
       return const Left(ConnectionFailure('Failed to connect to the network'));
     }
   }
+  
+  @override
+  Future<Either<Failure, void>> editActivities(int id, bool isPublic) async {
+    try {
+      final result = await remoteDataSource.editActivities(id, isPublic);
+      return Right(result);
+    } on ServerException {
+      return const Left(ServerFailure("abc"));
+    } on SocketException {
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    }
+  }
 }

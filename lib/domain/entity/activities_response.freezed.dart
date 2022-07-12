@@ -119,7 +119,7 @@ class __$$_ActivitiesReponseCopyWithImpl<$Res>
           : meta // ignore: cast_nullable_to_non_nullable
               as Meta,
       data: data == freezed
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as List<ActivitiesData>,
     ));
@@ -130,10 +130,7 @@ class __$$_ActivitiesReponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ActivitiesReponse implements _ActivitiesReponse {
   const _$_ActivitiesReponse(
-      {required this.message,
-      required this.meta,
-      required final List<ActivitiesData> data})
-      : _data = data;
+      {required this.message, required this.meta, required this.data});
 
   factory _$_ActivitiesReponse.fromJson(Map<String, dynamic> json) =>
       _$$_ActivitiesReponseFromJson(json);
@@ -142,12 +139,8 @@ class _$_ActivitiesReponse implements _ActivitiesReponse {
   final String message;
   @override
   final Meta meta;
-  final List<ActivitiesData> _data;
   @override
-  List<ActivitiesData> get data {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+  final List<ActivitiesData> data;
 
   @override
   String toString() {
@@ -161,7 +154,7 @@ class _$_ActivitiesReponse implements _ActivitiesReponse {
             other is _$_ActivitiesReponse &&
             const DeepCollectionEquality().equals(other.message, message) &&
             const DeepCollectionEquality().equals(other.meta, meta) &&
-            const DeepCollectionEquality().equals(other._data, _data));
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @JsonKey(ignore: true)
@@ -170,7 +163,7 @@ class _$_ActivitiesReponse implements _ActivitiesReponse {
       runtimeType,
       const DeepCollectionEquality().hash(message),
       const DeepCollectionEquality().hash(meta),
-      const DeepCollectionEquality().hash(_data));
+      const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
@@ -361,7 +354,7 @@ class __$$_ActivitiesDataCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ActivitiesData implements _ActivitiesData {
-  const _$_ActivitiesData(
+  _$_ActivitiesData(
       {required this.id,
       required this.title,
       required this.description,
@@ -424,7 +417,7 @@ class _$_ActivitiesData implements _ActivitiesData {
 }
 
 abstract class _ActivitiesData implements ActivitiesData {
-  const factory _ActivitiesData(
+  factory _ActivitiesData(
       {required final int id,
       required final String title,
       required final String description,

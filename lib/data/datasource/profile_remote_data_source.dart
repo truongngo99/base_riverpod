@@ -36,6 +36,7 @@ abstract class ProfileRemoteDataSource {
   Future<List<MediaData>> fetchMedia(String username);
   Future<List<AlbumData>> fetchAlbum(String username);
   Future<List<ActivitiesData>> fetchActivities(String username);
+  Future<void> editActivities(int id, bool isPublic);
 }
 
 class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
@@ -145,6 +146,19 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
 
     if (response.statusCode == 200) {
       return ActivitiesReponse.fromJson(response.data).data;
+    } else {
+      throw ServerException();
+    }
+  }
+  
+  @override
+  Future<void> editActivities(int id, bool isPublic) async {
+    var param = {"is_public": isPublic};
+    final response = await _dio.put("api/v1/guides/me/activities/$id",
+    data: param);
+     if (response.statusCode == 200) {
+      print("put success");
+      return;
     } else {
       throw ServerException();
     }

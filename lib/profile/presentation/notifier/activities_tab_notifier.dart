@@ -16,6 +16,14 @@ class ActivitiesNotifier extends ChangeNotifier {
   List<ActivitiesData> _activities = [];
   List<ActivitiesData> get activities => _activities;
 
+  List<ActivitiesData> _editableActivities = [];
+  List<ActivitiesData> get editableActivities => _editableActivities;
+
+  Map<int, bool> _initList = {};
+  Map<int, bool> _editedList = {};
+
+  bool _appliedChanged = false;
+
   ActivitiesNotifier({
     required this.repo,
     required this.userDefault,
@@ -46,8 +54,43 @@ class ActivitiesNotifier extends ChangeNotifier {
     final result = await repo.fetchActivities(userDefault.username);
     result.fold((l) {}, (r) {
       _activities = r;
+          notifyListeners();
+      _editableActivities = r;
+          notifyListeners();
+      for (var data in r) {
+        _initList[data.id] = data.isPublic;
+      }
       notifyListeners();
     });
+  }
+
+  void changeStateActivites(bool isPublic, int index) {
+    if (isPublic != _initList[_editableActivities[index].id]) {
+          _editedList[_editableActivities[index].id] = isPublic;
+    } else {
+      _editedList.removeWhere((key, value) => key == _editableActivities[index].id);
+    }
+    _editableActivities[index] = _editableActivities[index].copyWith(isPublic: isPublic);
+    notifyListeners();
+  }
+
+  Future<void> saveEditActivities() async {
+    _editedList.entries.map((e) async {
+      await repo.editActivities(e.key, e.value);
+    });
+    _appliedChanged = true;
+    notifyListeners();
+  }
+
+  void updateOnDismiss() {
+    print("apply change $_appliedChanged");
+    if (_appliedChanged) {
+      _activities = _editableActivities;
+    } else {
+      _editableActivities = _activities;
+    }
+    _appliedChanged = false;
+    notifyListeners();
   }
 }
 

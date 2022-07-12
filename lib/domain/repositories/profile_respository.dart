@@ -31,7 +31,7 @@ abstract class ProfileRepository {
   Future<Either<Failure, List<MediaData>>> fetchMedia(String username);
   Future<Either<Failure, List<AlbumData>>> fetchAlbum(String username);
   Future<Either<Failure, List<ActivitiesData>>> fetchActivities(String username);
-
+  Future<Either<Failure, void>> editActivities(int id, bool isPublic);
 }
 
 final Provider profileRespository = Provider<ProfileRespositoryImpl>((ref) {

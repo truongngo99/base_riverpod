@@ -3,6 +3,7 @@ import 'package:base_riverpod/auth/presentation/login_page.dart';
 import 'package:base_riverpod/home/presentation/home_screen.dart';
 import 'package:base_riverpod/menu/presentation/menu_screen.dart';
 import 'package:base_riverpod/profile/presentation/profile_screen.dart';
+import 'package:base_riverpod/profile/presentation/tab/edit/edit_activities_screen.dart';
 import 'package:base_riverpod/profile/presentation/tab/edit/edit_skill_screen.dart';
 import 'package:base_riverpod/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,12 @@ part 'app_router.gr.dart';
         page: EditSkillScreen,
         path: '/skill/edit',
         transitionsBuilder: TransitionsBuilders.slideLeft,
-        durationInMilliseconds: 200),
+        durationInMilliseconds: 100),
+    CustomRoute(
+        page: EditActivitiesScreen,
+        path: '/activities/edit',
+        transitionsBuilder: TransitionsBuilders.slideLeft,
+        durationInMilliseconds: 100),
     // CustomRoute(
     //   path: '/profile',
     //   page: ProfileScreen,
