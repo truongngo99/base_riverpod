@@ -53,10 +53,9 @@ class ActivitiesNotifier extends ChangeNotifier {
   Future<void> _fetchActivities() async {
     final result = await repo.fetchActivities(userDefault.username);
     result.fold((l) {}, (r) {
-      _activities = r;
-          notifyListeners();
-      _editableActivities = r;
-          notifyListeners();
+      _activities = [...r];
+      _editableActivities = [...r];
+      print("$r");
       for (var data in r) {
         _initList[data.id] = data.isPublic;
       }
@@ -83,11 +82,10 @@ class ActivitiesNotifier extends ChangeNotifier {
   }
 
   void updateOnDismiss() {
-    print("apply change $_appliedChanged");
     if (_appliedChanged) {
-      _activities = _editableActivities;
+      _activities = [..._editableActivities];
     } else {
-      _editableActivities = _activities;
+      _editableActivities = [..._activities];
     }
     _appliedChanged = false;
     notifyListeners();

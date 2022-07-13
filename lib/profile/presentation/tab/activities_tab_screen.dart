@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:base_riverpod/core/extension/imageX.dart';
 import 'package:base_riverpod/core/extension/stringX.dart';
 import 'package:base_riverpod/core/presentation/router/app_router.dart';
+import 'package:base_riverpod/core/utils/urls.dart';
 import 'package:base_riverpod/domain/entity/activities_response.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/profile/presentation/notifier/activities_tab_notifier.dart';
@@ -29,7 +30,6 @@ class ActivitiesTabScreen extends ConsumerWidget {
                   onTap: () async {
                     final result = await context.router.push(const EditActivitiesRoute());
                     if (result == true) {
-                      print("callbackaaa");
                       ref.read(activitiesNotifierProvider.notifier).updateOnDismiss();
                     }
                   },
@@ -37,7 +37,8 @@ class ActivitiesTabScreen extends ConsumerWidget {
             )
           ]),
         ),
-        for (var data in ref.watch(activitiesNotifierProvider).activities)
+        if (activities.isNotEmpty)
+        for (var data in activities)
           if (data.isPublic)
             _buildActivitiesElement(ref, MediaQuery.of(context).size.width,
                 data, activities.indexOf(data) != 0)
@@ -88,7 +89,7 @@ class ActivitiesTabScreen extends ConsumerWidget {
                 ],
               ),
             ),
-          ] else ...[
+          ] else if (activitiesData.media.length == 1) ...[
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: FadeInImage.assetNetwork(
