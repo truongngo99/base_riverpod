@@ -57,6 +57,9 @@ class $AssetsImagesGen {
   AssetGenImage get crossDivider =>
       const AssetGenImage('assets/images/cross_divider.png');
 
+  /// File path: assets/images/delete.png
+  AssetGenImage get delete => const AssetGenImage('assets/images/delete.png');
+
   /// File path: assets/images/docs.png
   AssetGenImage get docs => const AssetGenImage('assets/images/docs.png');
 
@@ -140,6 +143,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/placeholder_vjp.png
   AssetGenImage get placeholderVjp =>
       const AssetGenImage('assets/images/placeholder_vjp.png');
+
+  /// File path: assets/images/plus.png
+  AssetGenImage get plus => const AssetGenImage('assets/images/plus.png');
 
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');

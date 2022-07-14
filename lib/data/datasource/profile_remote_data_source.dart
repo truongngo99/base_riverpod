@@ -37,6 +37,7 @@ abstract class ProfileRemoteDataSource {
   Future<List<AlbumData>> fetchAlbum(String username);
   Future<List<ActivitiesData>> fetchActivities(String username);
   Future<void> editActivities(int id, bool isPublic);
+  Future<void> editSkill(SkillData data);
 }
 
 class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
@@ -156,6 +157,18 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
     var param = {"is_public": isPublic};
     final response = await _dio.put("api/v1/guides/me/activities/$id",
     data: param);
+     if (response.statusCode == 200) {
+      print("put success");
+      return;
+    } else {
+      throw ServerException();
+    }
+  }
+  
+  @override
+  Future<void> editSkill(SkillData data) async {
+    final response = await _dio.put("api/v1/guides/me/skills",
+    data: data.toJson());
      if (response.statusCode == 200) {
       print("put success");
       return;

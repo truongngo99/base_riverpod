@@ -14,18 +14,51 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+SkillData _$SkillDataFromJson(Map<String, dynamic> json) {
+  return _SkillData.fromJson(json);
+}
+
 /// @nodoc
 mixin _$SkillData {
+  @JsonKey(name: "domestic_business_manager")
   String get domesticBusinessManager => throw _privateConstructorUsedError;
+  @JsonKey(name: "domestic_business_manager")
+  set domesticBusinessManager(String value) =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: "general_business_manager")
   String get generalBusinessManager => throw _privateConstructorUsedError;
+  @JsonKey(name: "general_business_manager")
+  set generalBusinessManager(String value) =>
+      throw _privateConstructorUsedError;
   String get toeic => throw _privateConstructorUsedError;
+  set toeic(String value) => throw _privateConstructorUsedError;
+  @JsonKey(name: "tourism_english")
   String get tourismEnglish => throw _privateConstructorUsedError;
+  @JsonKey(name: "tourism_english")
+  set tourismEnglish(String value) => throw _privateConstructorUsedError;
+  @JsonKey(name: "travel_geography")
   String get travelGeography => throw _privateConstructorUsedError;
+  @JsonKey(name: "travel_geography")
+  set travelGeography(String value) => throw _privateConstructorUsedError;
+  @JsonKey(name: "world_heritage")
   String get worldHeritage => throw _privateConstructorUsedError;
+  @JsonKey(name: "world_heritage")
+  set worldHeritage(String value) => throw _privateConstructorUsedError;
+  @JsonKey(name: "show_latest_test")
   bool get showLatestTest => throw _privateConstructorUsedError;
+  @JsonKey(name: "show_latest_test")
+  set showLatestTest(bool value) => throw _privateConstructorUsedError;
+  @JsonKey(name: "orther_degrees")
   OrtherDegrees get ortherDegrees => throw _privateConstructorUsedError;
+  @JsonKey(name: "orther_degrees")
+  set ortherDegrees(OrtherDegrees value) => throw _privateConstructorUsedError;
+  @JsonKey(name: "last_skills_test")
   LastSkillsTest get lastSkillsTest => throw _privateConstructorUsedError;
+  @JsonKey(name: "last_skills_test")
+  set lastSkillsTest(LastSkillsTest value) =>
+      throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SkillDataCopyWith<SkillData> get copyWith =>
       throw _privateConstructorUsedError;
@@ -36,15 +69,23 @@ abstract class $SkillDataCopyWith<$Res> {
   factory $SkillDataCopyWith(SkillData value, $Res Function(SkillData) then) =
       _$SkillDataCopyWithImpl<$Res>;
   $Res call(
-      {String domesticBusinessManager,
-      String generalBusinessManager,
+      {@JsonKey(name: "domestic_business_manager")
+          String domesticBusinessManager,
+      @JsonKey(name: "general_business_manager")
+          String generalBusinessManager,
       String toeic,
-      String tourismEnglish,
-      String travelGeography,
-      String worldHeritage,
-      bool showLatestTest,
-      OrtherDegrees ortherDegrees,
-      LastSkillsTest lastSkillsTest});
+      @JsonKey(name: "tourism_english")
+          String tourismEnglish,
+      @JsonKey(name: "travel_geography")
+          String travelGeography,
+      @JsonKey(name: "world_heritage")
+          String worldHeritage,
+      @JsonKey(name: "show_latest_test")
+          bool showLatestTest,
+      @JsonKey(name: "orther_degrees")
+          OrtherDegrees ortherDegrees,
+      @JsonKey(name: "last_skills_test")
+          LastSkillsTest lastSkillsTest});
 
   $OrtherDegreesCopyWith<$Res> get ortherDegrees;
   $LastSkillsTestCopyWith<$Res> get lastSkillsTest;
@@ -132,15 +173,23 @@ abstract class _$$_SkillDataCopyWith<$Res> implements $SkillDataCopyWith<$Res> {
       __$$_SkillDataCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String domesticBusinessManager,
-      String generalBusinessManager,
+      {@JsonKey(name: "domestic_business_manager")
+          String domesticBusinessManager,
+      @JsonKey(name: "general_business_manager")
+          String generalBusinessManager,
       String toeic,
-      String tourismEnglish,
-      String travelGeography,
-      String worldHeritage,
-      bool showLatestTest,
-      OrtherDegrees ortherDegrees,
-      LastSkillsTest lastSkillsTest});
+      @JsonKey(name: "tourism_english")
+          String tourismEnglish,
+      @JsonKey(name: "travel_geography")
+          String travelGeography,
+      @JsonKey(name: "world_heritage")
+          String worldHeritage,
+      @JsonKey(name: "show_latest_test")
+          bool showLatestTest,
+      @JsonKey(name: "orther_degrees")
+          OrtherDegrees ortherDegrees,
+      @JsonKey(name: "last_skills_test")
+          LastSkillsTest lastSkillsTest});
 
   @override
   $OrtherDegreesCopyWith<$Res> get ortherDegrees;
@@ -212,115 +261,121 @@ class __$$_SkillDataCopyWithImpl<$Res> extends _$SkillDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_SkillData implements _SkillData {
-  const _$_SkillData(
-      {required this.domesticBusinessManager,
-      required this.generalBusinessManager,
+  _$_SkillData(
+      {@JsonKey(name: "domestic_business_manager")
+          required this.domesticBusinessManager,
+      @JsonKey(name: "general_business_manager")
+          required this.generalBusinessManager,
       required this.toeic,
-      required this.tourismEnglish,
-      required this.travelGeography,
-      required this.worldHeritage,
-      required this.showLatestTest,
-      required this.ortherDegrees,
-      required this.lastSkillsTest});
+      @JsonKey(name: "tourism_english")
+          required this.tourismEnglish,
+      @JsonKey(name: "travel_geography")
+          required this.travelGeography,
+      @JsonKey(name: "world_heritage")
+          required this.worldHeritage,
+      @JsonKey(name: "show_latest_test")
+          required this.showLatestTest,
+      @JsonKey(name: "orther_degrees")
+          required this.ortherDegrees,
+      @JsonKey(name: "last_skills_test")
+          required this.lastSkillsTest});
+
+  factory _$_SkillData.fromJson(Map<String, dynamic> json) =>
+      _$$_SkillDataFromJson(json);
 
   @override
-  final String domesticBusinessManager;
+  @JsonKey(name: "domestic_business_manager")
+  String domesticBusinessManager;
   @override
-  final String generalBusinessManager;
+  @JsonKey(name: "general_business_manager")
+  String generalBusinessManager;
   @override
-  final String toeic;
+  String toeic;
   @override
-  final String tourismEnglish;
+  @JsonKey(name: "tourism_english")
+  String tourismEnglish;
   @override
-  final String travelGeography;
+  @JsonKey(name: "travel_geography")
+  String travelGeography;
   @override
-  final String worldHeritage;
+  @JsonKey(name: "world_heritage")
+  String worldHeritage;
   @override
-  final bool showLatestTest;
+  @JsonKey(name: "show_latest_test")
+  bool showLatestTest;
   @override
-  final OrtherDegrees ortherDegrees;
+  @JsonKey(name: "orther_degrees")
+  OrtherDegrees ortherDegrees;
   @override
-  final LastSkillsTest lastSkillsTest;
+  @JsonKey(name: "last_skills_test")
+  LastSkillsTest lastSkillsTest;
 
   @override
   String toString() {
     return 'SkillData(domesticBusinessManager: $domesticBusinessManager, generalBusinessManager: $generalBusinessManager, toeic: $toeic, tourismEnglish: $tourismEnglish, travelGeography: $travelGeography, worldHeritage: $worldHeritage, showLatestTest: $showLatestTest, ortherDegrees: $ortherDegrees, lastSkillsTest: $lastSkillsTest)';
   }
 
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_SkillData &&
-            const DeepCollectionEquality().equals(
-                other.domesticBusinessManager, domesticBusinessManager) &&
-            const DeepCollectionEquality()
-                .equals(other.generalBusinessManager, generalBusinessManager) &&
-            const DeepCollectionEquality().equals(other.toeic, toeic) &&
-            const DeepCollectionEquality()
-                .equals(other.tourismEnglish, tourismEnglish) &&
-            const DeepCollectionEquality()
-                .equals(other.travelGeography, travelGeography) &&
-            const DeepCollectionEquality()
-                .equals(other.worldHeritage, worldHeritage) &&
-            const DeepCollectionEquality()
-                .equals(other.showLatestTest, showLatestTest) &&
-            const DeepCollectionEquality()
-                .equals(other.ortherDegrees, ortherDegrees) &&
-            const DeepCollectionEquality()
-                .equals(other.lastSkillsTest, lastSkillsTest));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(domesticBusinessManager),
-      const DeepCollectionEquality().hash(generalBusinessManager),
-      const DeepCollectionEquality().hash(toeic),
-      const DeepCollectionEquality().hash(tourismEnglish),
-      const DeepCollectionEquality().hash(travelGeography),
-      const DeepCollectionEquality().hash(worldHeritage),
-      const DeepCollectionEquality().hash(showLatestTest),
-      const DeepCollectionEquality().hash(ortherDegrees),
-      const DeepCollectionEquality().hash(lastSkillsTest));
-
   @JsonKey(ignore: true)
   @override
   _$$_SkillDataCopyWith<_$_SkillData> get copyWith =>
       __$$_SkillDataCopyWithImpl<_$_SkillData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_SkillDataToJson(this);
+  }
 }
 
 abstract class _SkillData implements SkillData {
-  const factory _SkillData(
-      {required final String domesticBusinessManager,
-      required final String generalBusinessManager,
-      required final String toeic,
-      required final String tourismEnglish,
-      required final String travelGeography,
-      required final String worldHeritage,
-      required final bool showLatestTest,
-      required final OrtherDegrees ortherDegrees,
-      required final LastSkillsTest lastSkillsTest}) = _$_SkillData;
+  factory _SkillData(
+      {@JsonKey(name: "domestic_business_manager")
+          required String domesticBusinessManager,
+      @JsonKey(name: "general_business_manager")
+          required String generalBusinessManager,
+      required String toeic,
+      @JsonKey(name: "tourism_english")
+          required String tourismEnglish,
+      @JsonKey(name: "travel_geography")
+          required String travelGeography,
+      @JsonKey(name: "world_heritage")
+          required String worldHeritage,
+      @JsonKey(name: "show_latest_test")
+          required bool showLatestTest,
+      @JsonKey(name: "orther_degrees")
+          required OrtherDegrees ortherDegrees,
+      @JsonKey(name: "last_skills_test")
+          required LastSkillsTest lastSkillsTest}) = _$_SkillData;
+
+  factory _SkillData.fromJson(Map<String, dynamic> json) =
+      _$_SkillData.fromJson;
 
   @override
+  @JsonKey(name: "domestic_business_manager")
   String get domesticBusinessManager => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "general_business_manager")
   String get generalBusinessManager => throw _privateConstructorUsedError;
   @override
   String get toeic => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "tourism_english")
   String get tourismEnglish => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "travel_geography")
   String get travelGeography => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "world_heritage")
   String get worldHeritage => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "show_latest_test")
   bool get showLatestTest => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "orther_degrees")
   OrtherDegrees get ortherDegrees => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "last_skills_test")
   LastSkillsTest get lastSkillsTest => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -487,11 +542,11 @@ class __$$_OrtherDegreesCopyWithImpl<$Res>
   }) {
     return _then(_$_OrtherDegrees(
       ja: ja == freezed
-          ? _value._ja
+          ? _value.ja
           : ja // ignore: cast_nullable_to_non_nullable
               as List<String?>?,
       en: en == freezed
-          ? _value._en
+          ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
               as List<String?>?,
     ));
@@ -501,31 +556,15 @@ class __$$_OrtherDegreesCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_OrtherDegrees implements _OrtherDegrees {
-  const _$_OrtherDegrees(
-      {required final List<String?>? ja, required final List<String?>? en})
-      : _ja = ja,
-        _en = en;
+  const _$_OrtherDegrees({required this.ja, required this.en});
 
   factory _$_OrtherDegrees.fromJson(Map<String, dynamic> json) =>
       _$$_OrtherDegreesFromJson(json);
 
-  final List<String?>? _ja;
   @override
-  List<String?>? get ja {
-    final value = _ja;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<String?>? _en;
+  final List<String?>? ja;
   @override
-  List<String?>? get en {
-    final value = _en;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+  final List<String?>? en;
 
   @override
   String toString() {
@@ -537,16 +576,16 @@ class _$_OrtherDegrees implements _OrtherDegrees {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OrtherDegrees &&
-            const DeepCollectionEquality().equals(other._ja, _ja) &&
-            const DeepCollectionEquality().equals(other._en, _en));
+            const DeepCollectionEquality().equals(other.ja, ja) &&
+            const DeepCollectionEquality().equals(other.en, en));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_ja),
-      const DeepCollectionEquality().hash(_en));
+      const DeepCollectionEquality().hash(ja),
+      const DeepCollectionEquality().hash(en));
 
   @JsonKey(ignore: true)
   @override

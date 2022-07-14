@@ -1,6 +1,7 @@
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';
 import 'package:base_riverpod/profile/presentation/notifier/home_tab_notifier.dart';
+import 'package:base_riverpod/profile/presentation/notifier/skill_tab_notifier.dart';
 import 'package:base_riverpod/profile/presentation/tab/edit/edit_skill_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -9,6 +10,14 @@ import 'package:auto_route/auto_route.dart';
 
 class SkillTabScreen extends ConsumerWidget {
   SkillTabScreen({Key? key}) : super(key: key);
+
+  Map<String, String> degreeMapping = {
+    "beginner": "初心者",
+    "elementary": "小学校",
+    "advanced": "高度",
+    "imediately": "中級",
+    "expert": "エキスパート",
+  };
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -32,8 +41,14 @@ class SkillTabScreen extends ConsumerWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 GestureDetector(
-                    onTap: () {
-                      context.router.push(const EditSkillRoute());
+                    onTap: () async {
+                      final result =
+                          await context.router.push(EditSkillRoute());
+                      if (result == true) {
+                        ref
+                            .read(skillNotifierProvider.notifier)
+                            .initFetch();
+                      }
                     },
                     child:
                         Assets.images.editProfile.image(width: 24, height: 24)),
@@ -42,12 +57,13 @@ class SkillTabScreen extends ConsumerWidget {
           ),
           if (skill?.domesticBusinessManager == "yes")
             _buildAwardElement("旅行業務取扱管理者（国内）"),
-            if (skill?.generalBusinessManager == "yes")
+          if (skill?.generalBusinessManager == "yes")
             _buildAwardElement("旅行業務取扱管理者（総合）"),
           if (skill?.toeic != null)
             _buildAwardElement("TOEIC", "${skill!.toeic}点"),
           if (skill?.travelGeography != null)
-            _buildAwardElement("旅行地理検定", "${skill?.travelGeography}"),
+            _buildAwardElement(
+                "旅行地理検定", "${degreeMapping[skill?.travelGeography]}"),
           for (var degree in skill?.ortherDegrees.ja ?? [])
             _buildAwardElement(degree)
         ],

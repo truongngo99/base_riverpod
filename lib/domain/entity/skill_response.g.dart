@@ -6,7 +6,7 @@ part of 'skill_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SkillData _$SkillDataFromJson(Map<String, dynamic> json) => SkillData(
+_$_SkillData _$$_SkillDataFromJson(Map<String, dynamic> json) => _$_SkillData(
       domesticBusinessManager: json['domestic_business_manager'] as String,
       generalBusinessManager: json['general_business_manager'] as String,
       toeic: json['toeic'] as String,
@@ -20,7 +20,8 @@ SkillData _$SkillDataFromJson(Map<String, dynamic> json) => SkillData(
           json['last_skills_test'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$SkillDataToJson(SkillData instance) => <String, dynamic>{
+Map<String, dynamic> _$$_SkillDataToJson(_$_SkillData instance) =>
+    <String, dynamic>{
       'domestic_business_manager': instance.domesticBusinessManager,
       'general_business_manager': instance.generalBusinessManager,
       'toeic': instance.toeic,

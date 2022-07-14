@@ -2,26 +2,25 @@
 //
 //     final skillReponse = skillReponseFromMap(jsonString);
 
-import 'package:meta/meta.dart';
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'dart:convert';
 
 part 'skill_response.g.dart';
 part 'skill_response.freezed.dart';
 
-@Freezed(makeCollectionsUnmodifiable: false, toJson: false, fromJson: false)
-@JsonSerializable(fieldRename: FieldRename.snake)
+@unfreezed
 class SkillData with _$SkillData {
-    const factory SkillData({
-        required String domesticBusinessManager,
-        required String generalBusinessManager,
+    factory SkillData({
+        @JsonKey(name: "domestic_business_manager") required String domesticBusinessManager,
+        @JsonKey(name: "general_business_manager") required String generalBusinessManager,
         required String toeic,
-        required String tourismEnglish,
-        required String travelGeography,
-        required String worldHeritage,
-        required bool showLatestTest,
-        required OrtherDegrees ortherDegrees,
-        required LastSkillsTest lastSkillsTest,
+        @JsonKey(name: "tourism_english") required String tourismEnglish,
+        @JsonKey(name: "travel_geography") required String travelGeography,
+        @JsonKey(name: "world_heritage") required String worldHeritage,
+        @JsonKey(name: "show_latest_test") required bool showLatestTest,
+        @JsonKey(name: "orther_degrees") required OrtherDegrees ortherDegrees,
+        @JsonKey(name: "last_skills_test") required LastSkillsTest lastSkillsTest,
     }) = _SkillData;
 
     factory SkillData.fromJson(Map<String, dynamic> json) => _$SkillDataFromJson(json);
@@ -34,6 +33,7 @@ class LastSkillsTest with _$LastSkillsTest {
     factory LastSkillsTest.fromJson(Map<String, dynamic> json) => _$LastSkillsTestFromJson(json);
 }
 
+@Freezed(makeCollectionsUnmodifiable: false)
 @freezed
 class OrtherDegrees with _$OrtherDegrees {
     const factory OrtherDegrees({

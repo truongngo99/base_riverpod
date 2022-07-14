@@ -32,6 +32,7 @@ abstract class ProfileRepository {
   Future<Either<Failure, List<AlbumData>>> fetchAlbum(String username);
   Future<Either<Failure, List<ActivitiesData>>> fetchActivities(String username);
   Future<Either<Failure, void>> editActivities(int id, bool isPublic);
+  Future<Either<Failure, void>> editSkill(SkillData data);
 }
 
 final Provider profileRespository = Provider<ProfileRespositoryImpl>((ref) {

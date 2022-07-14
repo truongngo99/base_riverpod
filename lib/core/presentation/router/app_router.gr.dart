@@ -55,9 +55,11 @@ class _$AppRouter extends RootStackRouter {
           barrierDismissible: false);
     },
     EditSkillRoute.name: (routeData) {
+      final args = routeData.argsAs<EditSkillRouteArgs>(
+          orElse: () => const EditSkillRouteArgs());
       return CustomPage<dynamic>(
           routeData: routeData,
-          child: const EditSkillScreen(),
+          child: EditSkillScreen(key: args.key),
           transitionsBuilder: TransitionsBuilders.slideLeft,
           durationInMilliseconds: 100,
           opaque: true,
@@ -152,10 +154,23 @@ class ProfileRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [EditSkillScreen]
-class EditSkillRoute extends PageRouteInfo<void> {
-  const EditSkillRoute() : super(EditSkillRoute.name, path: '/skill/edit');
+class EditSkillRoute extends PageRouteInfo<EditSkillRouteArgs> {
+  EditSkillRoute({Key? key})
+      : super(EditSkillRoute.name,
+            path: '/skill/edit', args: EditSkillRouteArgs(key: key));
 
   static const String name = 'EditSkillRoute';
+}
+
+class EditSkillRouteArgs {
+  const EditSkillRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'EditSkillRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
