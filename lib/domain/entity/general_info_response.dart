@@ -9,23 +9,22 @@ import 'dart:convert';
 part 'general_info_response.g.dart';
 part 'general_info_response.freezed.dart';
 
-@Freezed(makeCollectionsUnmodifiable: false, toJson: false, fromJson: false)
-@JsonSerializable(fieldRename: FieldRename.snake)
+@unfreezed
 class GeneralInfoData with _$GeneralInfoData {
-    const factory GeneralInfoData({
+    factory GeneralInfoData({
         required Catchphrase catchphrase,
-        required TravelOrganizations travelOrganizations,
-        required List<LanguageSkill> languageSkills,
-        required List<GeneralInfo> generalInfos,
-        required Catchphrase selfIntroduction,
+        @JsonKey(name: "travel_organizations") required TravelOrganizations travelOrganizations,
+        @JsonKey(name: "language_skills") required List<LanguageSkill> languageSkills,
+        @JsonKey(name: "general_infos") required List<GeneralInfo> generalInfos,
+        @JsonKey(name: "self_introduction")required Catchphrase selfIntroduction,
     }) = _GeneralInfoData;
 
     factory GeneralInfoData.fromJson(Map<String, dynamic> json) => _$GeneralInfoDataFromJson(json);
 }
 
-@freezed
+@unfreezed
 class Catchphrase with _$Catchphrase {
-    const factory Catchphrase({
+    factory Catchphrase({
         required String? ja,
         required String? en,
     }) = _Catchphrase;
@@ -57,7 +56,7 @@ class LanguageSkill with _$LanguageSkill {
     factory LanguageSkill.fromJson(Map<String, dynamic> json) => _$LanguageSkillFromJson(json);
 }
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class TravelOrganizations with _$TravelOrganizations {
     const factory TravelOrganizations({
         required List<String>? ja,

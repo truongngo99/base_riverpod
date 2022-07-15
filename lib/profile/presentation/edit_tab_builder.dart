@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:base_riverpod/core/extension/imageX.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';
+import 'package:sticky_headers/sticky_headers.dart';
 
 import '../../gen/assets.gen.dart';
 
@@ -24,14 +25,16 @@ class EditScreenBuilder extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: Container(
-        color: ColorName.profileBackground,
-        child: SingleChildScrollView(
-          child: Container(
+      body: SingleChildScrollView(
+        child: StickyHeader(
+          header: Container(
+            color: Colors.white,
+            child: _buildTopViewWidget(context, ref)
+            ),
+          content: Container(
             color: Colors.white,
             child: Column(
               children: [
-                _buildTopViewWidget(context, ref),
                 body,
                 _buildBottomViewWidget(context)
               ],
@@ -44,48 +47,48 @@ class EditScreenBuilder extends ConsumerWidget {
 
   Widget _buildTopViewWidget(BuildContext context, WidgetRef ref) {
     return SafeArea(
+      bottom: false,
       child: Column(
         children: [
-          Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Assets.images.iconAppbar.image().iconify(36),
-                      GestureDetector(
-                        onTap:  () {
-                          context.pushRoute(const MenuRoute());
-                        },
-                        child: const Icon(Icons.menu, color: Colors.black)
-                        ),
-                    ]),
-              ),
-              const SizedBox(height: 10),
-              Divider(color: Colors.grey[400], height: 3),
-              Stack(
-                alignment: Alignment.centerLeft,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        topTitle,
-                         textAlign: TextAlign.center,
-                         style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                         )
-                      ),
-                  ],
-                ),
-                GestureDetector(
-                        onTap: () {
-                          context.router.pop(true);
-                        },
-                        child: Assets.images.arrowBackIos.image().iconify(48)),
-              ])
-            ],
+                  Assets.images.iconAppbar.image().iconify(36),
+                  GestureDetector(
+                    onTap:  () {
+                      context.pushRoute(const MenuRoute());
+                    },
+                    child: const Icon(Icons.menu, color: Colors.black)
+                    ),
+                ]),
           ),
+          const SizedBox(height: 10),
+          Divider(color: Colors.grey[400], height: 3),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Stack(
+              alignment: Alignment.centerLeft,
+              children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      topTitle,
+                       textAlign: TextAlign.center,
+                       style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                       )
+                    ),
+                ],
+              ),
+              GestureDetector(
+                onTap: () {
+                  context.router.pop(true);
+                },
+                child: Assets.images.arrowLeft.image().iconify(18)),
+            ]),
+          )
         ],
       ),
     );

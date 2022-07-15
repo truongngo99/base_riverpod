@@ -1,3 +1,5 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:base_riverpod/core/presentation/router/app_router.dart';
 import 'package:base_riverpod/domain/entity/general_info_response.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/profile/presentation/notifier/home_tab_notifier.dart';
@@ -24,15 +26,14 @@ class HomeTabScreen extends ConsumerWidget {
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        _buildBioWidget(ref),
+        _buildBioWidget(context, ref),
         const SizedBox(height: 30),
         _buildSkillWidget(_skillList),
       ]),
     );
   }
 
-  Widget _buildBioWidget(WidgetRef ref) {
-
+  Widget _buildBioWidget(BuildContext context, WidgetRef ref) {
     final generalInfo = ref.watch(profileNotifierProvider).generalInfo;
 
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -47,7 +48,12 @@ class HomeTabScreen extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
             child: GestureDetector(
-                onTap: () {},
+                 onTap: () async {
+              final result = await context.router.push(EditHomeRoute());
+              if (result == true) {
+                // ref.read(activitiesNotifierProvider.notifier).updateOnDismiss();
+              }
+              },
                 child: Assets.images.editProfile.image(width: 24, height: 24)),
           ),
         ],

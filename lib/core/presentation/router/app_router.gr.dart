@@ -73,6 +73,17 @@ class _$AppRouter extends RootStackRouter {
           durationInMilliseconds: 100,
           opaque: true,
           barrierDismissible: false);
+    },
+    EditHomeRoute.name: (routeData) {
+      final args = routeData.argsAs<EditHomeRouteArgs>(
+          orElse: () => const EditHomeRouteArgs());
+      return CustomPage<dynamic>(
+          routeData: routeData,
+          child: EditHomeScreen(key: args.key),
+          transitionsBuilder: TransitionsBuilders.slideLeft,
+          durationInMilliseconds: 100,
+          opaque: true,
+          barrierDismissible: false);
     }
   };
 
@@ -84,7 +95,8 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(MenuRoute.name, path: '/menu'),
         RouteConfig(ProfileRoute.name, path: '/profile'),
         RouteConfig(EditSkillRoute.name, path: '/skill/edit'),
-        RouteConfig(EditActivitiesRoute.name, path: '/activities/edit')
+        RouteConfig(EditActivitiesRoute.name, path: '/activities/edit'),
+        RouteConfig(EditHomeRoute.name, path: '/home/edit')
       ];
 }
 
@@ -180,4 +192,25 @@ class EditActivitiesRoute extends PageRouteInfo<void> {
       : super(EditActivitiesRoute.name, path: '/activities/edit');
 
   static const String name = 'EditActivitiesRoute';
+}
+
+/// generated route for
+/// [EditHomeScreen]
+class EditHomeRoute extends PageRouteInfo<EditHomeRouteArgs> {
+  EditHomeRoute({Key? key})
+      : super(EditHomeRoute.name,
+            path: '/home/edit', args: EditHomeRouteArgs(key: key));
+
+  static const String name = 'EditHomeRoute';
+}
+
+class EditHomeRouteArgs {
+  const EditHomeRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'EditHomeRouteArgs{key: $key}';
+  }
 }

@@ -164,4 +164,17 @@ class ProfileRespositoryImpl implements ProfileRepository {
       return const Left(ConnectionFailure('Failed to connect to the network'));
     }
   }
+
+ 
+  @override
+  Future<Either<Failure, void>> editGeneralInfo(GeneralInfoData data) async {
+    try {
+      final result = await remoteDataSource.editGeneralInfo(data);
+      return Right(result);
+    } on ServerException {
+      return const Left(ServerFailure("abc"));
+    } on SocketException {
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    }
+  }
 }

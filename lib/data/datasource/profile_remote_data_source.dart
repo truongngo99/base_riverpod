@@ -38,6 +38,7 @@ abstract class ProfileRemoteDataSource {
   Future<List<ActivitiesData>> fetchActivities(String username);
   Future<void> editActivities(int id, bool isPublic);
   Future<void> editSkill(SkillData data);
+  Future<void> editGeneralInfo(GeneralInfoData data);
 }
 
 class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
@@ -171,6 +172,17 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
     data: data.toJson());
      if (response.statusCode == 200) {
       print("put success");
+      return;
+    } else {
+      throw ServerException();
+    }
+  }
+  
+  @override
+  Future<void> editGeneralInfo(GeneralInfoData data) async {
+    final response = await _dio.put("api/v1/guides/me/general_info",
+    data: data.toJson());
+     if (response.statusCode == 200) {
       return;
     } else {
       throw ServerException();

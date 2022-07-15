@@ -291,7 +291,7 @@ class _EditSkillScreenState extends ConsumerState<EditSkillScreen> {
               ),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(
-                  ColorName.greyBackground,
+                  ColorName.greyBackground.withOpacity(0.2),
                 ),
                 shape: MaterialStateProperty.all<OutlinedBorder>(
                   RoundedRectangleBorder(

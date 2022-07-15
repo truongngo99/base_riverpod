@@ -4,6 +4,7 @@ import 'package:base_riverpod/home/presentation/home_screen.dart';
 import 'package:base_riverpod/menu/presentation/menu_screen.dart';
 import 'package:base_riverpod/profile/presentation/profile_screen.dart';
 import 'package:base_riverpod/profile/presentation/tab/edit/edit_activities_screen.dart';
+import 'package:base_riverpod/profile/presentation/tab/edit/edit_home_screen.dart';
 import 'package:base_riverpod/profile/presentation/tab/edit/edit_skill_screen.dart';
 import 'package:base_riverpod/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -35,12 +36,11 @@ part 'app_router.gr.dart';
         path: '/activities/edit',
         transitionsBuilder: TransitionsBuilders.slideLeft,
         durationInMilliseconds: 100),
-    // CustomRoute(
-    //   path: '/profile',
-    //   page: ProfileScreen,
-    //   transitionsBuilder: TransitionsBuilders.noTransition,
-    //   durationInMilliseconds: 200),
-    //MaterialRoute(page: TestApiPage, initial: true),
+    CustomRoute(
+        page: EditHomeScreen,
+        path: '/home/edit',
+        transitionsBuilder: TransitionsBuilders.slideLeft,
+        durationInMilliseconds: 100),
   ],
   replaceInRouteName: 'Page|Screen,Route',
 )

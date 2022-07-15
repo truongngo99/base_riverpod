@@ -14,15 +14,36 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+GeneralInfoData _$GeneralInfoDataFromJson(Map<String, dynamic> json) {
+  return _GeneralInfoData.fromJson(json);
+}
+
 /// @nodoc
 mixin _$GeneralInfoData {
   Catchphrase get catchphrase => throw _privateConstructorUsedError;
+  set catchphrase(Catchphrase value) => throw _privateConstructorUsedError;
+  @JsonKey(name: "travel_organizations")
   TravelOrganizations get travelOrganizations =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: "travel_organizations")
+  set travelOrganizations(TravelOrganizations value) =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: "language_skills")
   List<LanguageSkill> get languageSkills => throw _privateConstructorUsedError;
+  @JsonKey(name: "language_skills")
+  set languageSkills(List<LanguageSkill> value) =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: "general_infos")
   List<GeneralInfo> get generalInfos => throw _privateConstructorUsedError;
+  @JsonKey(name: "general_infos")
+  set generalInfos(List<GeneralInfo> value) =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: "self_introduction")
   Catchphrase get selfIntroduction => throw _privateConstructorUsedError;
+  @JsonKey(name: "self_introduction")
+  set selfIntroduction(Catchphrase value) => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GeneralInfoDataCopyWith<GeneralInfoData> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,10 +56,14 @@ abstract class $GeneralInfoDataCopyWith<$Res> {
       _$GeneralInfoDataCopyWithImpl<$Res>;
   $Res call(
       {Catchphrase catchphrase,
-      TravelOrganizations travelOrganizations,
-      List<LanguageSkill> languageSkills,
-      List<GeneralInfo> generalInfos,
-      Catchphrase selfIntroduction});
+      @JsonKey(name: "travel_organizations")
+          TravelOrganizations travelOrganizations,
+      @JsonKey(name: "language_skills")
+          List<LanguageSkill> languageSkills,
+      @JsonKey(name: "general_infos")
+          List<GeneralInfo> generalInfos,
+      @JsonKey(name: "self_introduction")
+          Catchphrase selfIntroduction});
 
   $CatchphraseCopyWith<$Res> get catchphrase;
   $TravelOrganizationsCopyWith<$Res> get travelOrganizations;
@@ -118,10 +143,14 @@ abstract class _$$_GeneralInfoDataCopyWith<$Res>
   @override
   $Res call(
       {Catchphrase catchphrase,
-      TravelOrganizations travelOrganizations,
-      List<LanguageSkill> languageSkills,
-      List<GeneralInfo> generalInfos,
-      Catchphrase selfIntroduction});
+      @JsonKey(name: "travel_organizations")
+          TravelOrganizations travelOrganizations,
+      @JsonKey(name: "language_skills")
+          List<LanguageSkill> languageSkills,
+      @JsonKey(name: "general_infos")
+          List<GeneralInfo> generalInfos,
+      @JsonKey(name: "self_introduction")
+          Catchphrase selfIntroduction});
 
   @override
   $CatchphraseCopyWith<$Res> get catchphrase;
@@ -176,81 +205,78 @@ class __$$_GeneralInfoDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_GeneralInfoData implements _GeneralInfoData {
-  const _$_GeneralInfoData(
+  _$_GeneralInfoData(
       {required this.catchphrase,
-      required this.travelOrganizations,
-      required this.languageSkills,
-      required this.generalInfos,
-      required this.selfIntroduction});
+      @JsonKey(name: "travel_organizations") required this.travelOrganizations,
+      @JsonKey(name: "language_skills") required this.languageSkills,
+      @JsonKey(name: "general_infos") required this.generalInfos,
+      @JsonKey(name: "self_introduction") required this.selfIntroduction});
+
+  factory _$_GeneralInfoData.fromJson(Map<String, dynamic> json) =>
+      _$$_GeneralInfoDataFromJson(json);
 
   @override
-  final Catchphrase catchphrase;
+  Catchphrase catchphrase;
   @override
-  final TravelOrganizations travelOrganizations;
+  @JsonKey(name: "travel_organizations")
+  TravelOrganizations travelOrganizations;
   @override
-  final List<LanguageSkill> languageSkills;
+  @JsonKey(name: "language_skills")
+  List<LanguageSkill> languageSkills;
   @override
-  final List<GeneralInfo> generalInfos;
+  @JsonKey(name: "general_infos")
+  List<GeneralInfo> generalInfos;
   @override
-  final Catchphrase selfIntroduction;
+  @JsonKey(name: "self_introduction")
+  Catchphrase selfIntroduction;
 
   @override
   String toString() {
     return 'GeneralInfoData(catchphrase: $catchphrase, travelOrganizations: $travelOrganizations, languageSkills: $languageSkills, generalInfos: $generalInfos, selfIntroduction: $selfIntroduction)';
   }
 
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_GeneralInfoData &&
-            const DeepCollectionEquality()
-                .equals(other.catchphrase, catchphrase) &&
-            const DeepCollectionEquality()
-                .equals(other.travelOrganizations, travelOrganizations) &&
-            const DeepCollectionEquality()
-                .equals(other.languageSkills, languageSkills) &&
-            const DeepCollectionEquality()
-                .equals(other.generalInfos, generalInfos) &&
-            const DeepCollectionEquality()
-                .equals(other.selfIntroduction, selfIntroduction));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(catchphrase),
-      const DeepCollectionEquality().hash(travelOrganizations),
-      const DeepCollectionEquality().hash(languageSkills),
-      const DeepCollectionEquality().hash(generalInfos),
-      const DeepCollectionEquality().hash(selfIntroduction));
-
   @JsonKey(ignore: true)
   @override
   _$$_GeneralInfoDataCopyWith<_$_GeneralInfoData> get copyWith =>
       __$$_GeneralInfoDataCopyWithImpl<_$_GeneralInfoData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_GeneralInfoDataToJson(this);
+  }
 }
 
 abstract class _GeneralInfoData implements GeneralInfoData {
-  const factory _GeneralInfoData(
-      {required final Catchphrase catchphrase,
-      required final TravelOrganizations travelOrganizations,
-      required final List<LanguageSkill> languageSkills,
-      required final List<GeneralInfo> generalInfos,
-      required final Catchphrase selfIntroduction}) = _$_GeneralInfoData;
+  factory _GeneralInfoData(
+      {required Catchphrase catchphrase,
+      @JsonKey(name: "travel_organizations")
+          required TravelOrganizations travelOrganizations,
+      @JsonKey(name: "language_skills")
+          required List<LanguageSkill> languageSkills,
+      @JsonKey(name: "general_infos")
+          required List<GeneralInfo> generalInfos,
+      @JsonKey(name: "self_introduction")
+          required Catchphrase selfIntroduction}) = _$_GeneralInfoData;
+
+  factory _GeneralInfoData.fromJson(Map<String, dynamic> json) =
+      _$_GeneralInfoData.fromJson;
 
   @override
   Catchphrase get catchphrase => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "travel_organizations")
   TravelOrganizations get travelOrganizations =>
       throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "language_skills")
   List<LanguageSkill> get languageSkills => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "general_infos")
   List<GeneralInfo> get generalInfos => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "self_introduction")
   Catchphrase get selfIntroduction => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -265,7 +291,9 @@ Catchphrase _$CatchphraseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Catchphrase {
   String? get ja => throw _privateConstructorUsedError;
+  set ja(String? value) => throw _privateConstructorUsedError;
   String? get en => throw _privateConstructorUsedError;
+  set en(String? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -348,36 +376,20 @@ class __$$_CatchphraseCopyWithImpl<$Res> extends _$CatchphraseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Catchphrase implements _Catchphrase {
-  const _$_Catchphrase({required this.ja, required this.en});
+  _$_Catchphrase({required this.ja, required this.en});
 
   factory _$_Catchphrase.fromJson(Map<String, dynamic> json) =>
       _$$_CatchphraseFromJson(json);
 
   @override
-  final String? ja;
+  String? ja;
   @override
-  final String? en;
+  String? en;
 
   @override
   String toString() {
     return 'Catchphrase(ja: $ja, en: $en)';
   }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Catchphrase &&
-            const DeepCollectionEquality().equals(other.ja, ja) &&
-            const DeepCollectionEquality().equals(other.en, en));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(ja),
-      const DeepCollectionEquality().hash(en));
 
   @JsonKey(ignore: true)
   @override
@@ -391,8 +403,8 @@ class _$_Catchphrase implements _Catchphrase {
 }
 
 abstract class _Catchphrase implements Catchphrase {
-  const factory _Catchphrase(
-      {required final String? ja, required final String? en}) = _$_Catchphrase;
+  factory _Catchphrase({required String? ja, required String? en}) =
+      _$_Catchphrase;
 
   factory _Catchphrase.fromJson(Map<String, dynamic> json) =
       _$_Catchphrase.fromJson;
@@ -845,11 +857,11 @@ class __$$_TravelOrganizationsCopyWithImpl<$Res>
   }) {
     return _then(_$_TravelOrganizations(
       ja: ja == freezed
-          ? _value._ja
+          ? _value.ja
           : ja // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       en: en == freezed
-          ? _value._en
+          ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ));
@@ -859,31 +871,15 @@ class __$$_TravelOrganizationsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_TravelOrganizations implements _TravelOrganizations {
-  const _$_TravelOrganizations(
-      {required final List<String>? ja, required final List<String>? en})
-      : _ja = ja,
-        _en = en;
+  const _$_TravelOrganizations({required this.ja, required this.en});
 
   factory _$_TravelOrganizations.fromJson(Map<String, dynamic> json) =>
       _$$_TravelOrganizationsFromJson(json);
 
-  final List<String>? _ja;
   @override
-  List<String>? get ja {
-    final value = _ja;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<String>? _en;
+  final List<String>? ja;
   @override
-  List<String>? get en {
-    final value = _en;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+  final List<String>? en;
 
   @override
   String toString() {
@@ -895,16 +891,16 @@ class _$_TravelOrganizations implements _TravelOrganizations {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TravelOrganizations &&
-            const DeepCollectionEquality().equals(other._ja, _ja) &&
-            const DeepCollectionEquality().equals(other._en, _en));
+            const DeepCollectionEquality().equals(other.ja, ja) &&
+            const DeepCollectionEquality().equals(other.en, en));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_ja),
-      const DeepCollectionEquality().hash(_en));
+      const DeepCollectionEquality().hash(ja),
+      const DeepCollectionEquality().hash(en));
 
   @JsonKey(ignore: true)
   @override

@@ -88,7 +88,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               ProfileTabBuilder(body: HomeTabScreen()),
               ProfileTabBuilder(body: TravelSpotTabScreen()),
               ProfileTabBuilder(body: SkillTabScreen()),
-              ProfileTabBuilder(body: ActivitiesTabScreen()),
+              const ProfileTabBuilder(body: ActivitiesTabScreen()),
               ProfileTabBuilder(body: GalleryTabScreen()),
             ],
           ),

@@ -19,6 +19,10 @@ class $AssetsImagesGen {
   AssetGenImage get arrowBackIos =>
       const AssetGenImage('assets/images/arrow_back_ios.png');
 
+  /// File path: assets/images/arrow_left.png
+  AssetGenImage get arrowLeft =>
+      const AssetGenImage('assets/images/arrow_left.png');
+
   /// File path: assets/images/avatar-background.png
   AssetGenImage get avatarBackground =>
       const AssetGenImage('assets/images/avatar-background.png');
