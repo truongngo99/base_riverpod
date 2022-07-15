@@ -6,23 +6,6 @@ part of 'general_info_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-GeneralInfo _$GeneralInfoFromJson(Map<String, dynamic> json) => GeneralInfo(
-      id: json['id'] as int,
-      inputType: json['input_type'] as String?,
-      value: json['value'] == null
-          ? null
-          : Catchphrase.fromJson(json['value'] as Map<String, dynamic>),
-      mediaUrl: json['media_url'] as String?,
-    );
-
-Map<String, dynamic> _$GeneralInfoToJson(GeneralInfo instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'input_type': instance.inputType,
-      'value': instance.value,
-      'media_url': instance.mediaUrl,
-    };
-
 _$_GeneralInfoData _$$_GeneralInfoDataFromJson(Map<String, dynamic> json) =>
     _$_GeneralInfoData(
       catchphrase:
@@ -58,6 +41,24 @@ Map<String, dynamic> _$$_CatchphraseToJson(_$_Catchphrase instance) =>
     <String, dynamic>{
       'ja': instance.ja,
       'en': instance.en,
+    };
+
+_$_GeneralInfo _$$_GeneralInfoFromJson(Map<String, dynamic> json) =>
+    _$_GeneralInfo(
+      id: json['id'] as int,
+      inputType: json['input_type'] as String?,
+      value: json['value'] == null
+          ? null
+          : Catchphrase.fromJson(json['value'] as Map<String, dynamic>),
+      mediaUrl: json['media_url'] as String?,
+    );
+
+Map<String, dynamic> _$$_GeneralInfoToJson(_$_GeneralInfo instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'input_type': instance.inputType,
+      'value': instance.value,
+      'media_url': instance.mediaUrl,
     };
 
 _$_LanguageSkill _$$_LanguageSkillFromJson(Map<String, dynamic> json) =>

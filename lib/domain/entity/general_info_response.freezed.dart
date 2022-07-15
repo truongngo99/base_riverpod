@@ -419,13 +419,26 @@ abstract class _Catchphrase implements Catchphrase {
       throw _privateConstructorUsedError;
 }
 
+GeneralInfo _$GeneralInfoFromJson(Map<String, dynamic> json) {
+  return _GeneralInfo.fromJson(json);
+}
+
 /// @nodoc
 mixin _$GeneralInfo {
   int get id => throw _privateConstructorUsedError;
+  set id(int value) => throw _privateConstructorUsedError;
+  @JsonKey(name: "input_type")
   String? get inputType => throw _privateConstructorUsedError;
+  @JsonKey(name: "input_type")
+  set inputType(String? value) => throw _privateConstructorUsedError;
   Catchphrase? get value => throw _privateConstructorUsedError;
+  set value(Catchphrase? value) => throw _privateConstructorUsedError;
+  @JsonKey(name: "media_url")
   String? get mediaUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: "media_url")
+  set mediaUrl(String? value) => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GeneralInfoCopyWith<GeneralInfo> get copyWith =>
       throw _privateConstructorUsedError;
@@ -436,7 +449,11 @@ abstract class $GeneralInfoCopyWith<$Res> {
   factory $GeneralInfoCopyWith(
           GeneralInfo value, $Res Function(GeneralInfo) then) =
       _$GeneralInfoCopyWithImpl<$Res>;
-  $Res call({int id, String? inputType, Catchphrase? value, String? mediaUrl});
+  $Res call(
+      {int id,
+      @JsonKey(name: "input_type") String? inputType,
+      Catchphrase? value,
+      @JsonKey(name: "media_url") String? mediaUrl});
 
   $CatchphraseCopyWith<$Res>? get value;
 }
@@ -495,7 +512,11 @@ abstract class _$$_GeneralInfoCopyWith<$Res>
           _$_GeneralInfo value, $Res Function(_$_GeneralInfo) then) =
       __$$_GeneralInfoCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String? inputType, Catchphrase? value, String? mediaUrl});
+  $Res call(
+      {int id,
+      @JsonKey(name: "input_type") String? inputType,
+      Catchphrase? value,
+      @JsonKey(name: "media_url") String? mediaUrl});
 
   @override
   $CatchphraseCopyWith<$Res>? get value;
@@ -540,67 +561,63 @@ class __$$_GeneralInfoCopyWithImpl<$Res> extends _$GeneralInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_GeneralInfo implements _GeneralInfo {
-  const _$_GeneralInfo(
+  _$_GeneralInfo(
       {required this.id,
-      required this.inputType,
+      @JsonKey(name: "input_type") required this.inputType,
       required this.value,
-      required this.mediaUrl});
+      @JsonKey(name: "media_url") required this.mediaUrl});
+
+  factory _$_GeneralInfo.fromJson(Map<String, dynamic> json) =>
+      _$$_GeneralInfoFromJson(json);
 
   @override
-  final int id;
+  int id;
   @override
-  final String? inputType;
+  @JsonKey(name: "input_type")
+  String? inputType;
   @override
-  final Catchphrase? value;
+  Catchphrase? value;
   @override
-  final String? mediaUrl;
+  @JsonKey(name: "media_url")
+  String? mediaUrl;
 
   @override
   String toString() {
     return 'GeneralInfo(id: $id, inputType: $inputType, value: $value, mediaUrl: $mediaUrl)';
   }
 
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_GeneralInfo &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.inputType, inputType) &&
-            const DeepCollectionEquality().equals(other.value, value) &&
-            const DeepCollectionEquality().equals(other.mediaUrl, mediaUrl));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(inputType),
-      const DeepCollectionEquality().hash(value),
-      const DeepCollectionEquality().hash(mediaUrl));
-
   @JsonKey(ignore: true)
   @override
   _$$_GeneralInfoCopyWith<_$_GeneralInfo> get copyWith =>
       __$$_GeneralInfoCopyWithImpl<_$_GeneralInfo>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_GeneralInfoToJson(this);
+  }
 }
 
 abstract class _GeneralInfo implements GeneralInfo {
-  const factory _GeneralInfo(
-      {required final int id,
-      required final String? inputType,
-      required final Catchphrase? value,
-      required final String? mediaUrl}) = _$_GeneralInfo;
+  factory _GeneralInfo(
+      {required int id,
+      @JsonKey(name: "input_type") required String? inputType,
+      required Catchphrase? value,
+      @JsonKey(name: "media_url") required String? mediaUrl}) = _$_GeneralInfo;
+
+  factory _GeneralInfo.fromJson(Map<String, dynamic> json) =
+      _$_GeneralInfo.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "input_type")
   String? get inputType => throw _privateConstructorUsedError;
   @override
   Catchphrase? get value => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "media_url")
   String? get mediaUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 class HomeTabScreen extends ConsumerWidget {
   HomeTabScreen({Key? key}) : super(key: key);
 
@@ -48,12 +47,15 @@ class HomeTabScreen extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
             child: GestureDetector(
-                 onTap: () async {
-              final result = await context.router.push(EditHomeRoute());
-              if (result == true) {
-                // ref.read(activitiesNotifierProvider.notifier).updateOnDismiss();
-              }
-              },
+                onTap: () async {
+                  final result =
+                      await context.router.push(EditHomeRoute());
+                  if (result == true) {
+                    ref
+                        .read(profileNotifierProvider.notifier)
+                        .updateOnDismiss();
+                  }
+                },
                 child: Assets.images.editProfile.image(width: 24, height: 24)),
           ),
         ],
@@ -61,24 +63,25 @@ class HomeTabScreen extends ConsumerWidget {
       const SizedBox(height: 20),
       Text(generalInfo?.catchphrase.ja ?? "",
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-      for (var info in generalInfo?.generalInfos ?? []) Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20),
-        child: _buildBioElement(info),
-      ),
+      for (var info in generalInfo?.generalInfos ?? [])
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          child: _buildBioElement(info),
+        ),
     ]);
   }
 
   Widget _buildBioElement(GeneralInfo info) {
     return (info.inputType == "image")
         ? ClipRRect(
-          borderRadius: BorderRadius.circular(8),
-          child: FadeInImage.assetNetwork(
+            borderRadius: BorderRadius.circular(8),
+            child: FadeInImage.assetNetwork(
               placeholder: Assets.images.placeholderVjp.path,
               image: info.mediaUrl ??
                   "https://www.publicdomainpictures.net/pictures/280000/nahled/not-found-image-15383864787lu.jpg",
               fit: BoxFit.fill,
             ),
-        )
+          )
         : Html(data: info.value?.ja);
   }
 

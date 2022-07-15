@@ -32,14 +32,13 @@ class Catchphrase with _$Catchphrase {
     factory Catchphrase.fromJson(Map<String, dynamic> json) => _$CatchphraseFromJson(json);
 }
 
-@Freezed(makeCollectionsUnmodifiable: false, toJson: false, fromJson: false)
-@JsonSerializable(fieldRename: FieldRename.snake)
+@unfreezed
 class GeneralInfo with _$GeneralInfo {
-    const factory GeneralInfo({
+    factory GeneralInfo({
         required int id,
-        required String? inputType,
+        @JsonKey(name: "input_type") required String? inputType,
         required Catchphrase? value,
-        required String? mediaUrl,
+        @JsonKey(name: "media_url") required String? mediaUrl,
     }) = _GeneralInfo;
 
     factory GeneralInfo.fromJson(Map<String, dynamic> json) => _$GeneralInfoFromJson(json);
