@@ -11,6 +11,7 @@
 
     <color name="grey">#CCCCCC</color>
     <color name="greyMaterial" type="material">#CCCCCC</color>
+    <color name="greyBackground">#C8C8C8</color>
     <color name="second_background_color">#FF39393D</color>
     <color name="appbar_background_color">#EFEFEF</color>
 </resources>

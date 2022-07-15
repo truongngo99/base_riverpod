@@ -25,7 +25,7 @@ class SkillTabScreen extends ConsumerWidget {
   }
 
   Widget _buildAwardWidget(BuildContext context, WidgetRef ref) {
-    final skill = ref.watch(profileNotifierProvider).skill;
+    final skill = ref.watch(skillNotifierProvider).skill;
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -47,7 +47,7 @@ class SkillTabScreen extends ConsumerWidget {
                       if (result == true) {
                         ref
                             .read(skillNotifierProvider.notifier)
-                            .initFetch();
+                            .updateOnDismiss();
                       }
                     },
                     child:

@@ -49,6 +49,9 @@ class ColorName {
   /// Color: #CCCCCC
   static const Color grey = Color(0xFFCCCCCC);
 
+  /// Color: #C8C8C8
+  static const Color greyBackground = Color(0xFFC8C8C8);
+
   /// MaterialColor:
   ///   50: #FFF9F9F9
   ///   100: #FFF0F0F0

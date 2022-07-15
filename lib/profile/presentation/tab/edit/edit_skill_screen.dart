@@ -274,17 +274,24 @@ class _EditSkillScreenState extends ConsumerState<EditSkillScreen> {
                 ref.read(skillNotifierProvider.notifier).cloneNewDegree();
               },
               // ignore: sort_child_properties_last
-              child: const Text(
-                'Add',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
+              child: Row(
+                children: [
+                  Assets.images.plus.image().iconify(),
+                  const SizedBox(width: 10),
+                  const Text(
+                    '資格を追加',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: ColorName.orangePrimary,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
               ),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(
-                  const Color(0xFFE74E00),
+                  ColorName.greyBackground,
                 ),
                 shape: MaterialStateProperty.all<OutlinedBorder>(
                   RoundedRectangleBorder(
@@ -294,6 +301,7 @@ class _EditSkillScreenState extends ConsumerState<EditSkillScreen> {
               ),
             ),
           ),
+          const SizedBox(height: 36),
           SizedBox(
             width: MediaQuery.of(context).size.width,
             height: 44,

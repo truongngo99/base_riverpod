@@ -56,8 +56,13 @@ class SkillNotifier extends ChangeNotifier {
     result.fold((l) {}, (r) {
       toeicScore = r.toeic;
       travelGeography = r.travelGeography;
-      _skill = r.copyWith(ortherDegrees: r.ortherDegrees.copyWith(ja: List.from(r.ortherDegrees.ja ?? [])));
-      _editableSkill =  r.copyWith(ortherDegrees: r.ortherDegrees.copyWith(ja: List.from(r.ortherDegrees.ja ?? [])));
+      _skill = r.copyWith(
+          ortherDegrees: r.ortherDegrees
+              .copyWith(ja: List.from(r.ortherDegrees.ja ?? [])));
+      _editableSkill = r.copyWith(
+          ortherDegrees: r.ortherDegrees
+              .copyWith(ja: List.from(r.ortherDegrees.ja ?? [])));
+      notifyListeners();
     });
   }
 
@@ -68,7 +73,7 @@ class SkillNotifier extends ChangeNotifier {
 
   void removeOtherDegree(int index) {
     _editableSkill?.ortherDegrees.ja?.removeAt(index);
-        notifyListeners();
+    notifyListeners();
   }
 
   void cloneNewDegree() {
@@ -76,14 +81,24 @@ class SkillNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-   Future<void> saveEditSkill() async {
+  void updateOnDismiss() async {
+    if (_appliedChanged) {
+      await _fetchSkill();
+      _appliedChanged = false;
+    } else {
+      if (_skill != null) {
+      _editableSkill = _skill!.copyWith(ortherDegrees: _skill!.ortherDegrees.copyWith());
+      }
+    }
+  }
+
+  Future<void> saveEditSkill() async {
     if (_editableSkill != null) {
-    await repo.editSkill(_editableSkill!);
+      await repo.editSkill(_editableSkill!);
     }
     _appliedChanged = true;
     notifyListeners();
   }
-
 }
 
 final skillNotifierProvider = ChangeNotifierProvider<SkillNotifier>((ref) {
