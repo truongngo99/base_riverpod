@@ -63,13 +63,14 @@ class AuthNotifier extends StateNotifier<AuthState> {
     state = failureOrSuccess.fold(
       (l) => AuthState.failure(l),
       (authDto) {
+          userDefault.refreshToken = authDto.refreshToken;
           return AuthState.authenticated(authDto);
       } ,
     );
   }
 
   Future<void> signOut() async {
-    final failureOrSuccess = await _authenticator.signOut();
+    final failureOrSuccess = await _authenticator.signOut(userDefault.refreshToken, userDefault.username, userDefault.birthday);
     state = failureOrSuccess.fold(
       (l) => AuthState.failure(l),
       (r) => const AuthState.unauthenticated(),

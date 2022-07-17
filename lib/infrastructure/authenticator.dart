@@ -22,6 +22,10 @@ class Authenticator {
     }
   }
 
+  Future<void> clearSession() async {
+     _cacheAuthDto = null;
+  }
+
   Future<bool> isSignedIn() =>
       getSignedInAuth().then((authDto) => authDto != null);
 
@@ -51,9 +55,21 @@ class Authenticator {
     return left(const AuthFailure.webView());
   }
 
-  Future<Either<AuthFailure, Unit>> signOut() async {
-    // TODO:
-    return right(unit);
+  Future<Either<AuthFailure, String>> signOut(String refreshToken, String name, String birthday) async {
+     try {
+      final remoteRes = await _authRemoteService.signOut(refreshToken, name, birthday);
+      return remoteRes.when(
+        noConnection: () => left(const AuthFailure.server()),
+        success: (data) {
+          clearSession();
+          return right(data);
+        },
+      );
+    } on RestApiException catch (e) {
+      return left(AuthFailure.server('ErrorCode: ${e.errorCode}'));
+    } catch (e) {
+      return left(AuthFailure.server(e.toString()));
+    }
   }
 
   Future<Either<AuthFailure, Unit>> getNewTokenFromWeb() async {

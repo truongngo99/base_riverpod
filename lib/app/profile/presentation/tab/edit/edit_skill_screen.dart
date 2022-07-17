@@ -1,10 +1,9 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:base_riverpod/app/profile/presentation/edit_tab_builder.dart';
+import 'package:base_riverpod/app/profile/presentation/notifier/skill_tab_notifier.dart';
 import 'package:base_riverpod/core/extension/imageX.dart';
-import 'package:base_riverpod/domain/entity/skill_response.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';
-import 'package:base_riverpod/profile/presentation/edit_tab_builder.dart';
-import 'package:base_riverpod/profile/presentation/notifier/skill_tab_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

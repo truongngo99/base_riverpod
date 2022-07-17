@@ -59,6 +59,7 @@ class ProfileNotifier extends ChangeNotifier {
     final result = await repo.fetchTopProfile();
     result.fold((l) {}, (r) {
       _topProfile = r;
+      
       notifyListeners();
     });
   }
@@ -74,7 +75,9 @@ class ProfileNotifier extends ChangeNotifier {
 
   Future<void> _fetchUserInfo() async {
     final result = await repo.fetchUserInfo();
-    result.fold((l) {}, (r) {});
+    result.fold((l) {}, (r) {
+      userDefault.birthday = r.birthday.toString();
+    });
   }
 
   Future<void> _fetchGeneralInfo() async {

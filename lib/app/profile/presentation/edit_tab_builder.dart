@@ -1,15 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:auto_route/auto_route.dart';
+import 'package:base_riverpod/core/extension/imageX.dart';
 import 'package:base_riverpod/core/presentation/router/app_router.dart';
+import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:base_riverpod/core/extension/imageX.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';
 import 'package:sticky_headers/sticky_headers.dart';
-
-import '../../gen/assets.gen.dart';
 
 class EditScreenBuilder extends ConsumerWidget {
   final String topTitle;

@@ -1,12 +1,11 @@
+import 'package:base_riverpod/app/profile/presentation/tab/activities_tab_screen.dart';
+import 'package:base_riverpod/app/profile/presentation/tab/gallery_tab_screen.dart';
+import 'package:base_riverpod/app/profile/presentation/tab/home_tab_screen.dart';
+import 'package:base_riverpod/app/profile/presentation/tab/skill_tab_screen.dart';
+import 'package:base_riverpod/app/profile/presentation/tab/travel_spot_tab_screen.dart';
 import 'package:base_riverpod/core/presentation/router/app_router.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';
-import 'package:base_riverpod/profile/presentation/notifier/home_tab_notifier.dart';
-import 'package:base_riverpod/profile/presentation/tab/activities_tab_screen.dart';
-import 'package:base_riverpod/profile/presentation/tab/gallery_tab_screen.dart';
-import 'package:base_riverpod/profile/presentation/tab/home_tab_screen.dart';
-import 'package:base_riverpod/profile/presentation/tab/skill_tab_screen.dart';
-import 'package:base_riverpod/profile/presentation/tab/travel_spot_tab_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';

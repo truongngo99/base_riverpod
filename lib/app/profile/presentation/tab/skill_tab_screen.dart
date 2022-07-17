@@ -1,8 +1,6 @@
+import 'package:base_riverpod/app/profile/presentation/notifier/skill_tab_notifier.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';
-import 'package:base_riverpod/profile/presentation/notifier/home_tab_notifier.dart';
-import 'package:base_riverpod/profile/presentation/notifier/skill_tab_notifier.dart';
-import 'package:base_riverpod/profile/presentation/tab/edit/edit_skill_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:base_riverpod/core/presentation/router/app_router.dart';

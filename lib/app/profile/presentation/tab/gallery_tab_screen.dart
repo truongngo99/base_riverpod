@@ -1,11 +1,8 @@
-import 'package:auto_route/auto_route.dart';
+import 'package:base_riverpod/app/profile/presentation/notifier/gallery_tab_notifier.dart';
 import 'package:base_riverpod/core/extension/imageX.dart';
 import 'package:base_riverpod/core/extension/stringX.dart';
-import 'package:base_riverpod/domain/entity/media_response.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';
-import 'package:base_riverpod/profile/presentation/notifier/gallery_tab_notifier.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -23,8 +20,6 @@ class _GalleryTabScreenState extends ConsumerState<GalleryTabScreen>
     Assets.images.home.path: "media",
     Assets.images.blackMapPin.path: "gallery",
   };
-
-  final PageController _pageController = PageController();
 
   ShapeBorder? bottomBarShape = const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(Radius.circular(8)),

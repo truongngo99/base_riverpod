@@ -1,11 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:base_riverpod/app/profile/presentation/notifier/home_tab_notifier.dart';
+import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';
-import 'package:base_riverpod/profile/presentation/notifier/home_tab_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../gen/assets.gen.dart';
 import '../utils/custom_clip_path.dart';
 
 class ProfileTabBuilder extends ConsumerWidget {

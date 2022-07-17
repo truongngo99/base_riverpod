@@ -36,4 +36,32 @@ class AuthRemoteService {
       rethrow;
     }
   }
+   Future<RemoteResponse<String>> signOut(String refreshToken, String name, String birthday) async {
+    try {
+      final response = await _dio.delete(
+        '/api/v1/logout',
+        data: {
+          'refresh_token': refreshToken,
+          'name': name,
+          'birthday': birthday
+        },
+      );
+      if (response.statusCode == 200) {
+        return RemoteResponse.success(response.data['message']);
+      } else {
+        throw RestApiException(response.statusCode);
+      }
+    } on DioError catch (e) {
+      if (e.isNoConnectionError) {
+        return const RemoteResponse.noConnection();
+      } else if (e.response != null) {
+        throw RestApiException(e.response!.statusCode);
+      } else {
+        rethrow;
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
 }

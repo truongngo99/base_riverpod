@@ -1,17 +1,19 @@
+import 'package:base_riverpod/auth/shared/auth_provider.dart';
+import 'package:base_riverpod/core/presentation/router/app_router.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
+import 'package:base_riverpod/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
-
-import '../../gen/colors.gen.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:auto_route/auto_route.dart';
 
-class MenuScreen extends StatefulWidget {
+class MenuScreen extends ConsumerStatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);
 
   @override
-  State<MenuScreen> createState() => _MenuScreenState();
+  ConsumerState<MenuScreen> createState() => _MenuScreenState();
 }
 
-class _MenuScreenState extends State<MenuScreen> {
+class _MenuScreenState extends ConsumerState<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,9 +153,15 @@ class _MenuScreenState extends State<MenuScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      "ログアウト",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                    GestureDetector(
+                      onTap: () async {
+                        await ref.read(authNotifierProvider.notifier).signOut();
+                        context.router.replaceAll([const LoginRoute()]);
+                      },
+                      child: const Text(
+                        "ログアウト",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ),
                     Assets.images.arrow.image()
                   ],

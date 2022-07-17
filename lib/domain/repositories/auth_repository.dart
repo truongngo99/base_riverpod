@@ -8,6 +8,7 @@ import 'package:dartz/dartz.dart';
 
 abstract class AuthRepository {
   Future<Either<Failure, AuthResponse>> login(String email, String password);
+  Future<Either<Failure, void>> logout(String refreshToken, String name, String birthday);
 }
 
 final Provider authRespository = Provider<AuthRespositoryImpl>((ref) {

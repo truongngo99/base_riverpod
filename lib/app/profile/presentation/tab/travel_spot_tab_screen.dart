@@ -1,6 +1,6 @@
+import 'package:base_riverpod/app/profile/presentation/notifier/travel_spot_tab_notifier.dart';
 import 'package:base_riverpod/domain/entity/map_pin_response.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
-import 'package:base_riverpod/profile/presentation/notifier/travel_spot_tab_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

@@ -12,6 +12,7 @@ import 'package:base_riverpod/domain/entity/auth_response.dart';
 
 abstract class AuthRemoteDataSource {
   Future<AuthResponse> login(String email, String password);
+  Future<void> logout(String refreshToken, String username, String birthday);
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
@@ -33,6 +34,25 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     
     if (response.statusCode == 200) {
       return AuthResponse.fromJson(json.decode(response.body));
+    } else {
+      // ignore: avoid_print
+      throw ServerException();
+    }
+  }
+  
+  @override
+  Future<void> logout(String refreshToken, String username, String birthday) async {
+    Map<String, String> bodyData = {
+      "refresh_token": refreshToken,
+      "name": username,
+      "birthday": birthday
+    };
+    final response = await client.delete(Uri.parse(Urls.login), headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    }, body: jsonEncode(bodyData));
+    
+    if (response.statusCode == 200) {
+      return;
     } else {
       // ignore: avoid_print
       throw ServerException();

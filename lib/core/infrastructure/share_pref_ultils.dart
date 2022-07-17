@@ -10,6 +10,8 @@ class SharePrefUtils {
   late SharedPreferences _pref;
   final keyWebURL = 'web_url';
   final keyUsername = 'username';
+  final keyRefreshToken = 'refresh_token';
+  final keyBirthday = 'birthday';
   final keyPassword = 'password';
   final keyAuthStorage = 'authStorage';
   final keyApiEndpoint = 'apiEndpoint';
@@ -30,6 +32,18 @@ class SharePrefUtils {
 
   set username(String value) {
     _pref.setString(keyUsername, value);
+  }
+
+  String get refreshToken => _pref.getString(keyRefreshToken) ?? '00000';
+
+  set refreshToken(String value) {
+    _pref.setString(keyRefreshToken, value);
+  }
+
+  String get birthday => _pref.getString(keyBirthday) ?? '27/12/1999';
+
+  set birthday(String value) {
+    _pref.setString(keyBirthday, value);
   }
 
   String get password => _pref.getString(keyPassword) ?? 'guideNavi2022';
