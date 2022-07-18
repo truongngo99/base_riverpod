@@ -1,14 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:base_riverpod/core/utils/urls.dart';
+import 'package:dio/dio.dart';
+
 import 'package:base_riverpod/core/infrastructure/dio_extension.dart';
 import 'package:base_riverpod/core/infrastructure/network_exception.dart';
 import 'package:base_riverpod/domain/entity/remote_response.dart';
 import 'package:base_riverpod/infrastructure/dto/auth_dto.dart';
-import 'package:dio/dio.dart';
-
 
 class AuthRemoteService {
   final Dio _dio;
 
-  AuthRemoteService(this._dio);
+  AuthRemoteService(
+    this._dio
+  );
 
   Future<RemoteResponse<AuthDto>> signIn(String email, String password) async {
     try {
@@ -36,16 +40,20 @@ class AuthRemoteService {
       rethrow;
     }
   }
-   Future<RemoteResponse<String>> signOut(String refreshToken, String name, String birthday) async {
+   Future<RemoteResponse<String>> signOut(String accessToken, String refreshToken) async {
     try {
-      final response = await _dio.delete(
-        '/api/v1/logout',
+      final response = await Dio(BaseOptions(baseUrl: 'https://api.dev.guide-navi.com')).delete('/api/v1/logout',
         data: {
           'refresh_token': refreshToken,
-          'name': name,
-          'birthday': birthday
+          'name': '',
+          'birthday': ''
         },
+        options: Options(
+          headers: {
+              'Authorization': 'Bearer $accessToken',
+            })
       );
+
       if (response.statusCode == 200) {
         return RemoteResponse.success(response.data['message']);
       } else {

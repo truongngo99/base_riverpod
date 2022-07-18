@@ -13,6 +13,7 @@ class ActivitiesTabScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // ref.read(activitiesNotifierProvider.notifier).initFetch();
     final activities = ref.watch(activitiesNotifierProvider).activities;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

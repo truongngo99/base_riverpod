@@ -93,7 +93,7 @@ class GalleryNotifier extends ChangeNotifier {
   }
 }
 
-final galleryNotifierProvider = ChangeNotifierProvider<GalleryNotifier>((ref) {
+final galleryNotifierProvider = ChangeNotifierProvider.autoDispose<GalleryNotifier>((ref) {
   final repo = ref.watch(profileRespository);
   return GalleryNotifier(repo: repo, userDefault: getIt<SharePrefUtils>());
 });

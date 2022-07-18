@@ -55,7 +55,7 @@ class TravelSpotNotifier extends ChangeNotifier {
   }
 }
 
-final travelSpotNotifierProvider = ChangeNotifierProvider<TravelSpotNotifier>((ref) {
+final travelSpotNotifierProvider = ChangeNotifierProvider.autoDispose<TravelSpotNotifier>((ref) {
   final repo = ref.watch(profileRespository);
   return TravelSpotNotifier(repo: repo, userDefault: getIt<SharePrefUtils>());
 });

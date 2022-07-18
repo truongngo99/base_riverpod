@@ -11,6 +11,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class HomeTabScreen extends ConsumerWidget {
   HomeTabScreen({Key? key}) : super(key: key);
 
+  @override
+  @override
+
   final Map<String, String> _skillList = {
     "ドイツ語": "日常会話レベル",
     "中国語": "ビジネスレベル",
@@ -22,6 +25,7 @@ class HomeTabScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // ref.read(profileNotifierProvider.notifier).initFetch();
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

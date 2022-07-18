@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -69,11 +70,20 @@ class AuthNotifier extends StateNotifier<AuthState> {
     );
   }
 
-  Future<void> signOut() async {
-    final failureOrSuccess = await _authenticator.signOut(userDefault.refreshToken, userDefault.username, userDefault.birthday);
-    state = failureOrSuccess.fold(
-      (l) => AuthState.failure(l),
-      (r) => const AuthState.unauthenticated(),
+  Future<bool> signOut() async {
+    EasyLoading.show();
+    final failureOrSuccess = await _authenticator.signOut(userDefault.refreshToken);
+    return failureOrSuccess.fold(
+      (l) {
+        state = AuthState.failure(l);
+        return false;
+      },
+      (r) {
+        print("Logout successful");
+        state = const AuthState.unauthenticated();
+        EasyLoading.dismiss();
+        return true;
+      } 
     );
   }
 }

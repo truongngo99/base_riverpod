@@ -101,7 +101,7 @@ class SkillNotifier extends ChangeNotifier {
   }
 }
 
-final skillNotifierProvider = ChangeNotifierProvider<SkillNotifier>((ref) {
+final skillNotifierProvider = ChangeNotifierProvider.autoDispose<SkillNotifier>((ref) {
   final repo = ref.watch(profileRespository);
   return SkillNotifier(repo: repo, userDefault: getIt<SharePrefUtils>());
 });

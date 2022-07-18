@@ -31,9 +31,9 @@ class _MenuScreenState extends ConsumerState<MenuScreen> {
                   child: const Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: SizedBox(
-                      height: 40,
-                      width: 40,
-                      child: Icon(Icons.close, color: Colors.black)),
+                        height: 40,
+                        width: 40,
+                        child: Icon(Icons.close, color: Colors.black)),
                   ),
                 )
               ],
@@ -155,8 +155,13 @@ class _MenuScreenState extends ConsumerState<MenuScreen> {
                   children: [
                     GestureDetector(
                       onTap: () async {
-                        await ref.read(authNotifierProvider.notifier).signOut();
-                        context.router.replaceAll([const LoginRoute()]);
+                        final result = await ref
+                            .read(authNotifierProvider.notifier)
+                            .signOut();
+                        print("result $result");
+                        if (result) {
+                          context.router.pushAndPopUntil(const LoginRoute(), predicate: (Route<dynamic> route) => false);
+                        }
                       },
                       child: const Text(
                         "ログアウト",

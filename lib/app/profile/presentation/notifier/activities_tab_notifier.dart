@@ -32,6 +32,12 @@ class ActivitiesNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  @override
+  void dispose() {
+    print("active sap bi dispo");
+    super.dispose();
+  }
+
   void initFetch() async {
     EasyLoading.show();
     if (userDefault.username == "guide_navi") {
@@ -92,7 +98,7 @@ class ActivitiesNotifier extends ChangeNotifier {
   }
 }
 
-final activitiesNotifierProvider = ChangeNotifierProvider<ActivitiesNotifier>((ref) {
+final activitiesNotifierProvider = ChangeNotifierProvider.autoDispose<ActivitiesNotifier>((ref) {
   final repo = ref.watch(profileRespository);
   return ActivitiesNotifier(repo: repo, userDefault: getIt<SharePrefUtils>());
 });

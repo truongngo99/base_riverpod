@@ -140,7 +140,7 @@ class ProfileNotifier extends ChangeNotifier {
   }
 }
 
-final profileNotifierProvider = ChangeNotifierProvider<ProfileNotifier>((ref) {
+final profileNotifierProvider = ChangeNotifierProvider.autoDispose<ProfileNotifier>((ref) {
   final repo = ref.watch(profileRespository);
   return ProfileNotifier(repo: repo, userDefault: getIt<SharePrefUtils>());
 });

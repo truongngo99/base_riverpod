@@ -19,6 +19,7 @@ class SkillTabScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // ref.read(skillNotifierProvider.notifier).initFetch();
     return _buildAwardWidget(context, ref);
   }
 
