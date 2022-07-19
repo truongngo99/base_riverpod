@@ -1,4 +1,4 @@
-import 'package:base_riverpod/auth/shared/auth_provider.dart';
+import 'package:base_riverpod/app/auth/shared/auth_provider.dart';
 import 'package:base_riverpod/core/presentation/router/app_router.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';

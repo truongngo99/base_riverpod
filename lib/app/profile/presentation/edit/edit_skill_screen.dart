@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:base_riverpod/app/profile/presentation/edit_tab_builder.dart';
-import 'package:base_riverpod/app/profile/presentation/notifier/skill_tab_notifier.dart';
+import 'package:base_riverpod/app/profile/builder/edit_tab_builder.dart';
+import 'package:base_riverpod/app/profile/notifier/skill_tab_notifier.dart';
 import 'package:base_riverpod/core/extension/imageX.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';

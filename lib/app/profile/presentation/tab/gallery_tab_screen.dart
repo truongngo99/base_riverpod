@@ -1,4 +1,4 @@
-import 'package:base_riverpod/app/profile/presentation/notifier/gallery_tab_notifier.dart';
+import 'package:base_riverpod/app/profile/notifier/gallery_tab_notifier.dart';
 import 'package:base_riverpod/core/extension/imageX.dart';
 import 'package:base_riverpod/core/extension/stringX.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';

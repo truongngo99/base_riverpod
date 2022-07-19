@@ -1,6 +1,7 @@
+import 'package:base_riverpod/app/auth/application/auth_notifier.dart';
+import 'package:base_riverpod/core/infrastructure/share_pref_ultils.dart';
+import 'package:base_riverpod/injection.dart';
 import 'package:dio/dio.dart';
-
-import '../auth/application/auth_notifier.dart';
 import 'authenticator.dart';
 
 class AuthInterceptor extends Interceptor {
@@ -12,16 +13,14 @@ class AuthInterceptor extends Interceptor {
   @override
   Future<void> onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    final authDto = await _authenticator.getSignedInAuth();
+    final accessToken = getIt<SharePrefUtils>().accessToken;
 
     final modifiedOptions = options
-      ..headers.addAll(authDto == null
+      ..headers.addAll(accessToken == ''
           ? {}
           : {
-              'Authorization': 'Bearer ${authDto.accessToken}',
-            });
-
-            
+              'Authorization': 'Bearer $accessToken',
+            });       
     handler.next(modifiedOptions);
   }
 
@@ -40,7 +39,7 @@ class AuthInterceptor extends Interceptor {
         (r) => () async {
           final authModelStorage = await _authenticator.getSignedInAuth();
           if (authModelStorage != null) {
-            _authNotifier.updateAuthentication(authModelStorage);
+            getIt<SharePrefUtils>().accessToken = authModelStorage.accessToken;
             handler.resolve(
               await _dio.fetch(
                 err.requestOptions

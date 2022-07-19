@@ -30,17 +30,6 @@ class _$AppRouter extends RootStackRouter {
           opaque: true,
           barrierDismissible: false);
     },
-    HomeRoute.name: (routeData) {
-      final args =
-          routeData.argsAs<HomeRouteArgs>(orElse: () => const HomeRouteArgs());
-      return CustomPage<dynamic>(
-          routeData: routeData,
-          child: HomeScreen(key: args.key),
-          transitionsBuilder: TransitionsBuilders.noTransition,
-          durationInMilliseconds: 200,
-          opaque: true,
-          barrierDismissible: false);
-    },
     MenuRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const MenuScreen());
@@ -91,7 +80,6 @@ class _$AppRouter extends RootStackRouter {
   List<RouteConfig> get routes => [
         RouteConfig(SplashRoute.name, path: '/'),
         RouteConfig(LoginRoute.name, path: '/login'),
-        RouteConfig(HomeRoute.name, path: '/home'),
         RouteConfig(MenuRoute.name, path: '/menu'),
         RouteConfig(ProfileRoute.name, path: '/profile'),
         RouteConfig(EditSkillRoute.name, path: '/skill/edit'),
@@ -126,26 +114,6 @@ class LoginRoute extends PageRouteInfo<void> {
   const LoginRoute() : super(LoginRoute.name, path: '/login');
 
   static const String name = 'LoginRoute';
-}
-
-/// generated route for
-/// [HomeScreen]
-class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
-  HomeRoute({Key? key})
-      : super(HomeRoute.name, path: '/home', args: HomeRouteArgs(key: key));
-
-  static const String name = 'HomeRoute';
-}
-
-class HomeRouteArgs {
-  const HomeRouteArgs({this.key});
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'HomeRouteArgs{key: $key}';
-  }
 }
 
 /// generated route for

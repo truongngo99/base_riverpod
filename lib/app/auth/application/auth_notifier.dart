@@ -1,16 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:base_riverpod/app/auth/domain/auth_failure.dart';
+import 'package:base_riverpod/infrastructure/authenticator.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:base_riverpod/auth/domain/auth_failure.dart';
 import 'package:base_riverpod/core/infrastructure/share_pref_ultils.dart';
 import 'package:base_riverpod/infrastructure/dto/auth_dto.dart';
 import 'package:base_riverpod/infrastructure/dto/auth_model.dart';
-
-import '../../infrastructure/authenticator.dart';
-
 part 'auth_notifier.freezed.dart';
 
 @freezed
@@ -65,6 +63,8 @@ class AuthNotifier extends StateNotifier<AuthState> {
       (l) => AuthState.failure(l),
       (authDto) {
           userDefault.refreshToken = authDto.refreshToken;
+          userDefault.isSignedIn = true;
+          userDefault.accessToken = authDto.accessToken;
           return AuthState.authenticated(authDto);
       } ,
     );
@@ -79,7 +79,8 @@ class AuthNotifier extends StateNotifier<AuthState> {
         return false;
       },
       (r) {
-        print("Logout successful");
+        userDefault.isSignedIn = false;
+        userDefault.accessToken = '';
         state = const AuthState.unauthenticated();
         EasyLoading.dismiss();
         return true;

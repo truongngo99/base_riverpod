@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:base_riverpod/app/profile/presentation/edit_tab_builder.dart';
-import 'package:base_riverpod/app/profile/presentation/notifier/activities_tab_notifier.dart';
-import 'package:base_riverpod/app/profile/presentation/tab/edit/tabbar_editable.dart';
+import 'package:base_riverpod/app/profile/builder/edit_tab_builder.dart';
+import 'package:base_riverpod/app/profile/notifier/activities_tab_notifier.dart';
+import 'package:base_riverpod/app/profile/presentation/edit/tabbar_editable.dart';
 import 'package:base_riverpod/core/extension/stringX.dart';
 import 'package:base_riverpod/domain/entity/activities_response.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';

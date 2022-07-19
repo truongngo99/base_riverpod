@@ -1,20 +1,28 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:base_riverpod/app/auth/application/auth_notifier.dart';
+import 'package:base_riverpod/app/auth/shared/auth_provider.dart';
+import 'package:base_riverpod/core/infrastructure/share_pref_ultils.dart';
 import 'package:base_riverpod/core/presentation/router/app_router.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
+import 'package:base_riverpod/infrastructure/authenticator.dart';
+import 'package:base_riverpod/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-class SplashScreen extends StatefulWidget {
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod/riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+class SplashScreen extends ConsumerStatefulWidget {
   SplashScreen({Key? key}) : super(key: key);
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  ConsumerState<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
+class _SplashScreenState extends ConsumerState<SplashScreen>
     with TickerProviderStateMixin {
   late AnimationController _fadedAnimationController;
   late Animation<double> _fadedAnimation;
@@ -60,7 +68,10 @@ class _SplashScreenState extends State<SplashScreen>
       })
       ..addStatusListener((status) async {
         if (status == AnimationStatus.completed) {
-            context.router.replace(const LoginRoute());
+          final isSigned = ref.watch(authNotifierProvider.notifier).state == AuthState.unauthenticated();
+          final isSignedIn = getIt<SharePrefUtils>().isSignedIn;
+          print("${isSignedIn}");
+          context.router.replace(isSignedIn ? const ProfileRoute() : const LoginRoute());
         }
       });
        

@@ -11,7 +11,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'profile_tab_builder.dart';
+import '../builder/profile_tab_builder.dart';
 
 class ProfileScreen extends ConsumerStatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);

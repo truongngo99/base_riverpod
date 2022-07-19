@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:base_riverpod/app/profile/presentation/notifier/home_tab_notifier.dart';
+import 'package:base_riverpod/app/profile/notifier/home_tab_notifier.dart';
 import 'package:base_riverpod/app/profile/utils/container_rounded_text.dart';
 import 'package:base_riverpod/core/presentation/router/app_router.dart';
 import 'package:base_riverpod/domain/entity/general_info_response.dart';

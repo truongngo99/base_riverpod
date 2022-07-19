@@ -1,4 +1,4 @@
-import 'package:base_riverpod/app/profile/presentation/notifier/skill_tab_notifier.dart';
+import 'package:base_riverpod/app/profile/notifier/skill_tab_notifier.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';
 import 'package:flutter/material.dart';

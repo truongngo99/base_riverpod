@@ -1,4 +1,4 @@
-import 'package:base_riverpod/app/profile/presentation/notifier/travel_spot_tab_notifier.dart';
+import 'package:base_riverpod/app/profile/notifier/travel_spot_tab_notifier.dart';
 import 'package:base_riverpod/domain/entity/map_pin_response.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:flutter/material.dart';

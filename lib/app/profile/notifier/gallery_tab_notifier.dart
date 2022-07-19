@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:base_riverpod/app/profile/utils/auto_dispose_notifier.dart';
 import 'package:base_riverpod/core/infrastructure/share_pref_ultils.dart';
 import 'package:base_riverpod/domain/entity/album_response.dart';
 import 'package:base_riverpod/domain/entity/map_pin_response.dart';
@@ -12,7 +13,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:base_riverpod/domain/repositories/profile_respository.dart';
 
-class GalleryNotifier extends ChangeNotifier {
+class GalleryNotifier extends AutoDisposeChangeNotifier {
   final ProfileRepository repo;
   final SharePrefUtils userDefault;
 

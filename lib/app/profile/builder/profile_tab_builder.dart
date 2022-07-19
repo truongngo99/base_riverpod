@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'package:base_riverpod/app/profile/presentation/notifier/home_tab_notifier.dart';
+import 'package:base_riverpod/app/profile/notifier/home_tab_notifier.dart';
 import 'package:base_riverpod/gen/assets.gen.dart';
 import 'package:base_riverpod/gen/colors.gen.dart';
 import 'package:flutter/material.dart';

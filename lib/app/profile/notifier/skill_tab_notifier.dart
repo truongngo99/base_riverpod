@@ -1,15 +1,15 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:base_riverpod/app/profile/utils/auto_dispose_notifier.dart';
 import 'package:base_riverpod/core/infrastructure/share_pref_ultils.dart';
 import 'package:base_riverpod/domain/entity/skill_response.dart';
 import 'package:base_riverpod/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
 import 'package:base_riverpod/domain/repositories/profile_respository.dart';
 
-class SkillNotifier extends ChangeNotifier {
+class SkillNotifier extends AutoDisposeChangeNotifier {
   final ProfileRepository repo;
   final SharePrefUtils userDefault;
 
@@ -39,7 +39,6 @@ class SkillNotifier extends ChangeNotifier {
     }
     await _fetchSkill();
     EasyLoading.dismiss();
-    notifyListeners();
   }
 
   Future<void> _fetchGuideInfo() async {
@@ -87,7 +86,8 @@ class SkillNotifier extends ChangeNotifier {
       _appliedChanged = false;
     } else {
       if (_skill != null) {
-      _editableSkill = _skill!.copyWith(ortherDegrees: _skill!.ortherDegrees.copyWith());
+        _editableSkill =
+            _skill!.copyWith(ortherDegrees: _skill!.ortherDegrees.copyWith());
       }
     }
   }
@@ -101,7 +101,8 @@ class SkillNotifier extends ChangeNotifier {
   }
 }
 
-final skillNotifierProvider = ChangeNotifierProvider.autoDispose<SkillNotifier>((ref) {
+final skillNotifierProvider =
+    ChangeNotifierProvider.autoDispose<SkillNotifier>((ref) {
   final repo = ref.watch(profileRespository);
   return SkillNotifier(repo: repo, userDefault: getIt<SharePrefUtils>());
 });

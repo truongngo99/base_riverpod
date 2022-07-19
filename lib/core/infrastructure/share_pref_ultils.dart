@@ -11,10 +11,12 @@ class SharePrefUtils {
   final keyWebURL = 'web_url';
   final keyUsername = 'username';
   final keyRefreshToken = 'refresh_token';
+  final keyAccessToken = 'access_token';
   final keyBirthday = 'birthday';
   final keyPassword = 'password';
   final keyAuthStorage = 'authStorage';
   final keyApiEndpoint = 'apiEndpoint';
+  final keyIsSignedIn = 'isSignedIn';
 
   Future<void> init() async {
     _pref = await SharedPreferences.getInstance();
@@ -27,6 +29,12 @@ class SharePrefUtils {
   set webUrl(String value) {
     _pref.setString(keyWebURL, value);
   }
+  
+  bool get isSignedIn => _pref.getBool(keyIsSignedIn) ?? false;
+
+  set isSignedIn(bool value) {
+    _pref.setBool(keyIsSignedIn, value);
+  }
 
   String get username => _pref.getString(keyUsername) ?? 'guide_navi';
 
@@ -38,6 +46,12 @@ class SharePrefUtils {
 
   set refreshToken(String value) {
     _pref.setString(keyRefreshToken, value);
+  }
+
+  String get accessToken => _pref.getString(keyAccessToken) ?? '';
+
+  set accessToken(String value) {
+    _pref.setString(keyAccessToken, value);
   }
 
   String get birthday => _pref.getString(keyBirthday) ?? '27/12/1999';

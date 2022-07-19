@@ -60,8 +60,8 @@ class _LoginPageState extends ConsumerState<LoginPage>
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final isError = _errorText != null;
-    _emailController.text = 'hang.ung@executionlab.asia';
-    _passwordController.text = '12345678';
+    // _emailController.text = 'hang.ung@executionlab.asia';
+    // _passwordController.text = '12345678';
 
     ref.listen<AuthState>(authNotifierProvider, (preS, nextS) {
       nextS.maybeWhen(
